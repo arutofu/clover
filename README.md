@@ -27,7 +27,7 @@
   * [Название дрона 1]()
   * [Название дрона 2]()
 * 🟡[Настройка](docs/ru/setup.md)
-  * 🟡[Калибровка датчиков](docs/ru/calibration.md)
+  * 🟢[Калибровка датчиков](docs/ru/calibration.md)
   * 🟢[Настройка пульта](docs/ru/radio.md)
     * [Работа с FS-A8S](docs/ru/rc_flysky_a8s.md)
   * [Полетные режимы](docs/ru/modes.md)
