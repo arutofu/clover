@@ -35,7 +35,7 @@
   * 🟢[Настройка Failsafe](docs/ru/failsafe.md)
 * 🔴[Ручной полет](docs/ru/flight.md)
   * 🔴[Упражнения](docs/ru/flight_exercises.md)
-* [Работа с Raspberry Pi](docs/ru/raspberry.md)
+* 🟢[Работа с Raspberry Pi](docs/ru/raspberry.md)
   * [Образ для RPi](docs/ru/image.md)
   * [Подключение по Wi-Fi](docs/ru/wifi.md)
   * [Подключение к Pixracer](docs/ru/connection.md)
