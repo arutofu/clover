@@ -13,3 +13,4 @@
 Вы можете скачать PDF-версию ${\textsf{\color{red}***ссылку добавим когда будет готово***}}$ этой документации. ${\textsf{\color{red}***будет версия документации на английском языке?***}}$.
 ${\textsf{\color{lightgreen}Green}}$
 ${\textsf{\color{lightred}***ссылку добавим когда будет готово***}}$
+$\color{red}{\textsf{lorem ipsum}}$
