@@ -9,7 +9,7 @@
 
 * [*Введение*](docs/ru/README.md)
 * [*Глоссарий*](docs/ru/glossary.md)
-* [Безопасность](docs/ru/safety.md)
+* [*Безопасность*](docs/ru/safety.md)
 * [Сборка](docs/ru/assembly.md)
   * [Клевер 4.2 Pro](docs/ru/assemble_4_2_pro.md)
   * [Клевер 4.2](docs/ru/assemble_4_2.md)
