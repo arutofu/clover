@@ -32,7 +32,7 @@
     * 🟡[Работа с FS-A8S](docs/ru/rc_flysky_a8s.md) 🔴у нас FS-A8S?
   * 🟡[Полетные режимы](docs/ru/modes.md)
   * 🟡[Настройка питания](docs/ru/power.md)
-  * [Настройка Failsafe](docs/ru/failsafe.md)
+  * 🟢[Настройка Failsafe](docs/ru/failsafe.md)
 * [Ручной полет](docs/ru/flight.md)
   * [Упражнения](docs/ru/flight_exercises.md)
 * [Работа с Raspberry Pi](docs/ru/raspberry.md)
