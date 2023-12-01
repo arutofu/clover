@@ -433,6 +433,8 @@ flow_client.update_configuration({'enabled': True})
 
 <!-- markdownlint-enable MD044 -->
 
+$\color{red}{\textsf{🔴директория}}$
+
 ```python
 import rospy
 import dynamic_reconfigure.client
@@ -440,7 +442,7 @@ import dynamic_reconfigure.client
 rospy.init_node('flight')
 map_client = dynamic_reconfigure.client.Client('aruco_map')
 
-map_client.update_configuration({'map': '/home/pi/catkin_ws/src/clover/aruco_pose/map/office.txt'}) $\color{red}{\textsf{🔴директория}}$
+map_client.update_configuration({'map': '/home/pi/catkin_ws/src/clover/aruco_pose/map/office.txt'})
 ```
 
 ### # {#wait-global-position}
