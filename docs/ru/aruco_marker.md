@@ -14,13 +14,13 @@
 
 ## Настройка
 
-Аргумент `aruco` в файле `~/catkin_ws/src/clover/clover/launch/clover.launch` должен быть в значении `true`:
+Аргумент `aruco` в файле `~/catkin_ws/src/clover/clover/launch/clover.launch` должен быть в значении `true`: $\color{red}{\textsf{🔴директория}}$
 
 ```xml
 <arg name="aruco" default="true"/>
 ```
 
-Для включения распознавания маркеров аргумент `aruco_detect` в файле `~/catkin_ws/src/clover/clover/launch/aruco.launch` должен быть в значении `true`:
+Для включения распознавания маркеров аргумент `aruco_detect` в файле `~/catkin_ws/src/clover/clover/launch/aruco.launch` должен быть в значении `true`: $\color{red}{\textsf{🔴директория}}$
 
 ```xml
 <arg name="aruco_detect" default="true"/>
