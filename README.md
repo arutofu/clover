@@ -47,7 +47,7 @@
   * 🟡[Просмотр видеострима с камер](docs/ru/web_video_server.md)
 * 🟡[Программирование](docs/ru/programming.md)
   * 🟡[Настройка камеры](docs/ru/camera_setup.md)
-  * 🟡[Визуальные маркеры (ArUco)](docs/ru/aruco.md)
+  * 🟢[Визуальные маркеры (ArUco)](docs/ru/aruco.md)
     * 🟡[Распознавание маркеров](docs/ru/aruco_marker.md)
     * 🟡[Навигация по карте маркеров](docs/ru/aruco_map.md)
   * [Навигация по Optical Flow](docs/ru/optical_flow.md)
