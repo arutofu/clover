@@ -17,7 +17,7 @@
 
 ## Настройка расположения камеры {#frame}
 
-Расположение и ориентация камеры [задается в файле](cli.md#editing) `~/catkin_ws/src/clover/clover/launch/main_camera.launch`:
+Расположение и ориентация камеры [задается в файле](cli.md#editing) `~/catkin_ws/src/clover/clover/launch/main_camera.launch`: $\color{red}{\textsf{🔴директория}}$
 
 ```xml
 <arg name="direction_z" default="down"/> <!-- direction the camera points: down, up -->
