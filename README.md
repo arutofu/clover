@@ -35,7 +35,7 @@
   * 🟡[Настройка питания](docs/ru/power.md)
   * 🟢[Настройка Failsafe](docs/ru/failsafe.md)
 * 🟡[Ручной полет](docs/ru/flight.md)
-  * 🔴[Упражнения](docs/ru/flight_exercises.md)
+  * 🟢[Упражнения](docs/ru/flight_exercises.md)
 * 🟢[Работа с Raspberry Pi](docs/ru/raspberry.md)
   * 🟡[Образ для RPi](docs/ru/image.md)
   * 🟡[Подключение по Wi-Fi](docs/ru/wifi.md)
