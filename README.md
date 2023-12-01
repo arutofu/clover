@@ -30,7 +30,7 @@
 * 🟡[Настройка](docs/ru/setup.md)
   * 🟡[Калибровка датчиков](docs/ru/calibration.md)
   * 🟢[Настройка пульта](docs/ru/radio.md)
-    * 🟡[Работа с FS-A8S](docs/ru/rc_flysky_a8s.md) 🔴у нас FS-A8S?
+    * 🟡[Работа с FS-A8S](docs/ru/rc_flysky_a8s.md)
   * 🟡[Полетные режимы](docs/ru/modes.md)
   * 🟡[Настройка питания](docs/ru/power.md)
   * 🟢[Настройка Failsafe](docs/ru/failsafe.md)
