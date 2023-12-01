@@ -40,7 +40,7 @@
   * 🟡[Образ для RPi](docs/ru/image.md)
   * 🟡[Подключение по Wi-Fi](docs/ru/wifi.md)
   * 🟡[Подключение к Pixracer](docs/ru/connection.md)
-  * 🔴[QGroundControl по Wi-Fi](docs/ru/gcs_bridge.md)
+  * 🟡[QGroundControl по Wi-Fi](docs/ru/gcs_bridge.md)
   * [SSH-доступ](docs/ru/ssh.md)
   * [Командная строка](docs/ru/cli.md)
   * [Автоматическая проверка](docs/ru/selfcheck.md)
