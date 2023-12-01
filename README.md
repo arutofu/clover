@@ -43,7 +43,7 @@
   * 🟡[QGroundControl по Wi-Fi](docs/ru/gcs_bridge.md)
   * 🔴[SSH-доступ](docs/ru/ssh.md)
   * 🔴[Командная строка](docs/ru/cli.md)
-  * [Автоматическая проверка](docs/ru/selfcheck.md)
+  * 🟡[Автоматическая проверка](docs/ru/selfcheck.md)
   * [Просмотр видеострима с камер](docs/ru/web_video_server.md)
 * [Программирование](docs/ru/programming.md)
   * [Настройка камеры](docs/ru/camera_setup.md)
