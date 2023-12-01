@@ -2,7 +2,7 @@
 
 Полная документация по параметрам PX4: https://docs.px4.io/master/en/advanced_config/parameter_reference.html.
 
-Для изменения параметров PX4 используйте программу QGroundControl, [подключившись к Клеверу по Wi-Fi](gcs_bridge.md) или USB. Перейдите в панель *Vehicle Setup* (кликнув на логотип QGroundControl в левом верхнем углу и выберите меню *Parameters*.
+Для изменения параметров PX4 используйте программу QGroundControl, [подключившись к дрону по Wi-Fi](gcs_bridge.md) или USB. Перейдите в панель *Vehicle Setup* (кликнув на логотип QGroundControl в левом верхнем углу и выберите меню *Parameters*.
 
 ## Рекомендованные значения
 
