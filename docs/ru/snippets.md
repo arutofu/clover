@@ -349,8 +349,6 @@ rospy.loginfo('flip')
 flip()
 ```
 
-Необходимо использование [специальной сборки PX4 для Клевера](firmware.md#прошивка-для-клевера). Перед выполнением флипа необходимо принять все меры безопасности.
-
 ### # {#calibrate-gyro}
 
 Произвести калибровку гироскопа:
@@ -442,7 +440,7 @@ import dynamic_reconfigure.client
 rospy.init_node('flight')
 map_client = dynamic_reconfigure.client.Client('aruco_map')
 
-map_client.update_configuration({'map': '/home/pi/catkin_ws/src/clover/aruco_pose/map/office.txt'})
+map_client.update_configuration({'map': '/home/pi/catkin_ws/src/clover/aruco_pose/map/office.txt'}) 🔴
 ```
 
 ### # {#wait-global-position}
