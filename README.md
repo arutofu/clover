@@ -69,7 +69,7 @@
     * 🔴[Установка виртуальной машины](docs/ru/simulation_vm.md)
     * 🔴[Использование симулятора](docs/ru/simulation_usage.md)
     * 🔴[Установка на компьютеры c M1](docs/ru/simulation_m1.md)
-  * [ROS](docs/ru/ros.md)
+  * 🟡[ROS](docs/ru/ros.md)
   * [MAVROS](docs/ru/mavros.md)
 * [Дополнительные материалы](docs/ru/supplementary.md)
   * [COEX Pix](docs/ru/coex_pix.md)
