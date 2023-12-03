@@ -57,7 +57,7 @@
   * 🟡[Примеры кода](docs/ru/snippets.md)
   * 🟡[Лазерный дальномер](docs/ru/laser.md)
   * 🔴[Светодиодная лента](docs/ru/leds.md)
-  * [Работа с GPIO](docs/ru/gpio.md)
+  * 🟢[Работа с GPIO](docs/ru/gpio.md)
   * 🟢[Ультразвуковой дальномер](docs/ru/sonar.md)
   * [Компьютерное зрение](docs/ru/camera.md)
   * [Визуализация с помощью rviz и rqt](docs/ru/rviz.md)
