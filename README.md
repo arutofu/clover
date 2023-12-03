@@ -53,7 +53,7 @@
   * 🟡[Навигация по Optical Flow](docs/ru/optical_flow.md)
   * 🟡[Автономный полет (OFFBOARD)](docs/ru/simple_offboard.md)
   * 🟢[Системы координат](docs/ru/frames.md)
-  * [Примеры кода](docs/ru/snippets.md)
+  * 🟡[Примеры кода](docs/ru/snippets.md)
   * [Лазерный дальномер](docs/ru/laser.md)
   * [Светодиодная лента](docs/ru/leds.md)
   * [Работа с GPIO](docs/ru/gpio.md)
