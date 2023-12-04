@@ -444,8 +444,8 @@ map_client = dynamic_reconfigure.client.Client('aruco_map')
 
 map_client.update_configuration({'map': '/home/pi/catkin_ws/src/clover/aruco_pose/map/office.txt'})
 ```
-$\color{red}{\textsf{🔴директория}}$
 
+$\color{red}{\textsf{🔴директория}}$
 
 ### # {#wait-global-position}
 
