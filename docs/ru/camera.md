@@ -15,6 +15,7 @@
 ```bash
 sudo systemctl restart clover
 ```
+
 $\color{red}{\textsf{🔴директория}}$
 
 Для мониторинга изображения с камеры можно использовать [rqt](rviz.md) или [web_video_server](web_video_server.md).
@@ -28,6 +29,7 @@ $\color{red}{\textsf{🔴директория}}$
 ```bash
 sudo systemctl stop clover
 ```
+
 $\color{red}{\textsf{🔴директория}}$
 
 Получите картинку с камеры утилитой `raspistill`:
