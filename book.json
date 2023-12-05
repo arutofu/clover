@@ -1,7 +1,7 @@
 {
     "title": "Drone",
-    "description": "Empty description",
-    "author": "CE",
+    "description": "Конструктор квадрокоптера «Клевер»",
+    "author": "Copter Express",
     "language": "en",
     "root": "docs/",
     "gitbook": "^3.2.2",
