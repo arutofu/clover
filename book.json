@@ -19,41 +19,40 @@
         "image-zoom@https://github.com/okalachev/gitbook-plugin-image-zoom.git",
         "language-picker@https://github.com/okalachev/gitbook-plugin-language-picker.git"
     ],
-        "bulk-redirect": {
-            "basepath": "",
-            "redirectsFile": "redirects.json",
-            "blank": true
-        },
-        "sitemap": {
-            "hostname": "https://drone.coex.tech"
-        },
-        "toolbar": {
-            "buttons":
-            [
-                {
-                    "label": "Edit page on github",
-                    "icon": "fa fa-pencil-square-o",
-                    "position" : "left",
-                    "url": "https://github.com/CopterExpress/clover/edit/master/docs/{{filepath_lang}}"
-                },
-                {
-                    "label": "GitHub",
-                    "icon": "fa fa-github",
-                    "position" : "left",
-                    "url": "https://github.com/CopterExpress/clover"
-                }
-            ]
-        },
-        "addcssjs": {
-            "css": ["../drone.css"],
-            "js": ["../drone.js"]
-        },
-        "language-picker": {
-            "languages": [["ru", "Russian"], ["en", "English"]]
-        },
-        "localized-footer": {
-            "hline": false,
-            "filename": "./FOOTER.md"
-        }
+    "bulk-redirect": {
+        "basepath": "",
+        "redirectsFile": "redirects.json",
+        "blank": true
+    },
+    "sitemap": {
+        "hostname": "https://drone.coex.tech"
+    },
+    "toolbar": {
+        "buttons":
+        [
+            {
+                "label": "Edit page on github",
+                "icon": "fa fa-pencil-square-o",
+                "position" : "left",
+                "url": "https://github.com/CopterExpress/clover/edit/master/docs/{{filepath_lang}}"
+            },
+            {
+                "label": "GitHub",
+                "icon": "fa fa-github",
+                "position" : "left",
+                "url": "https://github.com/CopterExpress/clover"
+            }
+        ]
+    },
+    "addcssjs": {
+        "css": ["../drone.css"],
+        "js": ["../drone.js"]
+    },
+    "language-picker": {
+        "languages": [["ru", "Russian"], ["en", "English"]]
+    },
+    "localized-footer": {
+        "hline": false,
+        "filename": "./FOOTER.md"
     }
 }
