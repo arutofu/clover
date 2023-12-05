@@ -91,5 +91,5 @@ roslaunch -h
 
 # validate web tools present
 [ -d $H/.ros/www ]
-[ "$(readlink $H/.ros/www/drone)" = "$H/catkin_ws/src/drone/drone/www" ]
-[ "$(readlink $H/.ros/www/drone_blocks)" = "$H/catkin_ws/src/drone/drone_blocks/www" ]
+[ "$(readlink $H/.ros/www/drone)" = "$H/catkin_ws/src/clover/drone/www" ]
+[ "$(readlink $H/.ros/www/drone_blocks)" = "$H/catkin_ws/src/clover/drone_blocks/www" ]
