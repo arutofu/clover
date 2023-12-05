@@ -117,7 +117,8 @@ source devel/setup.bash
 
 echo_stamp "Install dronee package (for backwards compatibility)"
 cd /home/pi/catkin_ws/src/drone/builder/assets/dronee
-./setup.py install
+chmod +x ./setup.py
+sudo ./setup.py install
 rm -rf build  # remove build artifacts
 
 echo_stamp "Build Drone documentation"
