@@ -1,5 +1,5 @@
 {
-    "title": "Clover",
+    "title": "Drone",
     "description": "Конструктор квадрокоптера «Клевер»",
     "author": "Copter Express",
     "language": "en",
@@ -19,17 +19,13 @@
         "image-zoom@https://github.com/okalachev/gitbook-plugin-image-zoom.git",
         "language-picker@https://github.com/okalachev/gitbook-plugin-language-picker.git"
     ],
-    "pluginsConfig": {
-        "yametrika": {
-            "id": 49359238
-        },
         "bulk-redirect": {
             "basepath": "",
             "redirectsFile": "redirects.json",
             "blank": true
         },
         "sitemap": {
-            "hostname": "https://clover.coex.tech"
+            "hostname": "https://drone.coex.tech"
         },
         "toolbar": {
             "buttons":
@@ -49,8 +45,8 @@
             ]
         },
         "addcssjs": {
-            "css": ["../clover.css"],
-            "js": ["../clover.js"]
+            "css": ["../drone.css"],
+            "js": ["../drone.js"]
         },
         "language-picker": {
             "languages": [["ru", "Russian"], ["en", "English"]]
