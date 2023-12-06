@@ -2,7 +2,7 @@
 
 from distutils.core import setup
 
-setup(name='dronee',
+setup(name='clever',
       version='1.0',
       description='Dronee transitional package for backwards compatibility',
       author='Oleg Kalachev',
