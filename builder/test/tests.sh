@@ -85,3 +85,11 @@ rostopic || [ $? -eq 64 ]
 rosservice || [ $? -eq 64 ]
 rosparam
 roslaunch -h
+
+# validate examples are present
+[[ $(ls $H/examples/*) ]]
+
+# validate web tools present
+[ -d $H/.ros/www ]
+[ "$(readlink $H/.ros/www/drone)" = "$H/catkin_ws/src/drone/drone/www" ]
+[ "$(readlink $H/.ros/www/drone_blocks)" = "$H/catkin_ws/src/drone/drone_blocks/www" ]
