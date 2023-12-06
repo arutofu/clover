@@ -6,5 +6,5 @@ setup(name='dronee',
       version='1.0',
       description='Dronee transitional package for backwards compatibility',
       author='Oleg Kalachev',
-      packages=['dronee'],
+      packages=['clever'],
      )

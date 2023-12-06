@@ -27,7 +27,7 @@ cd /home/pi/catkin_ws/src/drone/builder/test/
 ./tests.py
 ./tests_py3.py
 [[ $(./test_qr.py) == "Found QRCODE with data Проверка Unicode with center at x=66.0, y=66.0" ]] 
-[[ $(./tests_dronee.py) == "Warning: clever package is renamed to drone" ]]  # test backwards compatibility
+[[ $(./tests_dronee.py) == "Warning: dronee package is renamed to drone" ]]  # test backwards compatibility
 
 systemctl stop roscore
 

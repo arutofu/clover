@@ -115,6 +115,11 @@ source /opt/ros/${ROS_DISTRO}/setup.bash
 catkin_make -j2 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 source devel/setup.bash
 
+echo_stamp "Install dronee package (for backwards compatibility)"
+cd /home/pi/catkin_ws/src/drone/builder/assets/dronee
+./setup.py install
+rm -rf build  # remove build artifacts
+
 echo_stamp "Build Drone documentation"
 cd /home/pi/catkin_ws/src/drone
 builder/assets/install_gitbook.sh
