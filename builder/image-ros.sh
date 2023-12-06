@@ -116,9 +116,10 @@ catkin_make -j2 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 source devel/setup.bash
 
 echo_stamp "Install clever package (for backwards compatibility)"
+chmod +x /home/pi/catkin_ws/src/drone/builder/assets/clever/setup.py
 cd /home/pi/catkin_ws/src/drone/builder/assets/clever
-./setup.py install
-rm -rf build  # remove build artifacts
+sudo ./setup.py install
+sudo rm -rf build  # remove build artifacts
 
 echo_stamp "Build Drone documentation"
 cd /home/pi/catkin_ws/src/drone
