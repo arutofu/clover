@@ -160,7 +160,7 @@ chown -Rf pi:pi /home/pi/catkin_ws
 echo_stamp "Update www"
 sudo -u pi sh -c ". devel/setup.sh"
 echo_stamp "End of -u pi sh -c . devel/setup.sh"
-sudo -u pi sh -c ". rosrun drone www"
+sudo -u pi sh -c "rosrun drone www"
 echo_stamp "End of rosrun drone www"
 
 echo_stamp "Make \$HOME/examples symlink"
