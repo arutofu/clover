@@ -150,6 +150,7 @@ echo_stamp "Install GeographicLib datasets (needed for mavros)" \
 && wget -qO- https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh | bash
 
 echo_stamp "Running tests"
+chmod +x /home/pi/catkin_ws
 cd /home/pi/catkin_ws
 # FIXME: Investigate failing tests
 catkin_make run_tests #&& catkin_test_results
@@ -158,8 +159,11 @@ echo_stamp "Change permissions for catkin_ws"
 chown -Rf pi:pi /home/pi/catkin_ws
 
 echo_stamp "Update www"
+echo_stamp "Start of -u pi sh -c . devel/setup.sh"
 sudo -u pi sh -c ". devel/setup.sh"
 echo_stamp "End of -u pi sh -c . devel/setup.sh"
+echo_stamp "Start of rosrun drone www"
+chmod +x /home/pi/catkin_ws
 sudo -u pi sh -c "rosrun drone www"
 echo_stamp "End of rosrun drone www"
 
