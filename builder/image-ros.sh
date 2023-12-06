@@ -164,7 +164,7 @@ sudo -u pi sh -c ". devel/setup.sh"
 echo_stamp "End of -u pi sh -c . devel/setup.sh"
 echo_stamp "Start of rosrun drone www"
 chmod +x /home/pi/catkin_ws
-sudo -u pi sh -c "rosrun drone www"
+sudo -u pi sh -c " rosrun drone www"
 echo_stamp "End of rosrun drone www"
 
 echo_stamp "Make \$HOME/examples symlink"
