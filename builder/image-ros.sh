@@ -179,14 +179,9 @@ ls
 cd /home/pi/catkin_ws
 
 echo_stamp "Update www"
-echo_stamp "Start of devel/setup.sh"
-sudo -u pi sh -c ". devel/setup.sh"
-echo_stamp "End of devel/setup.sh"
-
-echo_stamp "Start of rosrun drone www"
 chmod +x /home/pi/catkin_ws/src/drone/drone/src/www
-sudo -u pi rosrun drone www
-echo_stamp "End of rosrun drone www"
+sudo -u pi sh -c ". devel/setup.sh && rosrun clover www"
+echo_stamp "End of Update www"
 
 echo_stamp "Make \$HOME/examples symlink"
 ln -s "$(catkin_find drone examples --first-only)" /home/pi
