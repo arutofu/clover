@@ -180,7 +180,7 @@ cd /home/pi/catkin_ws
 
 echo_stamp "Update www"
 chmod +x /home/pi/catkin_ws/src/drone/drone/src/www
-sudo -u pi sh -c ". devel/setup.sh && rosrun clover www"
+sudo -u pi sh -c ". devel/setup.sh && rosrun drone www"
 echo_stamp "End of Update www"
 
 echo_stamp "Make \$HOME/examples symlink"
