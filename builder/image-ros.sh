@@ -166,7 +166,7 @@ echo_stamp "Start of devel/setup.sh"
 sudo -u pi sh -c ". devel/setup.sh"
 echo_stamp "End of devel/setup.sh"
 echo_stamp "Start of rosrun drone www"
-sudo -u pi rosrun drone src/www
+sudo -u pi rosrun drone/src www
 echo_stamp "End of rosrun drone www"
 
 echo_stamp "Make \$HOME/examples symlink"
