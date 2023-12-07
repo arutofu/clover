@@ -13,17 +13,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Build image
         run: |
+          echo "Building the image..."
           docker run --privileged --rm -v /dev:/dev -v $(pwd):/builder/repo -e TRAVIS_TAG="${{ github.event.release.tag_name }}" sfalexrog/img-tool:qemu-update
+
+      - name: Rename file
+        run: |
+          echo "Renaming the file..."
+          mv images/clover.zip images/drone.zip
+
       - name: Compress image
         run: |
-          cd images && sudo chmod -R 777 . && zip -9 $(echo drone_*).zip drone_* && ls -l . && unzip -l drone_*.zip
+          echo "Compressing the image..."
+          cd images && sudo chmod -R 777 . && zip -9 drone.zip drone_* && ls -l . && unzip -l drone.zip
+
       - name: Upload image
         uses: softprops/action-gh-release@v1
         if: ${{ github.event_name == 'release' }}
         with:
-          files: images/drone_*.zip
+          files: images/drone.zip
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
