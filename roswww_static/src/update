@@ -29,8 +29,16 @@ packages = rospack.list()
 
 index = '<h1>Packages list</h1>\n<ul>\n'
 
+print ('we are in roswww_static/src/update.py')
+
+print ('default_package' + default_package)
+print ('index file ' + index_file)
+print ('www ' + www)
+
 for name in packages:
     path = rospack.get_path(name)
+    print ('name is ' + name)
+    print ('path is ' + path)
     if os.path.exists(path + '/www'):
         print('found www path for %s package' % name)
         os.symlink(path + '/www', www + '/' + name)
@@ -43,4 +51,6 @@ elif index_file is not None:
     print('symlinking index file')
     os.symlink(index_file, www + '/index.html')
 else:
+    print ('default_package is none and index_file is none')
+    print ('trying to open' + www + '/index.html')
     open(www + '/index.html', 'w').write(index)

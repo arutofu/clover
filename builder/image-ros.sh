@@ -160,6 +160,7 @@ chown -Rf pi:pi /home/pi/catkin_ws
 
 echo_stamp "Update www"
 sudo -u pi sh -c ". devel/setup.sh && rosrun drone www"
+echo_stamp "End of Update www"
 
 echo_stamp "Make \$HOME/examples symlink"
 ln -s "$(catkin_find drone examples --first-only)" /home/pi
