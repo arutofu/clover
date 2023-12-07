@@ -23,13 +23,11 @@ source /home/pi/catkin_ws/devel/setup.bash
 systemctl start roscore
 
 cd /home/pi/catkin_ws/src/drone/builder/test/
-chmod +x /home/pi/catkin_ws/src/clover/builder/test/tests_clever.py
-
 ./tests.sh
 ./tests.py
 ./tests_py3.py
 [[ $(./test_qr.py) == "Found QRCODE with data Проверка Unicode with center at x=66.0, y=66.0" ]] 
-sudo chmod +x /root/tests_clever.py
+chmod +x /home/pi/catkin_ws/src/drone/builder/test/tests_clever.py
 [[ $(./tests_clever.py) == "Warning: clever package is renamed to drone" ]]  # test backwards compatibility
 
 systemctl stop roscore
