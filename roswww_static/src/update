@@ -44,4 +44,3 @@ elif index_file is not None:
     os.symlink(index_file, www + '/index.html')
 else:
     open(www + '/index.html', 'w').write(index)
-    
