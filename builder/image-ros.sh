@@ -159,8 +159,12 @@ echo_stamp "Change permissions for catkin_ws"
 chown -Rf pi:pi /home/pi/catkin_ws
 
 echo_stamp "Update www"
-sudo -u pi sh -c ". devel/setup.sh && rosrun drone www"
-echo_stamp "End of Update www"
+echo_stamp "Start of devel/setup.sh"
+sudo -u pi sh -c ". devel/setup.sh"
+echo_stamp "End of devel/setup.sh"
+echo_stamp "Start of rosrun drone www"
+sudo -u pi rosrun drone src/www
+echo_stamp "End of rosrun drone www"
 
 echo_stamp "Make \$HOME/examples symlink"
 ln -s "$(catkin_find drone examples --first-only)" /home/pi
