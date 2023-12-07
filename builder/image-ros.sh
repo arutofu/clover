@@ -158,6 +158,10 @@ catkin_make run_tests #&& catkin_test_results
 echo_stamp "Change permissions for catkin_ws"
 chown -Rf pi:pi /home/pi/catkin_ws
 
+echo_stamp "Directories:"
+ls
+ls drone
+
 echo_stamp "Update www"
 echo_stamp "Start of devel/setup.sh"
 sudo -u pi sh -c ". devel/setup.sh"
