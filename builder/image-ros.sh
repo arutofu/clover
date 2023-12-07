@@ -160,7 +160,6 @@ chown -Rf pi:pi /home/pi/catkin_ws
 
 echo_stamp "Directories:"
 ls
-ls drone
 
 echo_stamp "Update www"
 echo_stamp "Start of devel/setup.sh"
