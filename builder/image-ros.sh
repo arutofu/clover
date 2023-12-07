@@ -150,7 +150,6 @@ echo_stamp "Install GeographicLib datasets (needed for mavros)" \
 && wget -qO- https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh | bash
 
 echo_stamp "Running tests"
-chmod +x /home/pi/catkin_ws
 cd /home/pi/catkin_ws
 # FIXME: Investigate failing tests
 catkin_make run_tests #&& catkin_test_results
@@ -158,15 +157,35 @@ catkin_make run_tests #&& catkin_test_results
 echo_stamp "Change permissions for catkin_ws"
 chown -Rf pi:pi /home/pi/catkin_ws
 
-echo_stamp "Directories:"
+echo_stamp "Directories in /home/pi/catkin_ws:"
 ls
+
+cd /home/pi/catkin_ws/src
+echo_stamp "Directories in /home/pi/catkin_ws/src:"
+ls
+
+cd /home/pi/catkin_ws/src/drone
+echo_stamp "Directories in /home/pi/catkin_ws/src/drone:"
+ls
+
+cd /home/pi/catkin_ws/src/drone/drone
+echo_stamp "Directories in /home/pi/catkin_ws/src/drone/drone:"
+ls
+
+cd /home/pi/catkin_ws/src/drone/drone/src
+echo_stamp "Directories in /home/pi/catkin_ws/src/drone/drone/src:"
+ls
+
+cd /home/pi/catkin_ws
 
 echo_stamp "Update www"
 echo_stamp "Start of devel/setup.sh"
 sudo -u pi sh -c ". devel/setup.sh"
 echo_stamp "End of devel/setup.sh"
+
 echo_stamp "Start of rosrun drone www"
-sudo -u pi rosrun drone/src www
+chmod +x /home/pi/catkin_ws/src/drone/drone/src/www
+sudo -u pi rosrun drone www
 echo_stamp "End of rosrun drone www"
 
 echo_stamp "Make \$HOME/examples symlink"
