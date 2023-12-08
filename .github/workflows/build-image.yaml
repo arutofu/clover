@@ -13,29 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - name: Build image
         run: |
-          echo "Building the image..."
           docker run --privileged --rm -v /dev:/dev -v $(pwd):/builder/repo -e TRAVIS_TAG="${{ github.event.release.tag_name }}" sfalexrog/img-tool:qemu-update
-
-      - name: Find and rename file
-        run: |
-          file_path=$(find . -type f -name 'clover.zip')
-          if [ -n "$file_path" ]; then
-            echo "File found at: $file_path"
-            mv "$file_path" "$(dirname "$file_path")/drone.zip"
-            echo "File renamed to drone.zip"
-          else
-            echo "File 'clover.zip' not found."
-          fi
-
-      - name: Check files in images directory
-        run: |
-          echo "Files in images directory:"
-          ls -l images
-
       - name: Compress image
         run: |
-          echo "Compressing the image..."
-          cd images && sudo chmod -R 777 . && zip -9 drone.zip drone_* && ls -l . && unzip -l drone.zip
+          cd images && sudo chmod -R 777 . && zip -9 drone.zip clover* && ls -l . && unzip -l drone.zip
+      - name: Upload image
+        uses: softprops/action-gh-release@v1
+        if: ${{ github.event_name == 'release' }}
+        with:
+          files: images/drone.zip
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
