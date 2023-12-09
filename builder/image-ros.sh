@@ -156,6 +156,12 @@ catkin_make run_tests #&& catkin_test_results
 echo_stamp "Change permissions for catkin_ws"
 chown -Rf pi:pi /home/pi/catkin_ws
 
+ls /home/pi/catkin_ws/src
+ls /home/pi/catkin_ws/src/drone
+ls /home/pi/catkin_ws/src/drone/drone
+ls /home/pi/catkin_ws/src/clover
+ls /home/pi/catkin_ws/src/clover/clover
+
 echo_stamp "Update www"
 sudo -u pi sh -c ". devel/setup.sh && rosrun drone www"
 
