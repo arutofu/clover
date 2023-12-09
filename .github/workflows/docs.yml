@@ -64,13 +64,13 @@ jobs:
           wget --no-verbose https://clover.coex.tech/clover_ru.pdf -P _book/
           wget --no-verbose https://clover.coex.tech/clover_en.pdf -P _book/
       - name: Upload artifact
-        # if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        # if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final' }}
         uses: actions/upload-pages-artifact@v1
         with:
           path: _book
 
   deploy-docs:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final' }}
     concurrency:
         group: "pages"
         cancel-in-progress: true
