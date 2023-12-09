@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        path: catkin_ws/src/clover
+        path: catkin_ws/src/drone
     - name: Install requirements
       run: apt-get update && apt-get -y install python3-pip fakeroot python3-bloom debhelper dpkg-dev
     - name: Install dependencies
@@ -47,5 +47,5 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: debian-packages
-        path: catkin_ws/src/clover/*.deb
+        path: catkin_ws/src/drone/*.deb
         retention-days: 1
