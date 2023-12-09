@@ -175,10 +175,15 @@ ls /home/pi/catkin_ws/src
 ls /home/pi/catkin_ws/src/drone
 ls /home/pi/catkin_ws/src/drone/drone
 ls /home/pi/catkin_ws/src/drone/drone/src
-ls /home/pi/catkin_ws/src/clover
-ls /home/pi/catkin_ws/src/clover/clover
-ls /home/pi/catkin_ws/src/clover/clover/src
+
 echo_stamp "End of check dirs 3"
+
+echo_stamp "Read setup.sh"
+cat devel/setup.sh
+
+echo_stamp "Rename"
+mv /home/pi/catkin_ws/src/drone /home/pi/catkin_ws/src/clover
+mv /home/pi/catkin_ws/src/clover/drone /home/pi/catkin_ws/src/clover/clover
 
 echo_stamp "Update www"
 sudo -u pi sh -c ". devel/setup.sh && rosrun drone www"
