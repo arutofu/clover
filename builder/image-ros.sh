@@ -81,6 +81,13 @@ my_travis_retry sudo -u pi rosdep update
 export ROS_IP='127.0.0.1' # needed for running tests
 
 # echo_stamp "Reconfiguring Clover repository for simplier unshallowing"
+
+echo_stamp "Check dirs 1"
+ls /home/pi/catkin_ws
+ls /home/pi/catkin_ws/src
+ls /home/pi/catkin_ws/src/drone
+echo_stamp "End of check dirs 1"
+
 cd /home/pi/catkin_ws/src/drone
 git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 
@@ -105,6 +112,13 @@ my_travis_retry apt-get install -y --no-install-recommends libboost-dev libboost
 
 echo_stamp "Build and install Clover"
 cd /home/pi/catkin_ws
+
+echo_stamp "Check dirs 2"
+ls /home/pi/catkin_ws
+ls /home/pi/catkin_ws/src
+ls /home/pi/catkin_ws/src/drone
+echo_stamp "End of check dirs 2"
+
 # Don't try to install gazebo_ros
 my_travis_retry rosdep install -y --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} --os=debian:buster \
   --skip-keys=gazebo_ros --skip-keys=gazebo_plugins
@@ -156,7 +170,7 @@ catkin_make run_tests #&& catkin_test_results
 echo_stamp "Change permissions for catkin_ws"
 chown -Rf pi:pi /home/pi/catkin_ws
 
-echo_stamp "Check dirs"
+echo_stamp "Check dirs 3"
 ls /home/pi/catkin_ws/src
 ls /home/pi/catkin_ws/src/drone
 ls /home/pi/catkin_ws/src/drone/drone
@@ -164,6 +178,7 @@ ls /home/pi/catkin_ws/src/drone/drone/src
 ls /home/pi/catkin_ws/src/clover
 ls /home/pi/catkin_ws/src/clover/clover
 ls /home/pi/catkin_ws/src/clover/clover/src
+echo_stamp "End of check dirs 3"
 
 echo_stamp "Update www"
 sudo -u pi sh -c ". devel/setup.sh && rosrun drone www"
