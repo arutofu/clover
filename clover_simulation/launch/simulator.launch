@@ -43,7 +43,7 @@
     <param name="use_sim_time" value="false" if="$(eval type == 'jmavsim')"/>
 
     <!-- Clover services -->
-    <include file="$(find clover)/launch/clover.launch">
+    <include file="$(find drone)/launch/clover.launch">
         <arg name="simulator" value="true"/>
         <arg name="fcu_conn" value="sitl"/>
         <arg name="fcu_ip" value="127.0.0.1"/>

@@ -2,7 +2,7 @@
 import rospy
 import pytest
 from mavros_msgs.msg import State
-from clover import srv
+from drone import srv
 import time
 
 @pytest.fixture()
@@ -63,7 +63,7 @@ def test_blocks(node):
     assert wait_print.result == 'test'
 
 def test_long_callback():
-    from clover import long_callback
+    from drone import long_callback
     from time import sleep
 
     # very basic test for long_callback

@@ -1,7 +1,7 @@
 # Information: https://clover.coex.tech/en/simple_offboard.html#navigateglobal
 
 import rospy
-from clover import srv
+from drone import srv
 from std_srvs.srv import Trigger
 import math
 

@@ -14,7 +14,7 @@ from math import nan
 from sensor_msgs.msg import Image, CameraInfo
 from geometry_msgs.msg import PointStamped, Point
 from cv_bridge import CvBridge
-from clover import long_callback, srv
+from drone import long_callback, srv
 import tf2_ros
 import tf2_geometry_msgs
 import image_geometry

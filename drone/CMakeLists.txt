@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(clover)
+project(drone)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
@@ -247,7 +247,7 @@ target_link_libraries(${PROJECT_NAME}
 # )
 
 # Mark executables and/or libraries for installation
-install(TARGETS simple_offboard clover_rc camera_markers vpe_publisher clover_led shell clover
+install(TARGETS simple_offboard clover_rc camera_markers vpe_publisher clover_led shell drone
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
