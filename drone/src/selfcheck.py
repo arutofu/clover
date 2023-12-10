@@ -239,7 +239,7 @@ def check_fcu():
             return
 
         if not is_process_running('px4', exact=True): # can't use px4 console in SITL
-            clover_tag = re.compile(r'-cl[oe]ver\.\d+$')
+            clover_tag = re.compile(r'(-cl[oe]ver|drone)\.\d+$')
             clover_fw = False
 
             # Make sure the console is available to us

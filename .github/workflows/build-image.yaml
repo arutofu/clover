@@ -22,9 +22,9 @@ jobs:
           ls
       - name: Upload image
         uses: softprops/action-gh-release@v1
+        if: ${{ github.event_name == 'release' }}
         with:
           files: images/drone.zip
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
