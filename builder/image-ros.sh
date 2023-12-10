@@ -181,17 +181,9 @@ echo_stamp "End of check dirs 3"
 echo_stamp "Read setup.sh"
 cat devel/setup.sh
 
-echo_stamp "Rename"
-mv /home/pi/catkin_ws/src/drone /home/pi/catkin_ws/src/clover
-mv /home/pi/catkin_ws/src/clover/drone /home/pi/catkin_ws/src/clover/clover
-
 echo_stamp "Update www"
-chmod +x /home/pi/catkin_ws/src/clover/clover/src/www
+chmod +x /home/pi/catkin_ws/src/drone/drone/src/www
 sudo -u pi sh -c ". devel/setup.sh && rosrun drone www"
-
-echo_stamp "Rename"
-mv /home/pi/catkin_ws/src/clover /home/pi/catkin_ws/src/drone
-mv /home/pi/catkin_ws/src/drone/clover /home/pi/catkin_ws/src/drone/drone
 
 echo_stamp "Make \$HOME/examples symlink"
 ln -s "$(catkin_find drone examples --first-only)" /home/pi
