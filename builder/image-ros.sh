@@ -182,6 +182,7 @@ echo_stamp "Read setup.sh"
 cat devel/setup.sh
 
 echo_stamp "Update www"
+ls /home/pi/catkin_ws/src/drone/drone/src
 chmod +x /home/pi/catkin_ws/src/drone/drone/src/www
 sudo -u pi sh -c ". devel/setup.sh && rosrun drone www"
 

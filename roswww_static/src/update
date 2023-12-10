@@ -39,6 +39,7 @@ for name in packages:
     path = rospack.get_path(name)
     if os.path.exists(path + '/www'):
         print('found www path for %s package' % name)
+        print('Path:', path)
         os.symlink(path + '/www', www + '/' + name)
         index += '<li><a href="{name}/">{name}</a></li>'.format(name=name)
 
@@ -55,4 +56,3 @@ else:
     print('Index content:')
     print(index)
     open(www + '/index.html', 'w').write(index)
-    
