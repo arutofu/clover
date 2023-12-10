@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
+chmod -x /home/pi/catkin_ws/src/drone/drone/src/www
 export ROSWWW_DEFAULT=drone
 rosrun roswww_static update

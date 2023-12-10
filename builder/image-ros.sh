@@ -186,6 +186,7 @@ mv /home/pi/catkin_ws/src/drone /home/pi/catkin_ws/src/clover
 mv /home/pi/catkin_ws/src/clover/drone /home/pi/catkin_ws/src/clover/clover
 
 echo_stamp "Update www"
+chmod +x /home/pi/catkin_ws/src/drone/drone/src/www
 sudo -u pi sh -c ". devel/setup.sh && rosrun drone www"
 
 echo_stamp "Rename"

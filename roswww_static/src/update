@@ -16,10 +16,16 @@ import shutil
 import rospkg
 
 rospack = rospkg.RosPack()
+print('rospack:', rospack)
 
 www = rospkg.get_ros_home() + '/www'
+print('www:', www)
+
 index_file = os.environ.get('ROSWWW_INDEX')
+print('index_file:', index_file)
+
 default_package = os.environ.get('ROSWWW_DEFAULT')
+print('default_package:', default_package)
 
 print('using www dir: ' + www)
 shutil.rmtree(www, ignore_errors=True)  # reset www directory content
@@ -38,9 +44,15 @@ for name in packages:
 
 if default_package is not None:
     redirect_html = '<meta http-equiv=refresh content="0; url={name}/">'.format(name=default_package)
+    print(f'Creating redirect HTML for the default package: {default_package}')
     open(www + '/index.html', 'w').write(redirect_html)
 elif index_file is not None:
     print('symlinking index file')
+    print(f'Symlinking index file: {index_file}')
     os.symlink(index_file, www + '/index.html')
 else:
+    print('writing default index')
+    print('Index content:')
+    print(index)
     open(www + '/index.html', 'w').write(index)
+    
