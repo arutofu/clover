@@ -1,7 +1,7 @@
 <package format="2">
-  <name>clover_description</name>
+  <name>drone_description</name>
   <version>0.24.0</version>
-  <description>The clover_description package provides URDF models of the Clover series of quadcopters.</description>
+  <description>The drone_description package provides URDF models of the Clover series of quadcopters.</description>
 
   <maintainer email="sfalexrog@gmail.com">Alexey Rogachevskiy</maintainer>
 

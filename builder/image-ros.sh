@@ -68,11 +68,11 @@ my_travis_retry() {
   return $result
 }
 
-# TODO: 'kinetic-rosdep-clover.yaml' should add only if we use our repo?
+# TODO: 'kinetic-rosdep-drone.yaml' should add only if we use our repo?
 echo_stamp "Init rosdep"
 my_travis_retry rosdep init
 # FIXME: Re-add this after missing packages are built
-echo "yaml file:///etc/ros/rosdep/${ROS_DISTRO}-rosdep-clover.yaml" >> /etc/ros/rosdep/sources.list.d/20-default.list
+echo "yaml file:///etc/ros/rosdep/${ROS_DISTRO}-rosdep-drone.yaml" >> /etc/ros/rosdep/sources.list.d/20-default.list
 my_travis_retry rosdep update
 
 echo_stamp "Populate rosdep for ROS user"
@@ -80,7 +80,7 @@ my_travis_retry sudo -u pi rosdep update
 
 export ROS_IP='127.0.0.1' # needed for running tests
 
-# echo_stamp "Reconfiguring Clover repository for simplier unshallowing"
+# echo_stamp "Reconfiguring Drone repository for simplier unshallowing"
 
 echo_stamp "Check dirs 1"
 ls /home/pi/catkin_ws
@@ -107,10 +107,10 @@ ros-${ROS_DISTRO}-cv-camera \
 ros-${ROS_DISTRO}-image-publisher \
 ros-${ROS_DISTRO}-web-video-server
 
-echo_stamp "Installing libboost-dev" # https://travis-ci.org/github/CopterExpress/clover/jobs/766318908#L6536
+echo_stamp "Installing libboost-dev"
 my_travis_retry apt-get install -y --no-install-recommends libboost-dev libboost-all-dev
 
-echo_stamp "Build and install Clover"
+echo_stamp "Build and install Drone"
 cd /home/pi/catkin_ws
 
 echo_stamp "Check dirs 2"
@@ -134,7 +134,7 @@ cd /home/pi/catkin_ws/src/drone/builder/assets/clever
 ./setup.py install
 rm -rf build  # remove build artifacts
 
-echo_stamp "Build Clover documentation"
+echo_stamp "Build Drone documentation"
 cd /home/pi/catkin_ws/src/drone
 builder/assets/install_gitbook.sh
 gitbook install
@@ -191,10 +191,10 @@ ln -s "$(catkin_find drone examples --first-only)" /home/pi
 chown -Rf pi:pi /home/pi/examples
 
 echo_stamp "Make systemd services symlinks"
-ln -s /home/pi/catkin_ws/src/drone/builder/assets/clover.service /lib/systemd/system/
+ln -s /home/pi/catkin_ws/src/drone/builder/assets/drone.service /lib/systemd/system/
 ln -s /home/pi/catkin_ws/src/drone/builder/assets/roscore.service /lib/systemd/system/
 # validate
-[ -f /lib/systemd/system/clover.service ]
+[ -f /lib/systemd/system/drone.service ]
 [ -f /lib/systemd/system/roscore.service ]
 
 echo_stamp "Make udev rules symlink"

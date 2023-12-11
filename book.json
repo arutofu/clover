@@ -1,6 +1,6 @@
 {
-    "title": "Clover",
-    "description": "Конструктор квадрокоптера «Клевер»",
+    "title": "Drone",
+    "description": "Конструктор квадрокоптера",
     "author": "Copter Express",
     "language": "en",
     "root": "docs/",
@@ -49,8 +49,8 @@
             ]
         },
         "addcssjs": {
-            "css": ["../clover.css"],
-            "js": ["../clover.js"]
+            "css": ["../drone.css"],
+            "js": ["../drone.js"]
         },
         "language-picker": {
             "languages": [["ru", "Russian"], ["en", "English"]]

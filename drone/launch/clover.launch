@@ -80,8 +80,8 @@
         <arg name="simulator" value="$(arg simulator)"/>
     </include>
 
-    <!-- Clover Blocks -->
-    <node name="clover_blocks" pkg="clover_blocks" type="clover_blocks" output="screen" if="$(arg blocks)"/>
+    <!-- Drone Blocks -->
+    <node name="drone_blocks" pkg="drone_blocks" type="drone_blocks" output="screen" if="$(arg blocks)"/>
 
     <!-- rc backend -->
     <node name="rc" pkg="drone" type="rc" output="screen" if="$(arg rc)" clear_params="true">
