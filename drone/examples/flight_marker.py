@@ -1,5 +1,3 @@
-# Information: https://clover.coex.tech/aruco
-
 import rospy
 from drone import srv
 from std_srvs.srv import Trigger

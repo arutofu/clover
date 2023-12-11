@@ -646,7 +646,7 @@ inline void checkState()
 		throw std::runtime_error("State timeout, check mavros settings");
 
 	if (!state.connected)
-		throw std::runtime_error("No connection to FCU, https://clover.coex.tech/connection");
+		throw std::runtime_error("No connection to FCU");
 }
 
 void publishState()

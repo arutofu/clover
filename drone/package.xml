@@ -2,7 +2,7 @@
 <package format="3">
   <name>drone</name>
   <version>0.24.0</version>
-  <description>The Clover package</description>
+  <description>Drone package</description>
 
   <maintainer email="okalachev@gmail.com">Oleg Kalachev</maintainer>
   <license>MIT</license>

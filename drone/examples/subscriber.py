@@ -1,5 +1,3 @@
-# Information: https://clover.coex.tech/en/laser.html
-
 import rospy
 from sensor_msgs.msg import Range
 
