@@ -6,6 +6,8 @@
     <arg name="length" default="0.22"/> <!-- not-in-map markers length, m -->
     <arg name="map" default="map.txt"/> <!-- markers map file name -->
 
+    <!-- For additional help go to https://clover.coex.tech/aruco -->
+
     <arg name="force_init" default="false"/>
     <arg name="disable" default="false"/> <!-- only force init -->
 

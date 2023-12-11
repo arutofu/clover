@@ -1,5 +1,6 @@
 # This example makes the drone find and follow the red circle.
 # To test in the simulator, place 'Red Circle' model on the floor.
+# More information: https://clover.coex.tech/red_circle
 
 # Input topic: main_camera/image_raw (camera image)
 # Output topics:

@@ -1,3 +1,5 @@
+# Information: https://clover.coex.tech/programming
+
 import rospy
 from drone import srv
 from std_srvs.srv import Trigger

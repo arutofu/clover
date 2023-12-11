@@ -1,3 +1,5 @@
+# Information: https://clover.coex.tech/en/snippets.html#navigate_wait
+
 import math
 import rospy
 from drone import srv

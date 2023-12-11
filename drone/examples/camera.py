@@ -1,3 +1,5 @@
+# Information: https://clover.coex.tech/camera
+
 # Example on basic working with the camera and image processing:
 
 # - cuts out a central square from the camera image;

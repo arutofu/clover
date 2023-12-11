@@ -1,3 +1,5 @@
+# Information: https://clover.coex.tech/en/simple_offboard.html#gettelemetry
+
 import rospy
 from drone import srv
 

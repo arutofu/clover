@@ -34,14 +34,12 @@ echo_stamp() {
   echo -e ${TEXT}
 }
 
-echo_stamp "Write Drone information"
+echo_stamp "Write Clover information"
 
-# Drone image version
+# Clover image version
 echo "$1" >> /etc/clover_version
-mv /etc/clover_version /etc/drone_version
 # Origin image file name
 echo "${2%.*}" >> /etc/clover_origin
-mv /etc/clover_origin /etc/drone_origin
 
 echo_stamp "Write magic script to /etc/rc.local"
 MAGIC_SCRIPT="sudo /root/init_rpi.sh; sudo sed -i '/sudo \\\/root\\\/init_rpi.sh/d' /etc/rc.local && sudo reboot"
