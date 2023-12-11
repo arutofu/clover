@@ -13,7 +13,7 @@ jobs:
   #     - uses: actions/checkout@v2
   #     - name: Native Melodic build
   #       run: |
-  #         docker run --rm -v $(pwd):/root/catkin_ws/src/drone ros:melodic-ros-base /root/catkin_ws/src/drone/builder/standalone-install.sh
+  #         docker run --rm -v $(pwd):/root/catkin_ws/src/clover ros:melodic-ros-base /root/catkin_ws/src/clover/builder/standalone-install.sh
   noetic:
     runs-on: ubuntu-latest
     container: ros:noetic-ros-base

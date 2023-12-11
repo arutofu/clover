@@ -54,7 +54,7 @@
         <origin xyz="0 0 0.025" rpy="0 0 0" />
         <geometry>
           <!-- Note: Texture files are expected to be in the same directory as the model -->
-          <mesh filename="package://drone_description/meshes/clover4/clover_body_solid.dae"
+          <mesh filename="package://clover_description/meshes/clover4/clover_body_solid.dae"
             scale="1 1 1"/>
         </geometry>
       </visual>
@@ -113,7 +113,7 @@
         <!-- This origin should be the same as in "base_link_inertia" visuals -->
         <origin xyz="0 0 0.025" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://drone_description/meshes/clover4/clover_guards_transparent.dae"
+          <mesh filename="package://clover_description/meshes/clover4/clover_guards_transparent.dae"
             scale="1 1 1"/>
         </geometry>
         <!-- Let me reiterate that you can't put the "material" tag to any effect -->
@@ -188,7 +188,7 @@
       </inertial>
       <visual>
         <geometry>
-          <mesh filename="package://drone_description/meshes/${mesh}"
+          <mesh filename="package://clover_description/meshes/${mesh}"
             scale="1 1 1" />
         </geometry>
       </visual>

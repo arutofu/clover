@@ -28,7 +28,7 @@ ros.on('error', function(err) {
 });
 
 export const namespace = '/';
-export const priv = namespace + 'drone_blocks/';
+export const priv = namespace + 'clover_blocks/';
 
 export var params = {}; // parameters storage
 
@@ -62,8 +62,8 @@ export function readParam(name, fromUrl, _default) {
 }
 
 
-export var runService = new ROSLIB.Service({ ros: ros, name: priv + 'run', serviceType: 'drone_blocks/Run' });
+export var runService = new ROSLIB.Service({ ros: ros, name: priv + 'run', serviceType: 'clover_blocks/Run' });
 export var stopService = new ROSLIB.Service({ ros: ros, name: priv + 'stop', serviceType: 'std_srvs/Trigger' });
-export var loadService = new ROSLIB.Service({ ros: ros, name : priv + 'load', serviceType : 'drone_blocks/Load' });
-export var storeService = new ROSLIB.Service({ ros: ros, name : priv + 'store', serviceType : 'drone_blocks/Store' });
+export var loadService = new ROSLIB.Service({ ros: ros, name : priv + 'load', serviceType : 'clover_blocks/Load' });
+export var storeService = new ROSLIB.Service({ ros: ros, name : priv + 'store', serviceType : 'clover_blocks/Store' });
 export var landService = new ROSLIB.Service({ ros: ros, name : namespace + 'land', serviceType : 'std_srvs/Trigger' });

@@ -1,7 +1,7 @@
 <package format="3">
-    <name>drone_simulation</name>
+    <name>clover_simulation</name>
     <version>0.24.0</version>
-    <description>The drone_simulation package provides worlds and launch files for Gazebo.</description>
+    <description>The clover_simulation package provides worlds and launch files for Gazebo.</description>
 
     <maintainer email="okalachev@gmail.com">Oleg Kalachev</maintainer>
 

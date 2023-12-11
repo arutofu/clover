@@ -16,7 +16,7 @@
         <!-- Workaround for crashes in VMware -->
         <env name="SVGA_VGPU10" value="0"/>
         <arg name="gui" value="$(arg gui)"/>
-        <arg name="world_name" value="$(find drone_simulation)/resources/worlds/clover_aruco.world"/>
+        <arg name="world_name" value="$(find clover_simulation)/resources/worlds/clover_aruco.world"/>
         <arg name="verbose" value="true"/>
     </include>
 
@@ -27,7 +27,7 @@
     </node>
 
     <!-- Clover model -->
-    <include file="$(find drone_description)/launch/spawn_drone.launch" if="$(eval type == 'gazebo')">
+    <include file="$(find clover_description)/launch/spawn_drone.launch" if="$(eval type == 'gazebo')">
         <arg name="main_camera" value="$(arg main_camera)"/>
         <arg name="maintain_camera_rate" value="$(arg maintain_camera_rate)"/>
         <arg name="rangefinder" value="$(arg rangefinder)"/>

@@ -57,6 +57,12 @@ jobs:
           rm _book/drone_en.pdf && mv _book/drone_en_compressed.pdf _book/drone_en.pdf
           ls -lah _book/drone*.pdf
           echo '::set-output name=GITBOOK_PDF_OK::1'
+      - name: Download older PDFs
+        if: ${{ !steps.generate-pdf.outputs.GITBOOK_PDF_OK }}
+        run: |
+          rm -f _book/drone*.pdf
+          wget --no-verbose https://clover.coex.tech/clover_ru.pdf -P _book/
+          wget --no-verbose https://clover.coex.tech/clover_en.pdf -P _book/
       - name: Upload artifact
         # if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final-master' }}
         uses: actions/upload-pages-artifact@v1
