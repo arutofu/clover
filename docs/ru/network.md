@@ -19,8 +19,8 @@ Wi-Fi адаптер на Raspberry Pi имеет два основных реж
 
     ```txt
     network={
-        ssid="my-super-ssid"
-        psk="cloverwifi123"
+        ssid="my-ssid"
+        psk="dronewifi123"
         mode=2
         proto=RSN
         key_mgmt=WPA-PSK
@@ -90,8 +90,8 @@ Wi-Fi адаптер на Raspberry Pi имеет два основных реж
     country=GB
 
     network={
-        ssid="clover-1234"
-        psk="cloverwifi"
+        ssid="drone-1234"
+        psk="dronewifi"
         mode=2
         proto=RSN
         key_mgmt=WPA-PSK
@@ -101,7 +101,7 @@ Wi-Fi адаптер на Raspberry Pi имеет два основных реж
     }
     ```
 
-    где `clover-1234` – название сети, а `cloverwifi` – пароль.
+    где `drone-1234` – название сети, а `dronewifi` – пароль.
 
 3. Включите службу `dnsmasq`.
 
@@ -155,8 +155,8 @@ update_config=1
 country=GB
 
 network={
-        ssid=\"my-clover\"
-        psk=\"cloverwifi\"
+        ssid=\"my-drone\"
+        psk=\"dronewifi\"
         mode=2
         proto=RSN
         key_mgmt=WPA-PSK
@@ -186,97 +186,6 @@ network={
 }
 ```
 
-### Несколько Wi-Fi адаптеров
-
-В системе может быть несколько Wi-Fi адаптеров. Если для них корректно подключены драйвера, то их можно увидеть вызвав `ifconfig` (например `wlan0` и `wlan1`).
-
-Если у вас несколько адаптеров, для всех будет использоваться одна и та же самая рабочая секция `network`. Это связано с тем, что для каждого интерфейса, `dhcpcd` отдельно создает по дочернему процессу `wpa_supplicant`, в котором выполняется один тот же код (т. к. конфиг один и тот же).
-
-Для работы нескольких адаптеров с отдельными настройками для каждого, в стандартном вызываемом скрипте `dhcpcd` реализован механизм запуска разных конфигурационных скриптов. Для его использования необходимо переименовать стандартный файл конфига по следующему образцу: `wpa_supplicant-<имя интерфейса>.conf`, например `wpa_supplicant-wlan0.conf`.
-
-Для применения настроек необходимо перезапустить родительский процесс – службу `dhcpcd`. Сделать это можно следующей командой:
-
-```bash
-sudo systemctl restart dhcpcd
-```
-
-### DHCP сервер
-
-#### dnsmasq-base
-
-`dnsmasq-base` – консольная утилита, не являющаяся службой, для использования dnsmasq как службы надо установить пакет `dnsmasq`.
-
-```bash
-sudo apt install dnsmasq-base
-```
-
-```bash
-# Вызов dnsmasq-base
-sudo dnsmasq --interface=wlan0 --address=/clover/coex/192.168.11.1 --no-daemon --dhcp-range=192.168.11.100,192.168.11.200,12h --no-hosts --filterwin2k --bogus-priv --domain-needed --quiet-dhcp6 --log-queries
-
-# Подробнее о dnsmasq-base
-dnsmasq --help
-
-# или
-man dnsmasq
-```
-
-#### dnsmasq
-
-```bash
-sudo apt install dnsmasq
-```
-
-```bash
-cat << EOF | sudo tee -a /etc/dnsmasq.conf
-interface=wlan0
-address=/clover/coex/192.168.11.1
-dhcp-range=192.168.11.100,192.168.11.200,12h
-no-hosts
-filterwin2k
-bogus-priv
-domain-needed
-quiet-dhcp6
-
-EOF
-```
-
-#### isc-dhcp-server
-
-```bash
-sudo apt install isc-dhcp-server
-```
-
-```bash
-# https://www.shellhacks.com/ru/sed-find-replace-string-in-file/
-sed -i 's/INTERFACESv4=\"\"/INTERFACESv4=\"wlan0\"/' /etc/default/isc-dhcp-server
-```
-
-```bash
-cat << EOF | sudo tee /etc/dhcp/dhcpd.conf
-subnet 192.168.11.0 netmask 255.255.255.0 {
-  range 192.168.11.11 192.168.11.254;
-  #option domain-name-servers 8.8.8.8;
-  #option domain-name "rpi.local";
-  option routers 192.168.11.1;
-  option broadcast-address 192.168.11.255;
-  default-lease-time 600;
-  max-lease-time 7200;
-}
-
-EOF
-```
-
-```bash
-cat << EOF | sudo tee /etc/network/if-up.d/isc-dhcp-server && sudo chmod +x /etc/network/if-up.d/isc-dhcp-server
-#!/bin/sh
-if [ "\$IFACE" = "--all" ];
-then sleep 10 && systemctl start isc-dhcp-server.service &
-fi
-
-EOF
-```
-
 ## Ссылки
 
 1. [habr.com: Linux WiFi из командной строки с wpa_supplicant](https://habr.com/post/315960/)
@@ -285,10 +194,7 @@ EOF
 4. [dmitrysnotes.ru: Raspberry Pi 3. Присвоение статического IP-адреса](http://dmitrysnotes.ru/raspberry-pi-3-prisvoenie-staticheskogo-ip-adresa)
 5. [thegeekdiary.com: Linux OS Service ‘network’](https://www.thegeekdiary.com/linux-os-service-network/)
 6. [frillip.com: Using your new Raspberry Pi 3 as a Wi-Fi access point with hostapt](https://frillip.com/using-your-raspberry-pi-3-as-a-wifi-access-point-with-hostapd/) (также здесь есть инструкция по настройке форвардинга для использования RPi в качестве шлюза для выхода в интернет)
-7. [habr.com: Настраиваем ddns-сервер на GNU/Linux Debian 6](https://habr.com/sandbox/30433/) (Хорошая статья по настройке ddns-сервера на основе `bind` и `isc-dhcp-server`)
-8. [pro-gram.ru: Установка и настройка DHCP сервера на Ubuntu 16.04.](https://pro-gram.ru/dhcp-server-ubuntu.html) (Настройка isc-dhcp-server)
-9. [expert-orda.ru: Настройка DHCP-сервера на Ubuntu](http://expert-orda.ru/posts/liuxnewbie/125--dhcp-ubuntu) (Настройка isc-dhcp-server)
-10. [academicfox.com: Raspberry Pi беспроводная точка доступа (WiFi access point)](http://academicfox.com/raspberry-pi-besprovodnaya-tochka-dostupa-wifi-access-point/) (Настройка маршрутов, hostapd, isc-dhcp-server)
-11. [weworkweplay.com: Automatically connect a Raspberry Pi to a Wifi network](http://weworkweplay.com/play/automatically-connect-a-raspberry-pi-to-a-wifi-network/) (Есть настройки для создания открытой точки доступа)
-12. [wiki.archlinux.org: WPA supplicant](https://wiki.archlinux.org/index.php/WPA%20supplicant)
-13. [wiki.archlinux.org: dhcpcd](https://wiki.archlinux.org/index.php/Dhcpcd#10-wpa_supplicant) (dhcpcd hook wpa_supplicant)
+7. [expert-orda.ru: Настройка DHCP-сервера на Ubuntu](http://expert-orda.ru/posts/liuxnewbie/125--dhcp-ubuntu) (Настройка isc-dhcp-server)
+8. [academicfox.com: Raspberry Pi беспроводная точка доступа (WiFi access point)](http://academicfox.com/raspberry-pi-besprovodnaya-tochka-dostupa-wifi-access-point/) (Настройка маршрутов, hostapd, isc-dhcp-server)
+9. [weworkweplay.com: Automatically connect a Raspberry Pi to a Wifi network](http://weworkweplay.com/play/automatically-connect-a-raspberry-pi-to-a-wifi-network/) (Есть настройки для создания открытой точки доступа)
+10. [wiki.archlinux.org: WPA supplicant](https://wiki.archlinux.org/index.php/WPA%20supplicant)

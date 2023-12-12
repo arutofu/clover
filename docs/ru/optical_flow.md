@@ -6,7 +6,7 @@
 
 > **Hint** Для работы Optical Flow необходим [подключенный и настроенный лазерный дальномер](laser.md).
 
-Включите Optical Flow в файле `~/catkin_ws/src/clover/clover/launch/clover.launch`: $\color{red}{\textsf{🔴директория}}$
+Включите Optical Flow в файле `~/catkin_ws/src/drone/drone/launch/drone.launch`:
 
 ```xml
 <arg name="optical_flow" default="true"/>

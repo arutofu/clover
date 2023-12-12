@@ -24,7 +24,7 @@
 
     <img src="../assets/zerotier/network_3.png" width=300 class="zoom border center">
 
-7. Пролистайте ниже, до графы *Members*. В ней будет написано о том, что в сети нету пользователей.
+7. Пролистайте ниже, до графы *Members*. В ней будет написано о том, что в сети нет пользователей.
 
     <img src="../assets/zerotier/network_4.png" width=300 class="zoom border center">
 
@@ -177,7 +177,7 @@
 
 2. Убедитесь, что у всех устройств есть локальные IP адреса - *Managed IPs*.
 
-3. Откройте GQC и во вкладке *Comm Links* добавьте TCP подключение, указав IP дрона. Подробнее про удаленное подключение читайте [тут](gcs_bridge.md).
+3. Откройте QGC и во вкладке *Comm Links* добавьте TCP подключение, указав IP дрона. Подробнее про удаленное подключение читайте [тут](gcs_bridge.md).
 
     <div class="image-group">
         <img src="../assets/zerotier/qgc_2.png" width=300 class="zoom border">

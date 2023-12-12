@@ -60,10 +60,6 @@
 |`EKF2_OF_CTRL`|1 (*Enabled*)|Optical flow включен|
 |`EKF2_HGT_REF`|3 (*Vision*)|При наличии [дальномера](laser.md) и полете над ровным полом — 2 (*Range sensor*)|
 
-<!-- markdownlint-enable MD031 -->
-
-> **Info** См. также: список параметров по умолчанию в [симуляторе](simulation.md): https://github.com/CopterExpress/clover/blob/master/clover_simulation/airframes/4500_clover.
-
 ## Дополнительная информация
 
 Параметр `SYS_MC_EST_GROUP` отвечает за выбор Estimator'а.

@@ -12,7 +12,7 @@
 
 ```python
 import rospy
-from clover import srv 🔴
+from drone import srv
 from std_srvs.srv import Trigger
 
 rospy.init_node('flight')

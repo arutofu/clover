@@ -427,13 +427,9 @@ flow_client.update_configuration({'enabled': True})
 
 ### # {#aruco-map-dynamic}
 
-> **Info** Для [образа](image.md) версии > 0.23.
-
 Динамически изменить используемый файл с [картой ArUco-маркеров](aruco_map.md):
 
 <!-- markdownlint-enable MD044 -->
-
-$\color{red}{\textsf{🔴директория}}$
 
 ```python
 import rospy
@@ -442,10 +438,8 @@ import dynamic_reconfigure.client
 rospy.init_node('flight')
 map_client = dynamic_reconfigure.client.Client('aruco_map')
 
-map_client.update_configuration({'map': '/home/pi/catkin_ws/src/clover/aruco_pose/map/office.txt'})
+map_client.update_configuration({'map': '/home/pi/catkin_ws/src/drone/aruco_pose/map/office.txt'})
 ```
-
-$\color{red}{\textsf{🔴директория}}$
 
 ### # {#wait-global-position}
 
