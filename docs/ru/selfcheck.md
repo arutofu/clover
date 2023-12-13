@@ -7,6 +7,7 @@
 ```bash
 rosrun drone selfcheck.py
 ```
+
 $\color{red}{\textsf{🔴изменить картинку}}$
 <img src="../assets/selfcheck.png">
 

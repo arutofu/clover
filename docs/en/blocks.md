@@ -14,7 +14,7 @@ For correct work of the blocks programming, `blocks` argument in the Clover laun
 
 ## Running
 
-To run Clover's blocks programming interface, [connect to Clover's Wi-Fi](wifi.md) and go to web-page http://192.168.11.1/clover_blocks/ or click the link *Blocks programming* at the [main page](wifi.md#web-interface).
+To run Clover's blocks programming interface, [connect to Clover's Wi-Fi](wifi.md) and go to web-page http://192.168.11.1/drone_blocks/ or click the link *Blocks programming* at the [main page](wifi.md#web-interface).
 
 The page looks as follows:
 
@@ -30,7 +30,7 @@ The *Stop* button stops the program. Clicking *Land* button also stops the progr
 
 To store the program, open the menu at the top right, select *Save* item and input your program's name. The name should contain only Latin characters, hyphen, underline and dot characters. All your stored programs are available at the same menu.
 
-Your programs are stored as XML-files in the `/catkin_ws/src/clover/clover_blocks/programs/` directory of the SD-card.
+Your programs are stored as XML-files in the `/catkin_ws/src/clover/drone_blocks/programs/` directory of the SD-card.
 
 > **Note** Note also example programs, available at the same menu.
 

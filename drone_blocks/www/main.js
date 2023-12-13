@@ -100,7 +100,7 @@ function update() {
 
 var shownPrompts = new Set();
 
-new ROSLIB.Topic({ ros: ros.ros, name: ros.priv + 'prompt', messageType: 'clover_blocks/Prompt'}).subscribe(function(msg) {
+new ROSLIB.Topic({ ros: ros.ros, name: ros.priv + 'prompt', messageType: 'drone_blocks/Prompt'}).subscribe(function(msg) {
 	if (shownPrompts.has(msg.id)) return;
 	shownPrompts.add(msg.id);
 
