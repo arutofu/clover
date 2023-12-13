@@ -27,7 +27,7 @@
     </node>
 
     <!-- Clover model -->
-    <include file="$(find clover_description)/launch/spawn_drone.launch" if="$(eval type == 'gazebo')">
+    <include file="$(find drone_description)/launch/spawn_drone.launch" if="$(eval type == 'gazebo')">
         <arg name="main_camera" value="$(arg main_camera)"/>
         <arg name="maintain_camera_rate" value="$(arg maintain_camera_rate)"/>
         <arg name="rangefinder" value="$(arg rangefinder)"/>
@@ -43,7 +43,7 @@
     <param name="use_sim_time" value="false" if="$(eval type == 'jmavsim')"/>
 
     <!-- Clover services -->
-    <include file="$(find drone)/launch/clover.launch">
+    <include file="$(find drone)/launch/drone.launch">
         <arg name="simulator" value="true"/>
         <arg name="fcu_conn" value="sitl"/>
         <arg name="fcu_ip" value="127.0.0.1"/>

@@ -127,7 +127,7 @@ Configure the launch files to your taste and use `roslaunch` to launch the nodes
 roslaunch clover clover.launch
 ```
 
-> **Hint** You may want to start the Clover nodes automatically. This can be done with `systemd`: look at service files for [`roscore`](https://github.com/CopterExpress/clover/blob/master/builder/assets/roscore.service) and [`clover`](https://github.com/CopterExpress/clover/blob/master/builder/assets/clover.service) that are used in our image and adjust them as necessary.
+> **Hint** You may want to start the Clover nodes automatically. This can be done with `systemd`: look at service files for [`roscore`](https://github.com/CopterExpress/clover/blob/master/builder/assets/roscore.service) and [`clover`](https://github.com/CopterExpress/clover/blob/master/builder/assets/drone.service) that are used in our image and adjust them as necessary.
 
 ## Caveats
 

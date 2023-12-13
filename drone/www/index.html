@@ -1,15 +1,15 @@
-<title>Clover Drone Kit Tools</title>
+<title>Drone Kit Tools</title>
 
 <h1>Drone Kit Tools</h1>
 
 <ul>
-	<li><a href="docs">View documentation</a> (snapshot of <a href="https://clover.coex.tech">clover.coex.tech</a>)</li>
+	<li><a href="docs/ru">View documentation</a></li>
 	<li><a href="topics.html">View topics</a></li>
 	<li><a href="" id="wvs">View image topics</a> (<code>web_video_server</code>)</li>
 	<li><a href="" id="butterfly">Open web terminal</a> (<code>Butterfly</code>)</li>
 	<li>View <a href="viz.html">View 3D visualization</a>, <a href="aruco_map.html">3D visualization for markers map</a> (<code>ros3djs</code>)</li>
 	<li><a href="../drone_blocks/">Blocks programming</a> (<code>Blockly</code>)</li>
-	<li><a href="console.html">Clover console</a> (<code>/var/log/clover.log</code>)</li>
+	<li><a href="console.html">Drone console</a> (<code>/var/log/drone.log</code>)</li>
 </ul>
 
 <div class="version"></div>
@@ -27,7 +27,7 @@
 	});
 
 	// Determine image version
-	fetch('clover_version').then(function(response) {
+	fetch('drone_version').then(function(response) {
 		if (response.status !== 200) return;
 		response.text().then(function(text) {
 			document.querySelector('.version').innerHTML = 'Version: ' + text;

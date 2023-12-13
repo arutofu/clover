@@ -34,10 +34,10 @@ echo_stamp() {
   echo -e ${TEXT}
 }
 
-echo_stamp "Write Clover information"
+echo_stamp "Write Drone information"
 
-# Clover image version
-echo "$1" >> /etc/clover_version
+# Drone image version
+echo "$1" >> /etc/drone_version
 # Origin image file name
 echo "${2%.*}" >> /etc/clover_origin
 

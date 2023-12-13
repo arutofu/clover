@@ -7,7 +7,7 @@ var titleEl = document.querySelector('title');
 ros.on('error', function(error) {
 	titleEl.innerText = 'Disconnected';
 	err = error;
-	alert('Connection error: please enable \'rosbridge\' in clover.launch!');
+	alert('Connection error: please enable \'rosbridge\' in drone.launch!');
 });
 
 ros.on('connection', function() {

@@ -2,7 +2,7 @@
 <package format="2">
   <name>drone_blocks</name>
   <version>0.24.0</version>
-  <description>Blockly programming support for Clover</description>
+  <description>Blockly programming support</description>
   <maintainer email="okalachev@gmail.com">Oleg Kalachev</maintainer>
   <license>MIT</license>
 
