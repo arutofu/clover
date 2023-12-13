@@ -67,6 +67,7 @@ sudo reboot
    ```bash
    nano ~/catkin_ws/src/clover/clover/launch/clover.launch
    ```
+   
 $\color{red}{\textsf{🔴изменить картинку}}$
    <img src="../assets/nano.png" alt="Редактирование файла в nano" data-action="zoom">
 2. Отредактируйте файл.
