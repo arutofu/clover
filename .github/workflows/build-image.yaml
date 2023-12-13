@@ -18,7 +18,7 @@ jobs:
           docker run --privileged --rm -v /dev:/dev -v $(pwd):/builder/repo -e TRAVIS_TAG="${{ github.event.release.tag_name }}" sfalexrog/img-tool:qemu-update
       - name: Rename and Compress image
         run: |
-          cd images && sudo chmod -R 777 . && ls && find . -type f -name 'clover*.img' -exec sh -c 'mv "$1" "$(dirname "$1")/$(basename "$1" | sed s/clover/drone/)"' _ {} \; && zip -9 drone.zip drone* && ls -l . && unzip -l drone.zip
+          cd images && sudo chmod -R 777 . && find . -type f -name '*.img' -exec sh -c 'new_name="$(echo "$1" | sed "s/.*_//")"; mv "$1" "$(dirname "$1")/drone$new_name"' _ {} \; && find . -type f -name '*.img' -exec sh -c 'zip -9 "$(dirname "$1")/drone$(echo "$(basename "$1" | sed "s/.*_//")" | cut -c7-).zip" "$1"' _ {} \; && unzip -l drone*.zip
           ls
       - name: Upload image
         uses: softprops/action-gh-release@v1

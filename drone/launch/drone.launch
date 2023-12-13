@@ -80,7 +80,7 @@
         <arg name="simulator" value="$(arg simulator)"/>
     </include>
 
-    <!-- Clover Blocks -->
+    <!-- Blocks -->
     <node name="drone_blocks" pkg="drone_blocks" type="drone_blocks" output="screen" if="$(arg blocks)"/>
 
     <!-- rc backend -->

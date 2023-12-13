@@ -820,7 +820,7 @@ def check_image():
         info('version: %s', open('/etc/drone_version').read().strip())
     except IOError:
         try:
-            info('VM version: %s', open('/etc/clover_vm_version').read().strip())
+            info('VM version: %s', open('/etc/drone_vm_version').read().strip())
         except IOError:
             info('no /etc/drone_version file')
 
