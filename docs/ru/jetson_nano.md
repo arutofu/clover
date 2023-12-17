@@ -1,4 +1,4 @@
-# Пакеты Клевера на Jetson Nano
+# Jetson Nano
 
 ## О Jetson Nano
 

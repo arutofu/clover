@@ -32,8 +32,6 @@ rostopic echo /rangefinder/range
 
 ### Настройки
 
-> **Hint** Рекомендуется ознакомиться с [прошивкой полетного контроллера](firmware.md).
-
 При использовании EKF2 (`SYS_MC_EST_GROUP` = `ekf2`):
 
 * `EKF2_HGT_MODE` = `2` (Range sensor) – при полете над горизонтальным полом;

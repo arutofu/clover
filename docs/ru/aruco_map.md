@@ -69,7 +69,7 @@ rosrun aruco_pose genmap.py 0.33 2 4 1 1 0 -o test_map.txt
 
 <img src="../assets/aruco-map.png" width=600>
 
-Дрон публикует текущую позицию распознанной карты в топик `aruco_map/pose`. Также публикуется [TF-фрейм](frames.md) `aruco_map` (VPE выключен) или `aruco_map_detected` (VPE включен). Используя топик `aruco_map/visualization` можно визуализировать текущую карту маркеров в [rviz](rviz.md).
+Дрон публикует текущую позицию распознанной карты в топик `aruco_map/pose`. Также публикуется [TF-фрейм](frames.md) `aruco_map` (VPE выключен) или `aruco_map_detected` (VPE включен).
 
 Наглядно позиция распознанной карты отображается в топике `aruco_map/debug` (просмотр доступен по ссылке http://192.168.11.1:8080/stream_viewer?topic=/aruco_map/debug):
 
@@ -84,33 +84,6 @@ rosrun aruco_pose genmap.py 0.33 2 4 1 1 0 -o test_map.txt
 * ось **<font color=blue>z</font>** указывает от плоскости карты маркеров.
 
 <img src="../assets/aruco-map-axis.png" width="600">
-
-## Настройка VPE
-
-Для работы механизма Vision Position Estimation необходимы следующие [настройки PX4](parameters.md).
-
-При использовании **LPE** (параметр `SYS_MC_EST_GROUP` = `local_position_estimator, attitude_estimator_q`):
-
-* В параметре `LPE_FUSION` включены флажки `vision position`, `land detector`. Флажок `baro` рекомендуется отключить.
-* Вес угла по рысканью по зрению: `ATT_W_EXT_HDG` = 0.5
-* Включена ориентация по Yaw по зрению: `ATT_EXT_HDG_M` = 1 `Vision`.
-* Шумы позиции по зрению: `LPE_VIS_XY` = 0.1 m, `LPE_VIS_Z` = 0.1 m.
-* `LPE_VIS_DELAY` = 0 sec.
-
-<!-- * Выключен компас: `ATT_W_MAG` = 0 -->
-
-При использовании **EKF2** (параметр `SYS_MC_EST_GROUP` = `ekf2`):
-
-* В параметре `EKF2_AID_MASK` включены флажки `vision position fusion`, `vision yaw fusion`.
-* Шум угла по зрению: `EKF2_EVA_NOISE` = 0.1 rad.
-* Шум позиции по зрению: `EKF2_EVP_NOISE` = 0.1 m.
-* `EKF2_EV_DELAY` = 0.
-
-> **Hint** На данный момент для полета по маркерам рекомендуется использование **LPE**.
-
-Для проверки правильности всех настроек можно [воспользоваться утилитой `selfcheck.py`](selfcheck.md).
-
-> **Info** Для использования LPE в Pixhawk необходимо [скачать прошивку с названием `px4fmu-v2_lpe.px4`](https://github.com/PX4/Firmware/releases).
 
 ## Полет
 
@@ -156,12 +129,6 @@ navigate(frame_id='aruco_5', x=0, y=0, z=1)
 
 ```xml
 <arg name="placement" default="ceiling"/>
-```
-
-Технология [Optical Flow](optical_flow.md) не может нормально работать при таком расположении камеры, поэтому в файле `~/catkin_ws/src/drone/drone/launch/drone.launch` ее следует отключить:
-
-```xml
-<arg name="optical_flow" default="false"/>
 ```
 
 При такой конфигурации фрейм `aruco_map` также окажется перевернутым. Таким образом, для полета на высоту 2 метра ниже потолка, аргумент `z` нужно устанавливать в 2:

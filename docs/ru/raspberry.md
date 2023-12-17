@@ -9,7 +9,7 @@ Raspberry Pi
 
 * Broadcom BCM2711 SoC;
 * 64-битный четырехъядерный ARMv8 Cortex-A72 процессор с тактовой частотой 1.5 ГГц;
-* Графический сопроцессор VideoCore VI®;
+* Графический сопроцессор VideoCore VI;
 * Память на 1/2/4/8ГБ LPDDR4 SDRAM;
 * Gigabit Ethernet;
 * USB3.0;

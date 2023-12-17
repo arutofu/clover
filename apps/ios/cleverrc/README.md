@@ -1,4 +1,4 @@
-# iOS-приложение для управления Клевером
+# iOS-приложение
 
 Для установки зависимостей необходим [CocoaPods](https://cocoapods.org):
 
@@ -6,4 +6,4 @@
 pod install
 ```
 
-Для разработки и сборки откройте в XCode файл `cleverrc.xcworkspace`.
+Для разработки и сборки откройте в XCode файл `dronerrc.xcworkspace`.

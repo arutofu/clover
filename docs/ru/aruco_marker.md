@@ -6,7 +6,7 @@
 
 Модуль `aruco_detect` распознает ArUco-маркеры и публикует их позиции в ROS-топики и в [TF](frames.md).
 
-Эта функция полезна для применения совместно с какой-либо системой позиционирования для дрона, такой как [GPS](gps.md), [Optical Flow](optical_flow.md), PX4Flow, визуальная одометрия, ультразвуковое ([Marvelmind](https://marvelmind.com)) или UWB-позиционирование ([Pozyx](https://www.pozyx.io)).
+Эта функция полезна для применения совместно с какой-либо системой позиционирования для дрона, такой как [GPS](gps.md), визуальная одометрия, ультразвуковое ([Marvelmind](https://marvelmind.com)) или UWB-позиционирование ([Pozyx](https://www.pozyx.io)).
 
 Также возможно применение совместно с [навигацией по карте маркеров](aruco_map.md).
 
@@ -56,7 +56,7 @@
 
 ## Работа с распознанными маркерами
 
-Наглядно распознанные маркеры можно видеть в топике `aruco_detect/debug`. Просмотреть его можно с помощью [`rqt_image_view`](rviz.md) или через [web_video_server](web_video_server.md) по ссылке http://192.168.11.1:8080/snapshot?topic=/aruco_pose/debug:
+Наглядно распознанные маркеры можно видеть в топике `aruco_detect/debug`. Просмотреть его можно с помощью [web_video_server](web_video_server.md) по ссылке http://192.168.11.1:8080/snapshot?topic=/aruco_pose/debug:
 
 <img src="../assets/aruco-detect-debug.png" width=600>
 

@@ -85,7 +85,7 @@
 
     <!-- rc backend -->
     <node name="rc" pkg="drone" type="rc" output="screen" if="$(arg rc)" clear_params="true">
-        <!-- Send fake GCS heartbeats. Set to "true" for upstream PX4 -->
+        <!-- Send fake GCS heartbeats. Set to "true" for upstream -->
         <param name="use_fake_gcs" value="false"/>
     </node>
 
