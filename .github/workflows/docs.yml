@@ -54,11 +54,6 @@ jobs:
           gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/drone.pdf _book/drone.pdf
           ls -lah _book/drone*.pdf
           echo '::set-output name=GITBOOK_PDF_OK::1'
-      - name: Upload artifact
-        # if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final-master' }}
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: _book
   deploy-docs:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final-master' }}
     concurrency:
@@ -78,6 +73,8 @@ jobs:
         uses: actions/deploy-pages@v1
         with:
           path: _book
+      - name: Wait for artifacts
+        run: sleep 10
       - name: Upload PDF to GitHub Pages
         uses: actions/upload-artifact@v2
         with:
