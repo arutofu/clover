@@ -55,6 +55,8 @@ jobs:
           rm _book/drone_ru.pdf && mv _book/drone_ru_compressed.pdf _book/drone_ru.pdf
           ls -lah _book/drone*.pdf
           echo '::set-output name=GITBOOK_PDF_OK::1'
+      - name: Set release tag
+        run: git tag -a pdf -m "PDF"
       - name: Upload PDF artifact
         uses: softprops/action-gh-release@v1
         with:
@@ -62,7 +64,6 @@ jobs:
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   deploy-docs:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final-master' }}
     concurrency:
