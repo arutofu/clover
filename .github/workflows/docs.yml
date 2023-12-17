@@ -55,15 +55,11 @@ jobs:
           rm _book/drone_ru.pdf && mv _book/drone_ru_compressed.pdf _book/drone_ru.pdf
           ls -lah _book/drone*.pdf
           echo '::set-output name=GITBOOK_PDF_OK::1'
-      - name: Set release tag
-        run: git tag -a pdf -m "PDF"
-      - name: Upload PDF artifact
-        uses: softprops/action-gh-release@v1
+      - name: Upload artifact
+        # if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final-master' }}
+        uses: actions/upload-pages-artifact@v1
         with:
-          files: _book/drone*.pdf
-          prerelease: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: _book
   deploy-docs:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final-master' }}
     concurrency:
@@ -81,3 +77,10 @@ jobs:
         if: ${{ !env.FREEZE_DOCS }}
         id: deployment
         uses: actions/deploy-pages@v1
+        with:
+          path: _book
+      - name: Upload PDF to GitHub Pages
+        uses: actions/upload-artifact@v2
+        with:
+          name: pdf
+          path: _book/drone.pdf
