@@ -53,7 +53,7 @@
             "js": ["../drone.js"]
         },
         "language-picker": {
-            "languages": [["ru", "Russian"], ["en", "English"]]
+            "languages": [["ru", "Russian"]]
         },
         "localized-footer": {
             "hline": false,
