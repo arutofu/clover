@@ -14,7 +14,7 @@ Raspberry Pi
 * Gigabit Ethernet;
 * USB3.0;
 * 2 x micro-HDMI;
-* 2.4 ГГц и 5 ГГц IEEE 802.11.b/g/n/ac WI-FI + Bluetooth 5.0 Low Energy (BLE).
+* 2.4 ГГц и 5 ГГц IEEE 802.11.b/g/n/ac Wi-Fi + Bluetooth 5.0 Low Energy (BLE).
 
 Более подробную информацию читайте на странице [Raspberry Pi 4 Model B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/).
 
