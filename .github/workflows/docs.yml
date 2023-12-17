@@ -51,8 +51,7 @@ jobs:
         run: |
           for i in 1 2 3 4; do gitbook pdf ./ _book/drone.pdf && break || sleep 1; done
           sudo apt-get -q install ghostscript
-          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/drone_ru_compressed.pdf _book/drone_ru.pdf
-          rm _book/drone_ru.pdf && mv _book/drone_ru_compressed.pdf _book/drone_ru.pdf
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/drone.pdf _book/drone.pdf
           ls -lah _book/drone*.pdf
           echo '::set-output name=GITBOOK_PDF_OK::1'
       - name: Upload artifact
