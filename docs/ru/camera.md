@@ -16,7 +16,7 @@
 sudo systemctl restart drone
 ```
 
-Для мониторинга изображения с камеры можно использовать [rqt](rviz.md) или [web_video_server](web_video_server.md).
+Для мониторинга изображения с камеры можно использовать [web_video_server](web_video_server.md).
 
 ## Неисправности
 
@@ -100,7 +100,7 @@ image_pub = rospy.Publisher('~debug', Image)
 image_pub.publish(bridge.cv2_to_imgmsg(img, 'bgr8'))
 ```
 
-Получаемые изображения можно просматривать используя [web_video_server](web_video_server.md) или [rqt](rviz.md).
+Получаемые изображения можно просматривать используя [web_video_server](web_video_server.md).
 
 #### Получение одного кадра
 

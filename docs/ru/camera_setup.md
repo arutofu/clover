@@ -39,7 +39,6 @@
 ```
 
 <img src="../assets/camera_option_1_rviz.png" width=300>
-<img src="../assets/camera_option_1_clever.jpg" width=300>
 
 #### Камера направлена вниз, шлейф вперёд
 
@@ -49,7 +48,6 @@
 ```
 
 <img src="../assets/camera_option_2_rviz.png" width=300>
-<img src="../assets/camera_option_2_clever.jpg" width=300>
 
 #### Камера направлена вверх, шлейф назад
 
@@ -59,7 +57,6 @@
 ```
 
 <img src="../assets/camera_option_3_rviz.png" width=300>
-<img src="../assets/camera_option_3_clever.jpg" width=300>
 
 #### Камера направлена вверх, шлейф вперёд
 
@@ -69,7 +66,6 @@
 ```
 
 <img src="../assets/camera_option_4_rviz.png" width=300>
-<img src="../assets/camera_option_4_clever.jpg" width=300>
 
 > **Hint** [Утилита `selfcheck.py`](selfcheck.md) выдает словесное описание установленной в данной момент ориентации основной камеры.
 

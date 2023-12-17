@@ -37,7 +37,6 @@ sudo systemctl restart drone
 
 1. Измените параметр `gcs_bridge` на `udp`.
 2. В QGroundControl создайте подключение со следующими настройками:
-$\color{red}{\textsf{🔴изменить картинку}}$
 
     ![QGroundControl UDP connection](../assets/bridge_udp.png)
 
