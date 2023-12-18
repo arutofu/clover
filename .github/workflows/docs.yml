@@ -6,18 +6,11 @@ on:
   pull_request:
     branches: [ '*' ]
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-defaults:
-  run:
-    shell: bash
-
 jobs:
   docs:
     runs-on: ubuntu-22.04
+    outputs:
+      id: ${{ needs.docs.outputs.id }}
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
@@ -28,7 +21,7 @@ jobs:
           sudo sh -c "echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections"
           sudo apt-get update && sudo apt-get install -y calibre msttcorefonts
           builder/assets/install_gitbook.sh
-          npm install markdownlint-cli@0.28.1 -g # FIXME: https://github.com/DavidAnson/markdownlint/issues/435
+          npm install markdownlint-cli@0.28.1 -g
           npm install svgexport -g
           gitbook -V
           markdownlint -V
@@ -56,9 +49,30 @@ jobs:
           ls -lah _book/drone*.pdf
           echo '::set-output name=GITBOOK_PDF_OK::1'
       - name: Find PDF files
+        id: find-pdf
         run: |
           pdf_files=$(find ./_book -type f -name "drone*.pdf")
           echo "PDF files found: $pdf_files"
+
+  upload-pdf:
+    runs-on: ubuntu-latest
+    needs: docs
+    outputs:
+      id: ${{ needs.docs.outputs.id }}
+    steps:
+      - name: Upload PDF to release
+        run: |
+          release_id=$(curl -sSL -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/releases/tags/PDF" | jq -r '.id')
+
+          for pdf_file in $pdf_files; do
+            echo "Uploading $pdf_file to release"
+            curl -sSL -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Content-Type: application/zip" \
+              --data-binary "@$pdf_file" \
+              "https://uploads.github.com/repos/${{ github.repository }}/releases/$release_id/assets?name=$(basename $pdf_file)"
+          done
+
   deploy-docs:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final-master' }}
     concurrency:
@@ -68,9 +82,8 @@ jobs:
       name: github-pages
       url: ${{ needs.docs.outputs.url }}
     runs-on: ubuntu-latest
-    needs: docs
+    needs: [docs, upload-pdf]
     steps:
-      # ... (ваш существующий код)
       - name: Deploy to GitHub Pages
         env:
           FREEZE_DOCS: ${{ secrets.FREEZE_DOCS }}
