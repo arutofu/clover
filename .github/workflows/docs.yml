@@ -40,8 +40,8 @@ jobs:
           ./check_unused_assets.py
       - name: Build GitBook
         run: |
-         gitbook install
-         gitbook build
+          gitbook install
+          gitbook build
       - name: Generate PDF
         id: generate-pdf
         env:
@@ -51,9 +51,14 @@ jobs:
         run: |
           for i in 1 2 3 4; do gitbook pdf ./ _book/drone.pdf && break || sleep 1; done
           sudo apt-get -q install ghostscript
-          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/drone.pdf _book/drone.pdf
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/drone_ru_compressed.pdf _book/drone_ru.pdf
+          rm _book/drone_ru.pdf && mv _book/drone_ru_compressed.pdf _book/drone_ru.pdf
           ls -lah _book/drone*.pdf
           echo '::set-output name=GITBOOK_PDF_OK::1'
+      - name: Find PDF files
+        run: |
+          pdf_files=$(find ./_book -type f -name "drone*.pdf")
+          echo "PDF files found: $pdf_files"
   deploy-docs:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final-master' }}
     concurrency:
@@ -61,22 +66,14 @@ jobs:
         cancel-in-progress: true
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ needs.docs.outputs.url }}
     runs-on: ubuntu-latest
     needs: docs
     steps:
+      # ... (ваш существующий код)
       - name: Deploy to GitHub Pages
         env:
           FREEZE_DOCS: ${{ secrets.FREEZE_DOCS }}
         if: ${{ !env.FREEZE_DOCS }}
         id: deployment
         uses: actions/deploy-pages@v1
-        with:
-          path: _book
-      - name: Wait for artifacts
-        run: sleep 10
-      - name: Upload PDF to GitHub Pages
-        uses: actions/upload-artifact@v2
-        with:
-          name: pdf
-          path: _book/drone.pdf

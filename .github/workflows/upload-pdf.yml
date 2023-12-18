@@ -1,0 +1,30 @@
+name: Upload PDF to Release
+
+on:
+    push:
+      branches: [ '*' ]
+    pull_request:
+      branches: [ final-master ]
+    release:
+      types: [ created ]
+
+jobs:
+  upload-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Upload PDF to release
+        run: |
+          release_id=$(curl -sSL -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/releases/tags/PDF" | jq -r '.id')
+
+          pdf_files=$(find ./_book -type f -name "drone*.pdf")
+          for pdf_file in $pdf_files; do
+            echo "Uploading $pdf_file to release"
+            curl -sSL -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Content-Type: application/zip" \
+              --data-binary "@$pdf_file" \
+              "https://uploads.github.com/repos/${{ github.repository }}/releases/$release_id/assets?name=$(basename $pdf_file)"
+          done

@@ -91,11 +91,11 @@
 
 ## Подготовка платы распределения питания
 
-1. Подготавливаем нижнюю деку к размещению на ней электронных компонентов - бокорезами удаляем перегородки и освобождаем плату.
+1. (1) Подготавливаем нижнюю деку к размещению на ней электронных компонентов - бокорезами удаляем перегородки и освобождаем плату.
 
     <img src="../assets/assembling_drone1/1-14/1.png" width=300 class="zoom border center"></img>
 
-2. С помощью паяльника и припоя (оловянная проволока с канифолью) залуживаем места для припайки проводов для аккумуляторов **<font color=red>A</font>** и регуляторов оборотов **<font color=turquoise>Р</font>**.
+2. (2) С помощью паяльника и припоя (оловянная проволока с канифолью) залуживаем места для припайки проводов для аккумуляторов **<font color=red>A</font>** и регуляторов оборотов **<font color=turquoise>Р</font>**.
 
     <img src="../assets/assembling_drone1/1-14/2.1.png" width=300 class="zoom border center"></img>
 
@@ -103,30 +103,30 @@
 
     <img src="../assets/assembling_drone1/1-14/2.2.png" width=300 class="zoom border center"></img>
 
-3. Припаиваем провода к коннектору XT60, на котором указаны:
+3. (3) Припаиваем провода к коннектору XT60, на котором указаны:
 
     **<font color=red>+</font>** (красный провод)
     **<font color=black>-</font>** (черный провод).
 
     <img src="../assets/assembling_drone1/1-14/3.png" width=300 class="zoom border center"></img>
 
-4. Для изоляции контактов надеваем на места пайки термоусаживающую трубку и обрабатываем феном.
+4. (4) Для изоляции контактов надеваем на места пайки термоусаживающую трубку и обрабатываем феном.
 
     <img src="../assets/assembling_drone1/1-14/4.png" width=300 class="zoom border center"></img>
 
-5. Припаиваем коннектор к плате.
+5. (5) Припаиваем коннектор к плате.
 
     <img src="../assets/assembling_drone1/1-14/5.png" width=300 class="zoom border center"></img>
 
-6. Берем преобразователь напряжения BEC.
+6. (6) Берем преобразователь напряжения BEC.
 
     <img src="../assets/assembling_drone1/1-14/6.png" width=300 class="zoom border center"></img>
 
-7. Удаляем черный провод.
+7. (7) Удаляем черный провод.
 
     <img src="../assets/assembling_drone1/1-14/7.png" width=300 class="zoom border center"></img>
 
-8. Укорачиваем провода на 2 см.
+8. (8) Укорачиваем провода на 2 см.
 
     <img src="../assets/assembling_drone1/1-14/8.1.png" width=300 class="zoom border center"></img>
 
@@ -134,27 +134,27 @@
 
     <img src="../assets/assembling_drone1/1-14/8.2.png" width=300 class="zoom border center"></img>
 
-9. Удлиняем сигнальный провод регулятора оборотов.
+9. (9) Удлиняем сигнальный провод регулятора оборотов.
 
     <img src="../assets/assembling_drone1/1-14/9.png" width=300 class="zoom border center"></img>
 
-10. Припаиваем все 4 регулятора оборотов к плате.
+10. (10) Припаиваем все 4 регулятора оборотов к плате.
 
     <img src="../assets/assembling_drone1/1-14/10.png" width=300 class="zoom border center"></img>
 
-11. Вставляем кабель в этот разъем контроллера.
+11. (11) Вставляем кабель в этот разъем контроллера.
 
     <img src="../assets/assembling_drone1/1-14/11.png" width=300 class="zoom border center"></img>
 
-12. Находим в комплекте полётного контроллера такой кабель.
+12. (12) Находим в комплекте полётного контроллера такой кабель.
 
     <img src="../assets/assembling_drone1/1-14/12.png" width=300 class="zoom border center"></img>
 
-13. Отрезаем коннекторы, спаиваем провода между собой в соответствии с цветом.
+13. (13) Отрезаем коннекторы, спаиваем провода между собой в соответствии с цветом.
 
     <img src="../assets/assembling_drone1/1-14/13.png" width=300 class="zoom border center"></img>
 
-14. Результат должен выглядеть так.
+14. (14) Результат должен выглядеть так.
 
     <img src="../assets/assembling_drone1/1-14/14.png" width=300 class="zoom border center"></img>
 
