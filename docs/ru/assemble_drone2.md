@@ -1,5 +1,12 @@
 # Сборка Дрона 2
 
+* [STL файлы](https://www.tezona.ru/data/uploads/files/stl_orlenok.zip)
+* [Инструкция по сборке PDF](https://www.tezona.ru/data/uploads/files/orlenok_instruktsiya_po_sborke_korpusa.pdf)
+* [Видеоинструкция сборки](https://www.tezona.ru/data/uploads/files/Orlenok-instrukcia-1.webm)
+* [Видеоинструкция прошивки полетного контроллера](https://www.tezona.ru/data/uploads/files/Orlenok-nastroika-pc.webm)
+
+
+
 ## Сборка фюзеляжа
 
 ### Вставляем переднюю деку в переднюю часть фюзеляжа с помощью 4-х винтов М3*8
@@ -281,3 +288,8 @@
 2. (48) Собранный вид:
 
     <img src="../assets/assembling_drone2/7/2.png" width=350 class="zoom border center"></img>
+
+## Подключение и настройка
+
+* [Видеоинструкция подключения и настройки](https://www.tezona.ru/data/uploads/files/Orlenok-podkluchenie-i-nastroika.webm)
+

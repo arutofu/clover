@@ -1,10 +1,11 @@
 # Содержание
 
+* [Техническая поддержка](https://t.me/Tezona_bot)
 * [Введение](README.md)
 * [Глоссарий](glossary.md)
 * [Безопасность](safety.md)
 * [Сборка](assembly.md)
-  * [Дрон 1](assemble_drone1.md)
+  * [Конструктор «проектная деятельность»](assemble_drone1.md)
   * [Дрон 2](assemble_drone2.md)
 * [Настройка](setup.md)
   * [Калибровка датчиков](calibration.md)
