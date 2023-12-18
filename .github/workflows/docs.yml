@@ -52,19 +52,20 @@ jobs:
         run: |
           chmod +x find_and_show.sh
           ./find_and_show.sh
-          - name: Generate PDF
-          id: generate-pdf
-          env:
-            GITBOOK_SKIP_PDF: ${{ secrets.GITBOOK_SKIP_PDF }}
-          continue-on-error: ${{ env.GITBOOK_SKIP_PDF != '' }}
-          run: |
-            for i in 1 2 3 4; do gitbook pdf ./ _book/drone.pdf && break || sleep 1; done
-            sudo apt-get -q install ghostscript
-            gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/drone_ru_compressed.pdf _book/drone_ru.pdf
-            rm _book/drone_ru.pdf && mv _book/drone_ru_compressed.pdf _book/drone_ru.pdf
-            ls -lah _book/drone*.pdf
-            echo '::set-output name=GITBOOK_PDF_OK::1'
-            echo "::set-output name=pdf_files::$(find ./_book -type f -name 'drone*.pdf')"
+          
+      - name: Generate PDF
+        id: generate-pdf
+        env:
+          GITBOOK_SKIP_PDF: ${{ secrets.GITBOOK_SKIP_PDF }}
+        continue-on-error: ${{ env.GITBOOK_SKIP_PDF != '' }}
+        run: |
+          for i in 1 2 3 4; do gitbook pdf ./ _book/drone.pdf && break || sleep 1; done
+          sudo apt-get -q install ghostscript
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/drone_ru_compressed.pdf _book/drone_ru.pdf
+          rm _book/drone_ru.pdf && mv _book/drone_ru_compressed.pdf _book/drone_ru.pdf
+          ls -lah _book/drone*.pdf
+          echo '::set-output name=GITBOOK_PDF_OK::1'
+          echo "::set-output name=pdf_files::$(find ./_book -type f -name 'drone*.pdf')"
   
       - name: Find PDF files
         id: find-pdf
