@@ -67,14 +67,14 @@ jobs:
 
       - name: Use PDF files
         run: |
-            pdf_files="${{ needs.docs.outputs.pdf_files }}"
+            pdf_files=./_book/drone_ru.pdf
             echo "PDF files to upload: $pdf_files"
-            
+
       - name: Upload PDF
         uses: softprops/action-gh-release@v1
         if: ${{ github.event_name == 'release' }}
         with:
-          files: ${{ needs.docs.outputs.pdf_files }}
+          files: ./_book/drone_ru.pdf
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -84,3 +84,21 @@ jobs:
         with:
           name: docs
           path: _book
+
+  deploy-docs:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final-master' }}
+    concurrency:
+        group: "pages"
+        cancel-in-progress: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: docs
+    steps:
+      - name: Deploy to GitHub Pages
+        env:
+          FREEZE_DOCS: ${{ secrets.FREEZE_DOCS }}
+        if: ${{ !env.FREEZE_DOCS }}
+        id: deployment
+        uses: actions/deploy-pages@v1
