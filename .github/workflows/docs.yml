@@ -43,6 +43,11 @@ jobs:
           ./check_assets_size.py
           ./check_unused_assets.py
 
+      - name: Build GitBook
+        run: |
+          gitbook install
+          gitbook build
+      
       - name: List Files in _book Directory
         run: |
           echo "Listing files in _book directory:"
