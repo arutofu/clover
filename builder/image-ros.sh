@@ -139,6 +139,18 @@ cd /home/pi/catkin_ws/src/drone
 builder/assets/install_gitbook.sh
 gitbook install
 gitbook build
+
+ls
+
+buttons_file="_book/gitbook/gitbook-plugin-sharing/buttons.js"
+
+if [ -f "$buttons_file" ]; then
+  echo "Clearing contents of $buttons_file"
+  > "$buttons_file"
+else
+  echo "File $buttons_file not found."
+fi
+
 # replace assets copy to assets symlink to save space
 rm -rf _book/assets && ln -s ../docs/assets _book/assets
 touch node_modules/CATKIN_IGNORE docs/CATKIN_IGNORE _book/CATKIN_IGNORE drone/www/CATKIN_IGNORE apps/CATKIN_IGNORE # ignore documentation files by catkin
