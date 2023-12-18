@@ -82,13 +82,15 @@ jobs:
           done
 
       - name: Upload PDFs to Release
+        if: ${{ github.event_name == 'release' }}
         run: |
           pdf_files="${{ steps.find-pdf.outputs.pdf_files }}"
-          release_id=$(curl -s -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ github.event.release.tag_name }}" | jq -r '.id')
+          release_tag="${{ github.event.release.tag_name }}"
+          release_id=$(curl -s -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" "https://api.github.com/repos/arutofu/drone/releases/tags/$release_tag" | jq -r '.id')
       
           for pdf_file in $pdf_files; do
             echo "Uploading $pdf_file to Release #$release_id"
-            curl -s -X POST -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" -H "Content-Type: application/octet-stream" --data-binary "@$pdf_file" "https://uploads.github.com/repos/${{ github.repository }}/releases/$release_id/assets?name=$(basename $pdf_file)"
+            curl -s -X POST -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" -H "Content-Type: application/octet-stream" --data-binary "@$pdf_file" "https://uploads.github.com/repos/arutofu/drone/releases/$release_id/assets?name=$(basename $pdf_file)"
           done
 
       - name: Upload artifact
