@@ -6,8 +6,6 @@
 * [Видеоинструкция сборки](https://www.tezona.ru/data/uploads/files/Orlenok-instrukcia-1.webm)
 * [Видеоинструкция прошивки полетного контроллера](https://www.tezona.ru/data/uploads/files/Orlenok-nastroika-pc.webm)
 
-
-
 ## Сборка фюзеляжа
 
 ### Вставляем переднюю деку в переднюю часть фюзеляжа с помощью 4-х винтов М3*8
@@ -293,4 +291,3 @@
 ## Подключение и настройка
 
 * [Видеоинструкция подключения и настройки](https://www.tezona.ru/data/uploads/files/Orlenok-podkluchenie-i-nastroika.webm)
-

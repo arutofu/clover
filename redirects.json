@@ -64,6 +64,7 @@
         { "from": "gpio/", "to": "ru/gpio.html" },
         { "from": "blocks/", "to": "ru/blocks.html" },
         { "from": "red_circle/", "to": "ru/camera.html" },
+        { "from": "drone/", "to": "drone/ru" },
 
         { "from": "ru/microsd_images.html", "to": "image.html" },
         { "from": "ru/microsd_images.html", "to": "image.html" },

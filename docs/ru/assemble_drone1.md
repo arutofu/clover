@@ -6,8 +6,6 @@
 * [Видеоинструкция сборки](https://mail.tezona.ru/оса/инструкция.mp4)
 * [Видеоинструкция калибровки](https://www.tezona.ru/data/uploads/files/osa-kalibrovka.webm)
 
-
-
 ## Состав конструктора
 
 <table class="type_table">
