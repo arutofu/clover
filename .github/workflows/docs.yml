@@ -47,13 +47,14 @@ jobs:
           gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/drone_ru_compressed.pdf _book/drone_ru.pdf
           rm _book/drone_ru.pdf && mv _book/drone_ru_compressed.pdf _book/drone_ru.pdf
           ls -lah _book/drone*.pdf
-          echo '::set-output name=GITBOOK_PDF_OK::1'
+          echo -e "\033[33m::set-output name=GITBOOK_PDF_OK::1\033[0m"  # Yellow text
+
       - name: Find PDF files
         id: find-pdf
         run: |
           pdf_files=$(find ./_book -type f -name "drone*.pdf")
-          echo "PDF files found: $pdf_files"
-          echo "::set-output name=pdf_files::${pdf_files}"
+          echo -e "\033[32mPDF files found: $pdf_files\033[0m"  # Green text
+          echo -e "\033[34m::set-output name=pdf_files::${pdf_files}\033[0m"  # Blue text
 
   upload-pdf:
     runs-on: ubuntu-latest
@@ -62,13 +63,18 @@ jobs:
       id: ${{ needs.docs.outputs.id }}
       pdf_files: ${{ needs.docs.outputs.pdf_files }}
     steps:
+      - name: Debug info
+        run: |
+          echo -e "\033[34mpdf_files from upload-pdf: ${{ needs.docs.outputs.pdf_files }}\033[0m"  # Blue text
       - name: Upload PDF to release
         run: |
           release_id=$(curl -sSL -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             "https://api.github.com/repos/${{ github.repository }}/releases/latest" | jq -r '.id')
 
+          echo -e "\033[32mRelease ID for latest release: $release_id\033[0m"  # Green text
+
           for pdf_file in ${{ needs.upload-pdf.outputs.pdf_files }}; do
-            echo "Uploading $pdf_file to release"
+            echo -e "\033[36mUploading $pdf_file to release\033[0m"  # Cyan text
             curl -sSL -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
               -H "Content-Type: application/zip" \
               --data-binary "@$pdf_file" \
