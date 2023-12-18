@@ -59,12 +59,12 @@ jobs:
           ls -lah _book/drone*.pdf
           echo "::set-output name=pdf_files::$(find ./_book -type f -name 'drone*.pdf')"
 
-          - name: Find PDF files
-          id: find-pdf
-          run: |
-            pdf_files=$(find ./_book -type f -name "drone*.pdf")
-            echo "PDF files found: $pdf_files"
-            echo "::set-output name=pdf_files::$pdf_files"
+      - name: Find PDF files
+        id: find-pdf
+        run: |
+          pdf_files=$(find ./_book -type f -name "drone*.pdf")
+          echo "PDF files found: $pdf_files"
+          echo "::set-output name=pdf_files::$pdf_files"
   
       - name: Check PDF files
         run: |
