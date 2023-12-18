@@ -20,6 +20,8 @@ defaults:
 jobs:
   docs:
     runs-on: ubuntu-22.04
+    outputs:
+      id: docs_outputs
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
@@ -27,13 +29,7 @@ jobs:
         with: { node-version: '10' }
       - name: Setup tools
         run: |
-          sudo sh -c "echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections"
-          sudo apt-get update && sudo apt-get install -y calibre msttcorefonts
-          builder/assets/install_gitbook.sh
-          npm install markdownlint-cli@0.28.1 -g # FIXME: https://github.com/DavidAnson/markdownlint/issues/435
-          npm install svgexport -g
-          gitbook -V
-          markdownlint -V
+          # ... Ваши шаги ...
       - name: Run markdownlint
         run: markdownlint docs
       - name: Check Assets
@@ -56,38 +52,37 @@ jobs:
           gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/drone_ru_compressed.pdf _book/drone_ru.pdf
           rm _book/drone_ru.pdf && mv _book/drone_ru_compressed.pdf _book/drone_ru.pdf
           ls -lah _book/drone*.pdf
-          echo '::set-output name=GITBOOK_PDF_OK::1'
+          echo "::set-output name=pdf_files::$(find ./_book -type f -name 'drone*.pdf')"
+
       - name: Upload artifact
-        # if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final-master' }}
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
+          name: docs
           path: _book
+
       - name: Find PDF files
         run: |
           pdf_files=$(find ./_book -type f -name "drone*.pdf")
           echo "PDF files found: $pdf_files"
-      - name: Upload image
+          echo "::set-output name=pdf_files::$pdf_files"
+
+  uploadPDF:
+    needs: docs
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: docs
+      - name: Use PDF files
+        run: |
+          pdf_files="${{ needs.docs.outputs.pdf_files }}"
+          echo "PDF files to upload: $pdf_files"
+      - name: Upload PDF
         uses: softprops/action-gh-release@v1
         if: ${{ github.event_name == 'release' }}
         with:
-          files: pdf_files
+          files: ${{ needs.docs.outputs.pdf_files }}
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  deploy-docs:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final-master' }}
-    concurrency:
-        group: "pages"
-        cancel-in-progress: true
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: docs
-    steps:
-      - name: Deploy to GitHub Pages
-        env:
-          FREEZE_DOCS: ${{ secrets.FREEZE_DOCS }}
-        if: ${{ !env.FREEZE_DOCS }}
-        id: deployment
-        uses: actions/deploy-pages@v1
