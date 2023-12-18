@@ -9,50 +9,17 @@ on:
     types: [ created ]
 
 jobs:
-  upload-pdf:
-    runs-on: ubuntu-latest
-    needs: docs
-    steps:
-      - name: Wait for PDF files
-        run: |
-          wait_for_completion() {
-            while : ; do
-              status=$(curl -s -u "${{ secrets.GITHUB_TOKEN }}:" -H "Accept: application/vnd.github.v3+json" \
-                "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ needs.docs.run_id }}" \
-                | jq -r .status)
-              if [ "$status" = "completed" ]; then
-                break
-              fi
-              sleep 5s
-            done
-          }
-
-          wait_for_completion
-          echo "PDF files are ready for upload"
-
-      - name: Upload PDF to release
-        uses: softprops/action-gh-release@v1
-        if: ${{ github.event_name == 'release' }}
-        with:
-          files: ${{ needs.docs.outputs.pdf_files }}
-          prerelease: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - name: Build image
         run: |
           docker run --privileged --rm -v /dev:/dev -v $(pwd):/builder/repo -e TRAVIS_TAG="${{ github.event.release.tag_name }}" sfalexrog/img-tool:qemu-update
-
       - name: Rename and Compress image
         run: |
           cd images && sudo chmod -R 777 . && find . -type f -name '*.img' -exec sh -c 'new_name="$(echo "$1" | sed "s/.*_//")"; mv "$1" "$(dirname "$1")/drone$new_name"' _ {} \; && find . -type f -name '*.img' -exec sh -c 'zip -9 "$(dirname "$1")/drone$(echo "$(basename "$1" | sed "s/.*_//")" | cut -c7-).zip" "$1"' _ {} \; && unzip -l drone*.zip
           ls
-
       - name: Upload image
         uses: softprops/action-gh-release@v1
         if: ${{ github.event_name == 'release' }}
