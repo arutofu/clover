@@ -51,12 +51,14 @@ jobs:
         env:
           GITBOOK_SKIP_PDF: ${{ secrets.GITBOOK_SKIP_PDF }}
         continue-on-error: ${{ env.GITBOOK_SKIP_PDF != '' }}
+        if: ${{ github.event_name == 'push' }}
         run: |
           for i in 1 2 3 4; do gitbook pdf ./ _book/drone.pdf && break || sleep 1; done
           sudo apt-get -q install ghostscript
           gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/drone_ru_compressed.pdf _book/drone_ru.pdf
           rm _book/drone_ru.pdf && mv _book/drone_ru_compressed.pdf _book/drone_ru.pdf
           ls -lah _book/drone*.pdf
+          echo '::set-output name=GITBOOK_PDF_OK::1'
           echo "::set-output name=pdf_files::$(find ./_book -type f -name 'drone*.pdf')"
 
       - name: Find PDF files
@@ -94,9 +96,9 @@ jobs:
           done
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/final-master' }}
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: docs
           path: _book
 
   deploy-docs:
