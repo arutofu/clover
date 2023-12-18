@@ -1,6 +1,5 @@
 # Содержание
 
-* [Техническая поддержка](https://t.me/tezona_tech)
 * [Введение](docs/ru/README.md)
 * [Глоссарий](docs/ru/glossary.md)
 * [Безопасность](docs/ru/safety.md)
