@@ -2,25 +2,13 @@
 
 echo "--------------------------------------------------------"
 
-gitbook_file="_book/gitbook/style.css"
+gitbook_folder="_book/gitbook"
 
-if [ -f "$gitbook_file" ]; then
-  echo "Contents of $gitbook_file:"
-  cat "$gitbook_file"
+if [ -d "$gitbook_folder" ]; then
+  echo "Contents of $gitbook_folder:"
+  ls -l "$gitbook_folder"
 else
-  echo "File $gitbook_file not found."
+  echo "Directory $gitbook_folder not found."
 fi
-
-echo "--------------------------------------------------------"
-
-target_string='btn pull-right js-toolbar-action'
-files_with_string=$(grep -rl "$target_string" _book/*)
-echo "Files containing the target string:"
-echo "$files_with_string"
-
-for file in $files_with_string; do
-  echo "Content of $file:"
-  cat "$file"
-done || true
 
 echo "--------------------------------------------------------"
