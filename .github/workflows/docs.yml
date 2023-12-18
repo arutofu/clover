@@ -29,13 +29,13 @@ jobs:
         with: { node-version: '10' }
       - name: Setup tools
         run: |
-            sudo sh -c "echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections"
-            sudo apt-get update && sudo apt-get install -y calibre msttcorefonts
-            builder/assets/install_gitbook.sh
-            npm install markdownlint-cli@0.28.1 -g # FIXME: https://github.com/DavidAnson/markdownlint/issues/435
-            npm install svgexport -g
-            gitbook -V
-            markdownlint -V
+          sudo sh -c "echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections"
+          sudo apt-get update && sudo apt-get install -y calibre msttcorefonts
+          builder/assets/install_gitbook.sh
+          npm install markdownlint-cli@0.28.1 -g # FIXME: https://github.com/DavidAnson/markdownlint/issues/435
+          npm install svgexport -g
+          gitbook -V
+          markdownlint -V
       - name: Run markdownlint
         run: markdownlint docs
       - name: Check Assets
@@ -51,7 +51,6 @@ jobs:
         env:
           GITBOOK_SKIP_PDF: ${{ secrets.GITBOOK_SKIP_PDF }}
         continue-on-error: ${{ env.GITBOOK_SKIP_PDF != '' }}
-        if: ${{ github.event_name == 'push' }}
         run: |
           for i in 1 2 3 4; do gitbook pdf ./ _book/drone.pdf && break || sleep 1; done
           sudo apt-get -q install ghostscript
