@@ -65,30 +65,11 @@ jobs:
           echo "PDF files found: $pdf_files"
           echo "::set-output name=pdf_files::$pdf_files"
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: docs
-          path: _book
-
-      - name: Find PDF files
-        run: |
-          pdf_files=$(find ./_book -type f -name "drone*.pdf")
-          echo "PDF files found: $pdf_files"
-          echo "::set-output name=pdf_files::$pdf_files"
-
-  uploadPDF:
-    needs: docs
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Download artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: docs
       - name: Use PDF files
         run: |
-          pdf_files="${{ needs.docs.outputs.pdf_files }}"
-          echo "PDF files to upload: $pdf_files"
+            pdf_files="${{ needs.docs.outputs.pdf_files }}"
+            echo "PDF files to upload: $pdf_files"
+            
       - name: Upload PDF
         uses: softprops/action-gh-release@v1
         if: ${{ github.event_name == 'release' }}
@@ -97,3 +78,9 @@ jobs:
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: docs
+          path: _book
