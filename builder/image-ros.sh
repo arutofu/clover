@@ -153,7 +153,7 @@ fi
 
 # replace assets copy to assets symlink to save space
 rm -rf _book/assets && ln -s ../docs/assets _book/assets
-touch node_modules/CATKIN_IGNORE docs/CATKIN_IGNORE _book/CATKIN_IGNORE drone/www/CATKIN_IGNORE apps/CATKIN_IGNORE # ignore documentation files by catkin
+touch node_modules/CATKIN_IGNORE docs/CATKIN_IGNORE _book/CATKIN_IGNORE drone/www/CATKIN_IGNORE # ignore documentation files by catkin
 
 echo_stamp "Installing additional ROS packages"
 my_travis_retry apt-get install -y --no-install-recommends \
