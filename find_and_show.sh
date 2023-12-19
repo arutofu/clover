@@ -26,7 +26,6 @@ echo "--------------------------------------------------------"
 
 buttons_file="_book/gitbook/gitbook-plugin-sharing/buttons.js"
 
-# Проверяем наличие файла buttons.js и удаляем его содержимое
 if [ -f "$buttons_file" ]; then
   echo "Clearing contents of $buttons_file"
   > "$buttons_file"
