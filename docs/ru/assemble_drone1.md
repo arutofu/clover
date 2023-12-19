@@ -1,4 +1,4 @@
-# Сборка конструктора БПЛА мультироторного типа «проектная деятельность»
+# Конструктор БПЛА мультироторного типа «проектная деятельность»
 
 * [Технический паспорт](https://www.tezona.ru/data/uploads/files/osa_pasport.pdf)
 * [STL файлы](https://www.tezona.ru/data/uploads/files/stl_osa.zip)

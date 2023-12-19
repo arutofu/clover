@@ -1,4 +1,4 @@
-# Сборка
+# Инструкции по сборке
 
 В этом разделе находится статьи с инструкциями по сборке.
 
@@ -12,11 +12,15 @@
           <td><a href="assemble_drone1.md"><img src="../assets/assembling_drone1/drone1.png" width=400></a></td>
      </tr>
      <tr>
-          <td><a href="assemble_drone2.md">Дрон 2</a></td>
+          <td><a href="assemble_drone2.md">Конструктор самолетного типа</a></td>
           <td><a href="assemble_drone2.md"><img src="../assets/assembling_drone2/drone2.png" width=400></a></td>
      </tr>
      <tr>
-          <td><a href="assemble_drone3.md">Пиксель-Вжик</a></td>
-          <td><a href="assemble_drone3.md"></a></td>
+          <td><a href="assemble_drone3.md">Конструктор «Пиксель-Вжик»</a>
+               <div class=subversion>
+                    <a href="assemble_drone1.md"> и «Пиксель-Вжик - рой дронов»</a>
+               </div>
+          </td>
+          <td><a href="assemble_drone3.md"><img src="../assets/assembling_drone3_2/drone3_2.png" width=400></a></td></a></td>
      </tr>
 </table>
