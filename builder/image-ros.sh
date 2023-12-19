@@ -130,6 +130,7 @@ catkin_make -j2 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 source devel/setup.bash
 
 echo_stamp "Install dronee package (for backwards compatibility)"
+chmod +x /home/pi/catkin_ws/src/drone/builder/assets/dronee/setup.py
 cd /home/pi/catkin_ws/src/drone/builder/assets/dronee
 ./setup.py install
 rm -rf build  # remove build artifacts
