@@ -7,7 +7,7 @@ import time
 
 @pytest.fixture()
 def node():
-    return rospy.init_node('clover_test', anonymous=True)
+    return rospy.init_node('dronee_test', anonymous=True)
 
 def test_state(node):
     state = rospy.wait_for_message('mavros/state', State, timeout=10)

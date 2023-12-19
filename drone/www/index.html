@@ -25,12 +25,4 @@
 			}
 		}
 	});
-
-	// Determine image version
-	fetch('drone_version').then(function(response) {
-		if (response.status !== 200) return;
-		response.text().then(function(text) {
-			document.querySelector('.version').innerHTML = 'Version: ' + text;
-		});
-	});
 </script>

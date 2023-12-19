@@ -2,5 +2,5 @@
 
 # test backwards compatibility
 
-from clever.srv import GetTelemetry, Navigate, NavigateGlobal, SetPosition, SetVelocity, \
+from dronee.srv import GetTelemetry, Navigate, NavigateGlobal, SetPosition, SetVelocity, \
     SetAttitude, SetRates, SetLEDEffect

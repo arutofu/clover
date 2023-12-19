@@ -23,8 +23,7 @@
             "blank": true
         },
         "addcssjs": {
-            "css": ["../drone.css"],
-            "js": ["../drone.js"]
+            "css": ["../drone.css"]
         },
         "language-picker": {
             "languages": [["ru", "Russian"]]

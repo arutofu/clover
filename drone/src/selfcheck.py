@@ -116,7 +116,7 @@ def get_param(name, default=None, strict=True):
 
     if not res.success:
         if strict:
-            failure('unable to retrieve PX4 parameter %s', name)
+            failure('unable to retrieve parameter %s', name)
         return default
     else:
         if res.value.integer != 0:
@@ -259,7 +259,7 @@ def check_fcu():
                     info(line[len('HW arch: '):])
 
             if not drone_fw:
-                info('wrong PX4 firmware')
+                info('error with firmware')
 
         est = get_param('SYS_MC_EST_GROUP')
         if est == 1:
@@ -323,7 +323,7 @@ def check_fcu():
             if not os.path.exists('/lib/udev/rules.d/99-px4fmu.rules'):
                 info('udev rules are not installed, install udev rules or change usb_device to /dev/ttyACM0 in mavros.launch')
             else:
-                info('udev did\'t recognize px4fmu device, check wiring or change usb_device to /dev/ttyACM0 in mavros.launch')
+                info('udev did\'t recognize device, check wiring or change usb_device to /dev/ttyACM0 in mavros.launch')
         info('fcu_url = %s', rospy.get_param('mavros/fcu_url', '?'))
 
 
@@ -503,7 +503,7 @@ def check_vpe():
         info('LPE_VIS_XY = %s m, LPE_VIS_Z = %s m', get_paramf('LPE_VIS_XY'), get_paramf('LPE_VIS_Z'))
     elif est == 2:
         ev_ctrl = get_param('EKF2_EV_CTRL', strict=False)
-        if ev_ctrl is not None: # PX4 after v1.14
+        if ev_ctrl is not None:
             ev_ctrl = int(ev_ctrl)
             if not ev_ctrl & (1 << 0):
                 failure('vision horizontal position fusion is disabled, change EKF2_EV_CTRL parameter')
@@ -511,7 +511,7 @@ def check_vpe():
                 failure('vision vertical position fusion is disabled, change EKF2_EV_CTRL parameter')
             if not ev_ctrl & (1 << 3):
                 failure('vision yaw fusion is disabled, change EKF2_EV_CTRL parameter')
-        else: # PX4 before v1.14
+        else:
             fuse = int(get_param('EKF2_AID_MASK'))
             if not fuse & (1 << 3):
                 failure('vision position fusion is disabled, change EKF2_AID_MASK parameter')
@@ -626,10 +626,10 @@ def check_global_position():
         info('no global position')
         if get_param('SYS_MC_EST_GROUP') == 2:
             gps_ctrl = get_param('EKF2_GPS_CTRL', strict=False)
-            if gps_ctrl is not None: # PX4 after v1.14
+            if gps_ctrl is not None:
                 if int(gps_ctrl) & (1 << 0):
                     failure('GPS fusion enabled may suppress vision position aiding, change EKF2_GPS_CTRL')
-            else: # PX4 before v1.14
+            else:
                 if int(get_param('EKF2_AID_MASK', 0)) & (1 << 0):
                     failure('GPS fusion enabled may suppress vision position aiding, change EKF2_AID_MASK')
 
@@ -644,7 +644,6 @@ def check_optical_flow():
     try:
         rospy.wait_for_message('mavros/px4flow/raw/send', OpticalFlowRad, timeout=0.5)
 
-        # check PX4 settings
         rot = get_param('SENS_FLOW_ROT')
         if rot != 0:
             failure('SENS_FLOW_ROT = %s, but it should be zero', rot)
@@ -665,10 +664,10 @@ def check_optical_flow():
                           get_paramf('LPE_FLW_RR', 4))
         elif est == 2:
             of_ctrl = get_param('EKF2_OF_CTRL', strict=False)
-            if of_ctrl is not None: # PX4 after v1.14
+            if of_ctrl is not None:
                 if of_ctrl == 0:
                     failure('optical flow fusion is disabled, change EKF2_OF_CTRL')
-            else: # PX4 before v1.14
+            else:
                 fuse = int(get_param('EKF2_AID_MASK', 0))
                 if not fuse & (1 << 1):
                     failure('optical flow fusion is disabled, change EKF2_AID_MASK parameter')
@@ -706,7 +705,7 @@ def check_rangefinder():
         rospy.wait_for_message('mavros/distance_sensor/rangefinder', Range, timeout=4)
         rng = True
     except rospy.ROSException:
-        failure('no rangefinder data from PX4')
+        failure('no rangefinder data')
 
     if not rng:
         return
@@ -721,14 +720,14 @@ def check_rangefinder():
 
     elif est == 2:
         hgt = get_param('EKF2_HGT_REF', strict=False)
-        if hgt is None: # PX4 before v1.14
+        if hgt is None:
             hgt = get_param('EKF2_HGT_MODE')
         if hgt != 2:
             info('EKF2_HGT_MODE != Range sensor, NOT operating over flat surface')
         else:
             info('EKF2_HGT_MODE = Range sensor, operating over flat surface')
         aid = get_param('EKF2_RNG_AID', strict=False)
-        if aid is not None: # PX4 before v1.14
+        if aid is not None:
             if aid != 1:
                 info('EKF2_RNG_AID != 1, range sensor aiding disabled')
             else:

@@ -626,13 +626,12 @@ inline void checkManualControl()
 	}
 
 	if (check_kill_switch) {
-		// switch values: https://github.com/PX4/PX4-Autopilot/blob/c302514a0809b1765fafd13c014d705446ae1113/msg/manual_control_setpoint.msg#L3
 		const uint8_t SWITCH_POS_NONE = 0; // switch is not mapped
 		const uint8_t SWITCH_POS_ON = 1; // switch activated
 		const uint8_t SWITCH_POS_MIDDLE = 2; // middle position
 		const uint8_t SWITCH_POS_OFF = 3; // switch not activated
 
-		const int KILL_SWITCH_BIT = 12; // https://github.com/PX4/Firmware/blob/c302514a0809b1765fafd13c014d705446ae1113/src/modules/mavlink/mavlink_messages.cpp#L3975
+		const int KILL_SWITCH_BIT = 12;
 		uint8_t kill_switch = (manual_control.buttons & (0b11 << KILL_SWITCH_BIT)) >> KILL_SWITCH_BIT;
 
 		if (kill_switch == SWITCH_POS_ON)
@@ -646,7 +645,7 @@ inline void checkState()
 		throw std::runtime_error("State timeout, check mavros settings");
 
 	if (!state.connected)
-		throw std::runtime_error("No connection to FCU, https://clover.coex.tech/connection");
+		throw std::runtime_error("No connection to FCU");
 }
 
 void publishState()

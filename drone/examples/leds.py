@@ -1,5 +1,3 @@
-# Information: https://clover.coex.tech/led
-
 import rospy
 from drone.srv import SetLEDEffect
 
