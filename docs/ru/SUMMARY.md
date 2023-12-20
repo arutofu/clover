@@ -70,3 +70,8 @@
 
 * [Учебно-методическое пособие](metod.md)
 * [Контрольные материалы](tests.md)
+
+## Ссылки
+
+* [Скачать эту документацию в PDF](https://mail.tezona.ru/raspberryimage/drone_ru.pdf)
+* [Скачать образ для Raspberry](https://mail.tezona.ru/raspberryimage/drone.zip)

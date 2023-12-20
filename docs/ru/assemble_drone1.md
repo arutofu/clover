@@ -150,7 +150,7 @@
 
 11. (11) Вставляем кабель в этот разъем контроллера.
 
-    <img src="../assets/assembling_drone1/1-14/11.png" width=300 class="zoom border center"></img>
+    <img src="../assets/assembling_drone1/1-14/11.png" width=150 class="zoom border center"></img>
 
 12. (12) Находим в комплекте полётного контроллера такой кабель.
 
@@ -196,7 +196,7 @@
 
 9. (23) Постоянно горит красный индикатор - показатель готовности.
 
-    <img src="../assets/assembling_drone1/15-23/23.png" width=300 class="zoom border center"></img>
+    <img src="../assets/assembling_drone1/15-23/23.png" width=200 class="zoom border center"></img>
 
     **Показатель связанности - информация на дисплее пульта**
 
@@ -298,13 +298,13 @@
 
 1. (38) Две ножки скрепляются между собой винтами М3*8 и самокрутящимися гайками М3 с фторопластовой вставкой с помощью специального инструмента с головкой 5.5мм.
 
-    <img src="../assets/assembling_drone1/38/38.2.png" width=300 class="zoom border center"></img>
+    <img src="../assets/assembling_drone1/38/38.2.png" width=200 class="zoom border center"></img>
 
-    <img src="../assets/assembling_drone1/38/38.1.png" width=300 class="zoom border center"></img>
+    <img src="../assets/assembling_drone1/38/38.1.png" width=200 class="zoom border center"></img>
 
     Две ножки закреплены на раме.
 
-    <img src="../assets/assembling_drone1/38/38.3.png" width=300 class="zoom border center"></img>
+    <img src="../assets/assembling_drone1/38/38.3.png" width=200 class="zoom border center"></img>
 
     > **Внимание** Указанные операции выполняются со всеми 4 лучами.
 

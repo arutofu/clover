@@ -293,8 +293,6 @@
 
 1. (4) [Скачайте и установите программное обеспечение.](https://www.tezona.ru/download/avia-application)
 
-    <img src="../assets/assembling_drone3_2/1/4.png" width=590 class="zoom border center"></img>
-
 2. (5) Ознакомьтесь с меню:
 
     <img src="../assets/assembling_drone3_2/2/1.png" width=530 class="zoom border center"></img>

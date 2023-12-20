@@ -27,12 +27,15 @@
 ### Вставляем заднюю деку в заднюю часть фюзеляжа
 
 1. (4) Задняя дека:
+
     <img src="../assets/assembling_drone2/1/2/1.png" width=250 class="zoom border center"></img>
 
 2. (5) Задняя часть фюзеляжа:
+
     <img src="../assets/assembling_drone2/1/2/2.png" width=250 class="zoom border center"></img>
 
 3. (6) Готово:
+
     <img src="../assets/assembling_drone2/1/2/3.png" width=200 class="zoom border center"></img>
 
 ### Соединяем переднюю и заднюю часть фюзеляжа с помощью 2-х винтов M3*8
@@ -128,7 +131,7 @@
 
 ### Усиливаем жесткость крыла путём вставки 3-х карбоновых прутков в каждое крыло. Выполняем надрез глубиной 5 мм по размерам чертежа в нижней и верхней сторонах крыла
 
-<img src="../assets/assembling_drone2/5/1/0.png" width=450 class="zoom border center"></img>
+<img src="../assets/assembling_drone2/5/1/0.png" width=350 class="zoom border center"></img>
 
 ### Отрезаем пруток по длине крыла
 

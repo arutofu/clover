@@ -8,8 +8,8 @@
 
 ## Содержание
 
-* 🟡[Введение](docs/ru/README.md)
-* 🟡[Глоссарий](docs/ru/glossary.md)
+* [Введение](docs/ru/README.md)
+* [Глоссарий](docs/ru/glossary.md)
 * [Безопасность](docs/ru/safety.md)
 * [Сборка](docs/ru/assembly.md)
   * [Дрон 1](docs/ru/assemble_drone1.md)
@@ -24,7 +24,7 @@
 * [Ручной полет](docs/ru/flight.md)
   * [Упражнения](docs/ru/flight_exercises.md)
 * [Работа с Raspberry Pi](docs/ru/raspberry.md)
-  * 🟡[Образ для RPi](docs/ru/image.md)
+  * [Образ для RPi](docs/ru/image.md)
   * [Подключение по Wi-Fi](docs/ru/wifi.md)
   * [Подключение к полетному контроллеру](docs/ru/connection.md)
   * [QGroundControl по Wi-Fi](docs/ru/gcs_bridge.md)
