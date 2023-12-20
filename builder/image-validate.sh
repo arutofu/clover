@@ -27,7 +27,7 @@ chmod +x /home/pi/catkin_ws/src/drone/builder/test/tests.sh
 chmod +x /home/pi/catkin_ws/src/drone/builder/test/tests.py
 chmod +x /home/pi/catkin_ws/src/drone/builder/test/tests_py3.py
 chmod +x /home/pi/catkin_ws/src/drone/builder/test/tests_dronee.py
-chmod +x /home/pi/catkin_ws/src/drone/builder/test/tests_qr.py
+chmod +x /home/pi/catkin_ws/src/drone/builder/test/test_qr.py
 
 ./tests.sh
 ./tests.py
