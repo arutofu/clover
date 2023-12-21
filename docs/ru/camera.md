@@ -126,7 +126,7 @@ img = bridge.imgmsg_to_cv2(rospy.wait_for_message('main_camera/image_raw', Image
 
 > **Hint** Для высокоскоростного распознавания и позиционирования лучше использовать [ArUco-маркеры](aruco.md).
 
-Для программирования различных действий коптера при детектировании нужных [QR-кодов](https://ru.wikipedia.org/wiki/QR-код) можно использовать библиотеку [pyZBar](https://pypi.org/project/pyzbar/). Она уже установлена в последнем образе для Raspberry Pi.
+Для программирования различных действий дрона при детектировании нужных [QR-кодов](https://ru.wikipedia.org/wiki/QR-код) можно использовать библиотеку [pyZBar](https://pypi.org/project/pyzbar/). Она уже установлена в последнем образе для Raspberry Pi.
 
 Распознавание QR-кодов на Python:
 

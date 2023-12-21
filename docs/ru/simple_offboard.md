@@ -48,7 +48,7 @@ land = rospy.ServiceProxy('land', Trigger)
 
 * `frame_id` – система координат;
 * `connected` – есть ли подключение к <abbr title="Flight Control Unit, полетный контроллер">FCU</abbr>;
-* `armed` – состояние `armed` винтов (винты включены, если true);
+* `armed` – состояние `armed` пропеллеров (пропеллеры включены, если true);
 * `mode` – текущий [полетный режим](modes.md);
 * `x, y, z` – локальная позиция коптера *(м)*;
 * `lat, lon` – широта, долгота *(градусы)*, необходимо наличие [GPS](gps.md);

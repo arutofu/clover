@@ -1,4 +1,4 @@
-# Управление коптером с Arduino
+# Управление дроном с Arduino
 
 Для взаимодействия с ROS-топиками и сервисами на Raspberry Pi можно использовать библиотеку [rosserial_arduino](http://wiki.ros.org/rosserial_arduino). Эта библиотека предустановлена на [образе для Raspberry Pi](image.md).
 
@@ -73,7 +73,7 @@ for(int i=0; i<8; i++) {
 
 Набор сервисов и топиков аналогичен обычному набору в [simple_offboard](simple_offboard.md).
 
-Пример программы, контролирующей коптер по позиции, с использованием сервисов `navigate` и `set_mode`:
+Пример программы, контролирующей дрон по позиции, с использованием сервисов `navigate` и `set_mode`:
 
 ```cpp
 // Подключение библиотек для работы с rosserial
@@ -205,9 +205,9 @@ GetTelemetry::Response gt_res;
 gt_req.frame_id = "aruco_map"; // фрейм для значений x, y, z
 getTelemetry.call(gt_req, gt_res);
 
-// gt_res.x - положение коптера по x
-// gt_res.y - положение коптера по y
-// gt_res.z - положение коптера по z
+// gt_res.x - положение дрона по x
+// gt_res.y - положение дрона по y
+// gt_res.z - положение дрона по z
 ```
 
 ## Проблемы

@@ -41,7 +41,7 @@
 Блоки поделены на 4 категории:
 
 * <span style="padding:2px;color:white;background:#9d5ca6">Flight</span> – команды, имеющие отношение к полету.
-* <span style="padding:2px;color:white;background:#ff9b00">State</span> – блоки, позволяющие получить те или иные параметры текущего состояния коптера.
+* <span style="padding:2px;color:white;background:#ff9b00">State</span> – блоки, позволяющие получить те или иные параметры текущего состояния дрона.
 * <span style="padding:2px;color:white;background:#01d754">LED</span> – блоки для управления [LED-лентой](leds.md).
 * <span style="padding:2px;color:white;background:#5b97cc">GPIO</span> – блоки для работы с [GPIO-пинами](gpio.md).
 
@@ -67,7 +67,7 @@
 
 В блоке может быть выбрана [система координат](frames.md), в которой задана целевая точка:
 
-* *body* – координаты относительно коптера: вперед (*forward*), влево (*left*), вверх (*up*).
+* *body* – координаты относительно дрона: вперед (*forward*), влево (*left*), вверх (*up*).
 * *markers map* – система координат, связанная с [картой ArUco-маркеров](aruco_map.md).
 * *marker* – система координат, связанная с [ArUco-маркером](aruco_marker.md); появляется поле для ввода ID маркера.
 * *last navigate target* – координаты относительно последней заданной точки для навигации.

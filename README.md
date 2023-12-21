@@ -57,7 +57,7 @@
   * [Навигация по настенным маркерам](docs/ru/wall_aruco.md)
   * [Подключение к VPN ZeroTier](docs/ru/zerotier_vpn.md)
   * [Подключение к VPN Hamachi](docs/ru/hamachi_vpn.md)
-  * [Управление мультикоптером при помощи 4G связи](docs/ru/4g.md)
+  * [Управление дроном при помощи 4G связи](docs/ru/4g.md)
   * [Jetson Nano](docs/ru/jetson_nano.md)
   * [Настройка сети RPi](docs/ru/network.md)
   * [Интерфейс UART](docs/ru/uart.md)

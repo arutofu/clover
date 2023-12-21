@@ -116,7 +116,7 @@ rospy.init_node('my_ros_node')
 # Создаем обертку над сервисом get_telemetry пакета drone с типом GetTelemetry:
 get_telemetry = rospy.ServiceProxy('get_telemetry', srv.GetTelemetry)
 
-# Вызываем сервис и получаем телеметрию квадрокоптера:
+# Вызываем сервис и получаем телеметрию дрона:
 telemetry = get_telemetry()
 ```
 

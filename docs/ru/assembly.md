@@ -1,14 +1,10 @@
-# Инструкции по сборке
+# Инструкции по сборке и настройке
 
-В этом разделе находится статьи с инструкциями по сборке.
+В этом разделе находятся статьи с инструкциями по сборке и настройке БПЛА.
 
 <table class=versions>
      <tr>
-          <td><a href="assemble_drone1.md">Конструктор мультироторного типа</a>
-               <div class=subversion>
-                    <a href="assemble_drone1.md">«проектная деятельность»</a>
-               </div>
-          </td>
+          <td><a href="assemble_drone1.md">Конструктор мультироторного типа</a></td>
           <td><a href="assemble_drone1.md"><img src="../assets/assembling_drone1/drone1.png" width=400></a></td>
      </tr>
      <tr>
