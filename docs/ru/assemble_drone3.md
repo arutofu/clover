@@ -353,11 +353,13 @@ Scratch-программирование: нажмите **Код -> Файл ->
 
 <img src="../assets/assembling_drone3_2/7/1.png" width=500 class="zoom border center"></img>
 
-**Порядок замены аккумулятора**:
+### Порядок замены аккумулятора
 
 <img src="../assets/assembling_drone3_2/7/2.png" width=250 class="zoom border center">
 <img src="../assets/assembling_drone3_2/7/3.png" width=255 class="zoom border center">
 <img src="../assets/assembling_drone3_2/7/4.png" width=274 class="zoom border center">
 </img>
+
+### Полёт
 
 <img src="../assets/assembling_drone3_2/7/5.png" width=500 class="zoom border center"></img>

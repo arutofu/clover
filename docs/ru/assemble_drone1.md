@@ -49,7 +49,7 @@
 
 <img src="../assets/assembling_drone1/1-14/8.1.png" width=300 class="zoom border center"></img>
 
-**Полетный контроллер готов**
+Полетный контроллер готов.
 
 <img src="../assets/assembling_drone1/1-14/8.2.png" width=300 class="zoom border center"></img>
 
@@ -111,7 +111,7 @@ RX Binding... - ошибки удалены, аппаратура готова �
 
 <img src="../assets/assembling_drone1/15-23/23.png" width=200 class="zoom border center"></img>
 
-**Показатель связанности - информация на дисплее пульта**
+Показатель связанности - информация на дисплее пульта.
 
 <img src="../assets/assembling_drone1/15-23/controller_display.png" width=300 class="zoom border center"></img>
 
@@ -125,13 +125,13 @@ RX Binding... - ошибки удалены, аппаратура готова �
 
 <img src="../assets/assembling_drone1/24/24.2.png" width=300 class="zoom border center"></img>
 
-**Итоговое подключение**
+Итоговое подключение.
 
 <img src="../assets/assembling_drone1/24/24.3.png" width=300 class="zoom border center"></img>
 
 ## Подключение электромоторов к регулятору оборотов
 
-Подключаем.
+Подключаем:
 
 <img src="../assets/assembling_drone1/25-26/25.1.png" width=300 class="zoom border center"></img>
 
