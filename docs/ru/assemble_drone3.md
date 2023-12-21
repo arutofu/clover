@@ -1,4 +1,4 @@
-# Конструктор «Пиксель-Вжик» и «Пиксель-Вжик - рой дронов»
+# Конструктор БПЛА «Пиксель-Вжик» и «Пиксель-Вжик - рой дронов»
 
 * [Программное обеспечение](https://www.tezona.ru/download/avia-application/)
 * [Драйверы для Win 8 or 10](https://www.tezona.ru/data/uploads/files/driver_for_win_8_or_10.zip)
@@ -7,8 +7,6 @@
 
 1. [Перейти к «Пиксель-Вжик»](#title1)
 2. [Перейти к «Пиксель-Вжик - рой дронов»](#title2)
-
-<img src="../assets/assembling_drone3_2/construct1.png" width=500 class="zoom border center"></img>
 
 ## <a id="title1">«Пиксель-Вжик»</a>
 
