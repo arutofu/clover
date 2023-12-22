@@ -58,19 +58,21 @@
 
 ##### Усредненные коэффициенты PID для конструктора мультироторного типа
 
-* `MC_PITCHRATE_P` = 0.067
-* `MC_PITCHRATE_I` = 0.067
-* `MC_PITCHRATE_D` = 0.0018
-* `MC_PITCH_P` = 4.5
-* `MC_ROLLRATE_P` = 0.067
-* `MC_ROLLRATE_I` = 0.067
-* `MC_ROLLRATE_D` = 0.0018
-* `MC_ROLL_P` = 4.5
-* `MPC_XY_VEL_P` = 0.11
-* `MPC_XY_VEL_D` = 0.013
-* `MPC_XY_P` = 1.1
-* `MPC_Z_VEL_P` = 0.24
-* `MPC_Z_P` = 1.2
+* `MC_PITCHRATE_P` = 0.140
+* `MC_PITCHRATE_I` = 0.090
+* `MC_PITCHRATE_D` = 0.0008
+* `MC_ROLLRATE_P` = 0.140
+* `MC_ROLLRATE_I` = 0.100
+* `MC_ROLLRATE_D` = 0.0006
+
+##### Усредненные коэффициенты PID для конструктора самолетного типа
+
+* `MC_PITCHRATE_P` = 0.179
+* `MC_PITCHRATE_I` = 0.150
+* `MC_PITCHRATE_D` = 0.002
+* `MC_ROLLRATE_P` = 0.195
+* `MC_ROLLRATE_I` = 0.170
+* `MC_ROLLRATE_D` = 0.002
 
 > **Hint** Необходимо учитывать, что для идеального полета параметры PID-регуляторов подбираются вручную для каждого конкретного собранного дрона. Вы можете узнать больше об этом в статье "[Настройка PID-регуляторов](pid_tuning.md)".
 
