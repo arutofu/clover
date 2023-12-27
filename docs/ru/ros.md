@@ -32,7 +32,7 @@ rospy.init_node('my_ros_node')  # имя ROS-ноды
 rospy.spin()  # входим в бесконечный цикл...
 ```
 
-> **Info** Любая [программа для автономного полета](programming.md) является ROS-нодой.
+> **Информация** Любая [программа для автономного полета](programming.md) является ROS-нодой.
 
 ### Топики
 
@@ -51,7 +51,7 @@ rospy.spin()  # входим в бесконечный цикл...
 |[`geometry_msgs/TwistStamped`](https://docs.ros.org/api/geometry_msgs/html/msg/TwistStamped.html)|Линейная и угловая скорость объекта с заданной системой координат и временной меткой.|
 |[`sensor_msgs/Image`](https://docs.ros.org/api/sensor_msgs/html/msg/Image.html)|Изображение (см. [статью о работе с камерой](camera.md))|
 
-> **Info** Смотрите остальные стандартные типы сообщений в пакетах [`common_msgs`](http://wiki.ros.org/common_msgs), [`std_msgs`](https://wiki.ros.org/std_msgs), [`geometry_msgs`](https://wiki.ros.org/geometry_msgs), [`sensor_msgs`](https://wiki.ros.org/sensor_msgs) и других.
+> **Информация** Смотрите остальные стандартные типы сообщений в пакетах [`common_msgs`](http://wiki.ros.org/common_msgs), [`std_msgs`](https://wiki.ros.org/std_msgs), [`geometry_msgs`](https://wiki.ros.org/geometry_msgs), [`sensor_msgs`](https://wiki.ros.org/sensor_msgs) и других.
 
 Пример публикации сообщения типа [`std_msgs/String`](https://docs.ros.org/api/std_msgs/html/msg/String.html) (строка) в топик `/foo` на языке Python:
 
@@ -173,7 +173,7 @@ private_foo_pub = rospy.Publisher('~foo', String, queue_size=1)
 relative_foo_pub = rospy.Publisher('foo', String, queue_size=1)
 ```
 
-> **Hint** В общем случае всегда рекомендуется использовать приватные или относительные имена ресурсов и никогда не использовать глобальные.
+> **Подсказка** В общем случае всегда рекомендуется использовать приватные или относительные имена ресурсов и никогда не использовать глобальные.
 
 ## Работа на нескольких машинах
 
