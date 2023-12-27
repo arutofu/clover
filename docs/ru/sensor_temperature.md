@@ -27,25 +27,25 @@ sudo apt-get install git-core
 
 Чтобы установить библиотеку Adafruit DHT11:
 
-1. Введите это в командной строке, чтобы загрузить библиотеку:
+Введите это в командной строке, чтобы загрузить библиотеку:
 
 ```python
 git clone https://github.com/adafruit/Adafruit_Python_DHT.git
 ```
 
-2. Измените каталоги с помощью:
+Измените каталоги с помощью:
 
 ```python
 cd Adafruit_Python_DHT
 ```
 
-3. Теперь введите это:
+Теперь введите это:
 
 ```python
 sudo apt-get install build-essential python-dev
 ```
 
-4. Затем установите библиотеку с помощью:
+Затем установите библиотеку с помощью:
 
 ```python
 sudo python setup.py install
