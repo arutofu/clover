@@ -6,7 +6,7 @@
 
 ## Подключение
 
-<img src="../assets/sensors/light/light_connection.svg" width=350 class="zoom border center"></img>
+<img src="../assets/sensors/light/light_connection.png" width=350 class="zoom border center"></img>
 
 ## Код
 

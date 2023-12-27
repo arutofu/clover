@@ -1,5 +1,7 @@
 # Датчик наклона (The tilt sensor module)
 
+Определяет, наклонен ли объект.
+
 <img src="../assets/sensors/tilt/sensor_tilt.svg" width=300 class="zoom border center"></img>
 
 ## Подключение
