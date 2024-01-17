@@ -1,6 +1,7 @@
 # Содержание
 
 <img src="../assets/company_logo/Тезона_синий.png" width=300></img>
+
 * [Техническая поддержка](support.md)
 * [Введение](README.md)
 * [Глоссарий](glossary.md)
