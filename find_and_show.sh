@@ -62,3 +62,14 @@ else
 fi
 
 echo "--------------------------------------------------------"
+
+index_file="_book/ru/index.html"
+
+if [ -f "$index_file" ]; then
+  echo "Contents of $index_file :"
+  cat "$index_file"
+else
+  echo "File $index_file not found."
+fi
+
+echo "--------------------------------------------------------"
