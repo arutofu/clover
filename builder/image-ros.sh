@@ -143,6 +143,8 @@ gitbook build
 
 ls
 
+echo "--------------------------------------------------------"
+
 buttons_file="_book/gitbook/gitbook-plugin-sharing/buttons.js"
 
 if [ -f "$buttons_file" ]; then
@@ -151,6 +153,26 @@ if [ -f "$buttons_file" ]; then
 else
   echo "File $buttons_file not found."
 fi
+
+echo "--------------------------------------------------------"
+
+start_directory="_book/ru/"
+search_string="<nav role=\"navigation\">"
+inserted_line='<p><a href="https://www.tezona.ru/"><img src="../assets/company_logo/Тезона_синий.png" width="270" align="center"></a></p>'
+
+found_files=$(grep -rl --include='*.html' "$search_string" "$start_directory")
+
+for found_file in $found_files; do
+  echo "File found: $found_file"
+
+  # Вставка новой строки перед найденной строкой
+  sed -i "/$search_string/i $inserted_line" "$found_file"
+
+  # Перенос строки, содержащей искомую строку, на следующую строку
+  sed -i "/$search_string/s/$/\\n/" "$found_file"
+done
+
+echo "--------------------------------------------------------"
 
 # replace assets copy to assets symlink to save space
 rm -rf _book/assets && ln -s ../docs/assets _book/assets
