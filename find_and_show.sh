@@ -38,29 +38,20 @@ fi
 echo "--------------------------------------------------------"
 
 start_directory="_book/ru/"
-search_string='<nav role="navigation">'
+search_string="book-header"
 inserted_line='<p><img src="../assets/company_logo/Тезона_синий.png" width="270" align="center"></p>'
 
-# Поиск файлов, содержащих искомую строку в указанной директории и её поддиректориях
 found_files=$(grep -rl "$search_string" "$start_directory")
 
-# Проверка, найдены ли файлы
-if [ -n "$found_files" ]; then
-  for found_file in $found_files; do
-    echo "File found: $found_file"
+for found_file in $found_files; do
+  echo "File found: $found_file"
 
-    # Проверка, пуста ли строка перед искомой строкой
-    line_before_search=$(grep -B 1 "$search_string" "$found_file" | head -n 1)
-    if [ -z "$line_before_search" ]; then
-      # Вставка строки, если строка перед искомой строкой пуста
-      sed -i '/<nav role="navigation">/i\'"$inserted_line" "$found_file"
-      echo "String - $inserted_line - inserted into $found_file"
-    else
-      echo "Line before $search_string is not empty in $found_file. String not inserted."
-    fi
-  done
-else
-  echo "No files found containing the search string '$search_string' in the specified directory and its subdirectories."
-fi
+  # Вставка новой строки перед найденной строкой
+  sed -i "/$search_string/i $inserted_line" "$found_file"
+
+  # Перенос строки, содержащей искомую строку, на следующую строку
+  sed -i "/$search_string/s/$/\\n/" "$found_file"
+  echo "done"
+done
 
 echo "--------------------------------------------------------"
