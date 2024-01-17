@@ -37,43 +37,27 @@ fi
 
 echo "--------------------------------------------------------"
 
-css_file="_book/gitbook/style.css"
-
-if [ -f "$css_file" ]; then
-  echo "Contents of $css_file :"
-  cat "$css_file"
-else
-  echo "File $css_file not found."
-fi
-
-echo "--------------------------------------------------------"
-
 search_string="book-header"
 start_directory="_book/"
+inserted_line='<p><img src="/assets/company_logo/Tezona_blue.png" width="270" align="center"></p>'
 
-found_file=$(grep -rl "$search_string" "$start_directory")
+# Find files containing the "book-header" string
+found_files=$(grep -rl "$search_string" "$start_directory")
 
-if [ -n "$found_file" ]; then
-  echo "Файл найден: $found_file"
-  echo "Содержимое файла:"
-  cat "$found_file"
-else
-  echo "Файл не найден по строке '$search_string'."
-fi
+# Iterate over the found files
+for file in $found_files; do
+  # Get the line where we are going to insert $inserted_line
+  line_to_insert=$(grep -C 1 "$search_string" "$file" | tail -n 1)
 
-echo "--------------------------------------------------------"
-
-index_file="_book/ru/index.html"
-inserted_line='<p><img src="../assets/company_logo/Тезона_синий.png" width="270" align="center"></p>'
-
-if [ -f "$index_file" ]; then
-  echo "Contents of $index_file :"
-  cat "$index_file"
-  sed -i '/<nav role="navigation">/i\'"$inserted_line" "$index_file"
-  echo "String - $inserted_line - inserted"
-  cat "$index_file"
-else
-  echo "File $index_file not found."
-fi
+  # Check if the line where we insert is empty
+  if [ -z "$line_to_insert" ]; then
+    # The line is empty, so insert the line
+    sed -i '/<nav role="navigation">/i\'"$inserted_line" "$file"
+    echo "String - $inserted_line - inserted into $file"
+  else
+    # The line is not empty, print a message and skip insertion
+    echo "Line in $file is not empty. Skipping insertion."
+  fi
+done
 
 echo "--------------------------------------------------------"
