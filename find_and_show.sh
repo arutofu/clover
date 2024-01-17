@@ -37,7 +37,7 @@ fi
 
 echo "--------------------------------------------------------"
 
-start_directory="_book/"
+start_directory="_book/ru/"
 search_string="<nav role="navigation">"
 inserted_line='<p><img src="../assets/company_logo/Тезона_синий.png" width="270" align="center"></p>'
 
