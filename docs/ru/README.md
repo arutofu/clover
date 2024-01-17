@@ -1,5 +1,7 @@
 # Конструкторы
 
+## Конструктор БПЛА мультироторного типа «Оса»
+
 <img src="../assets/assembling_drone1/drone1.png" width=500></img>
 
 * [Технический паспорт](https://www.tezona.ru/data/uploads/files/osa_pasport.pdf)
