@@ -48,11 +48,13 @@ fi
 
 echo "--------------------------------------------------------"
 
-images_folder="_book/gitbook/images"
+images_folder="_book/gitbook/gitbook-plugin-sharing"
 
-if [ -f "$images_folder" ]; then
-  echo "Contents of $images_folder :"
-  cd $images_folder
-  ls
+if [ -d "$images_folder" ]; then
+  echo "Contents of $images_folder:"
+  ls -l "$images_folder"
+else
+  echo "Directory $images_folder not found."
+fi
 
 echo "--------------------------------------------------------"
