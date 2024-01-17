@@ -1,5 +1,9 @@
+# <img src="../assets/company_logo/Тезона_синий.png" width=300></img>
+
 # Конструкторы
+
 <img src="../assets/company_logo/Тезона_синий.png" width=300></img>
+
 ## Конструктор БПЛА мультироторного типа "Оса"
 
 <img src="../assets/assembling_drone1/drone1.png" width=500></img>

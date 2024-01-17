@@ -1,4 +1,5 @@
-<img src="../assets/company_logo/Тезона_синий.png" width=300></img>
+# <img src="../assets/company_logo/Тезона_синий.png" width=300></img>
+
 # Техническая поддержка
 
 * [Группа технической поддержки пользователей](https://t.me/tezona_tech)
