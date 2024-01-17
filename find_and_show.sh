@@ -41,23 +41,32 @@ search_string="book-header"
 start_directory="_book/"
 inserted_line='<p><img src="/assets/company_logo/Tezona_blue.png" width="270" align="center"></p>'
 
-# Find files containing the "book-header" string
-found_files=$(grep -rl "$search_string" "$start_directory")
+# Поиск файла, содержащего искомую строку
+found_file=$(grep -rl "$search_string" "$start_directory")
 
-# Iterate over the found files
-for file in $found_files; do
-  # Get the line where we are going to insert $inserted_line
-  line_to_insert=$(grep -C 1 "$search_string" "$file" | tail -n 1)
+# Проверка, найден ли файл
+if [ -n "$found_file" ]; then
+  echo "File found: $found_file"
 
-  # Check if the line where we insert is empty
-  if [ -z "$line_to_insert" ]; then
-    # The line is empty, so insert the line
-    sed -i '/<nav role="navigation">/i\'"$inserted_line" "$file"
-    echo "String - $inserted_line - inserted into $file"
+  # Получение строки перед найденной
+  line_before=$(grep -B 1 "$search_string" "$found_file" | head -n 1)
+
+  # Проверка строки перед найденной на пустоту
+  if [ -z "$line_before" ]; then
+    echo "The line before $search_string is empty. Inserting the line."
+
+    # Вставка строки в файл
+    sed -i "/$search_string/i\\$inserted_line" "$found_file"
+    echo "String - $inserted_line - inserted"
   else
-    # The line is not empty, print a message and skip insertion
-    echo "Line in $file is not empty. Skipping insertion."
+    echo "The line before $search_string is not empty. Skipping insertion."
   fi
-done
+
+  # Вывод содержимого файла после вставки
+  echo "Contents of $found_file after insertion:"
+  cat "$found_file"
+else
+  echo "File not found with the string '$search_string'."
+fi
 
 echo "--------------------------------------------------------"
