@@ -64,9 +64,13 @@ fi
 echo "--------------------------------------------------------"
 
 index_file="_book/ru/index.html"
+inserted_line='<p><img src="../assets/company_logo/Тезона_синий.png" width="270" align="center"></p>'
 
 if [ -f "$index_file" ]; then
   echo "Contents of $index_file :"
+  cat "$index_file"
+  sed -i '/<nav role="navigation">/i\'"$inserted_line" "$index_file"
+  echo "String - $inserted_line - inserted"
   cat "$index_file"
 else
   echo "File $index_file not found."
