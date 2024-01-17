@@ -37,11 +37,11 @@ fi
 
 echo "--------------------------------------------------------"
 
-start_directory="_book/ru/"
-search_string="book-header"
+start_directory="_book/"
+search_string="<nav role="navigation">"
 inserted_line='<p><img src="../assets/company_logo/Тезона_синий.png" width="270" align="center"></p>'
 
-found_files=$(grep -rl "$search_string" "$start_directory")
+found_files=$(grep -rl --include='*.html' "$search_string" "$start_directory")
 
 for found_file in $found_files; do
   echo "File found: $found_file"
@@ -51,7 +51,6 @@ for found_file in $found_files; do
 
   # Перенос строки, содержащей искомую строку, на следующую строку
   sed -i "/$search_string/s/$/\\n/" "$found_file"
-  echo "done"
 done
 
 echo "--------------------------------------------------------"
