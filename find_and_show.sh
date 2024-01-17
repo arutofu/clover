@@ -48,13 +48,17 @@ fi
 
 echo "--------------------------------------------------------"
 
-images_folder="_book/gitbook/images"
+search_string="book-header"
+start_directory="_book/"
 
-if [ -d "$images_folder" ]; then
-  echo "Contents of $images_folder:"
-  ls -l "$images_folder"
+found_file=$(grep -rl "$search_string" "$start_directory")
+
+if [ -n "$found_file" ]; then
+  echo "Файл найден: $found_file"
+  echo "Содержимое файла:"
+  cat "$found_file"
 else
-  echo "Directory $images_folder not found."
+  echo "Файл не найден по строке '$search_string'."
 fi
 
 echo "--------------------------------------------------------"
