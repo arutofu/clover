@@ -1,4 +1,4 @@
-# Конструктор БПЛА мультироторного типа "Оса"
+# Конструктор БПЛА мультироторного типа «Оса»
 
 * [Технический паспорт](https://www.tezona.ru/data/uploads/files/osa_pasport.pdf)
 * [STL файлы](https://www.tezona.ru/data/uploads/files/stl_osa.zip)

@@ -1,14 +1,14 @@
-# Содержание
+# [<img src="../assets/company_logo/Тезона_синий.png" width=200></img>](http://tezona.ru)
 
-<img src="../assets/company_logo/Тезона_синий.png" width=300></img>
+## Содержание
 
 * [Техническая поддержка](support.md)
 * [Введение](README.md)
 * [Глоссарий](glossary.md)
 * [Безопасность](safety.md)
 * [Сборка](assembly.md)
-  * [Конструктор мультироторного типа "Оса"](assemble_drone1.md)
-  * [Конструктор самолетного типа "Орленок"](assemble_drone2.md)
+  * [Конструктор «Оса»](assemble_drone1.md)
+  * [Конструктор «Орленок»](assemble_drone2.md)
   * [Конструктор «Пиксель-Вжик»](assemble_drone3.md)
 * [Настройка](setup.md)
   * [Калибровка датчиков](calibration.md)
