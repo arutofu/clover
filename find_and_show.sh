@@ -48,7 +48,7 @@ fi
 
 echo "--------------------------------------------------------"
 
-images_folder="_book/gitbook/gitbook-plugin-sharing"
+images_folder="_book/gitbook/images"
 
 if [ -d "$images_folder" ]; then
   echo "Contents of $images_folder:"
