@@ -39,7 +39,7 @@ echo "--------------------------------------------------------"
 
 start_directory="_book/ru/"
 search_string="<nav role=\"navigation\">"
-inserted_line='<p><img src="../assets/company_logo/Тезона_синий.png" width="270" align="center"></p>'
+inserted_line='<p><a href="https://www.tezona.ru/"><img src="../assets/company_logo/Тезона_синий.png" width="270" align="center"></a></p>'
 
 found_files=$(grep -rl --include='*.html' "$search_string" "$start_directory")
 
