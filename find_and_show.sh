@@ -27,6 +27,8 @@ echo "--------------------------------------------------------"
 buttons_file="_book/gitbook/gitbook-plugin-sharing/buttons.js"
 
 if [ -f "$buttons_file" ]; then
+  echo "Contents of $buttons_file before clearing:"
+  cat "$buttons_file"
   echo "Clearing contents of $buttons_file"
   > "$buttons_file"
 else
