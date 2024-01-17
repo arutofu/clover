@@ -1,4 +1,4 @@
-# Конструктора БПЛА самолетного типа
+# Конструктора БПЛА самолетного типа "Орленок"
 
 * [Технический паспорт](https://www.tezona.ru/data/uploads/files/tehpasport__orlenok.pdf)
 * [STL файлы](https://www.tezona.ru/data/uploads/files/stl_orlenok.zip)
