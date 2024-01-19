@@ -142,7 +142,7 @@ Mode 2:
 
 Откройте программное обеспечение «Пиксель-Вжик». Нажмите «Добавить расширение»:
 
-<img src="../assets/assembling_drone3_1/6/2.png" width=400 class="zoom border center">
+<img src="../assets/assembling_drone3_1/6/2.png" width=800 class="zoom border center">
 
 Выберите «Пиксель-Вжик»:
 
