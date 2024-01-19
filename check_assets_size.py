@@ -10,7 +10,7 @@ def human_size(num, suffix='B'):
         num /= 1024.0
     return "%.1f %s%s" % (num, 'Yi', suffix)
 
-SIZE_LIMIT = 2056 * 1024
+SIZE_LIMIT = 50 * 1024 * 1024  # 25 MB in bytes
 
 code = 0
 
