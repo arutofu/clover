@@ -16,82 +16,82 @@
 
 Вставьте аккумулятор в зарядное устройство, как показано на рисунке. Используйте кабель micro USB для зарядки (макс. входное напряжение 8,4 В, 600 мАч):
 
-<img src="../assets/assembling_drone3_1/1/1.png" width=200 class="zoom border center"></img>
-<img src="../assets/assembling_drone3_1/1/2.png" width=200 class="zoom border center"></img>
-<img src="../assets/assembling_drone3_1/1/3.png" width=200 class="zoom border center"></img>
-<img src="../assets/assembling_drone3_1/1/4.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/1/1.png" width=400 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/1/2.png" width=400 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/1/3.png" width=400 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/1/4.png" width=400 class="zoom border center"></img>
 
 Постоянный красный цвет индикатора указывает на состояние зарядки аккумулятора:
 
-<img src="../assets/assembling_drone3_1/1/5.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/1/5.png" width=400 class="zoom border center"></img>
 
 Постоянный зеленый цвет индикатора указывает на полную зарядку аккумулятора (может занять до 1 часа):
 
-<img src="../assets/assembling_drone3_1/1/6.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/1/6.png" width=400 class="zoom border center"></img>
 
 > **Внимание** Не заряжайте аккумулятор через порт USB на дроне.
 
-<img src="../assets/assembling_drone3_1/1/7.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/1/7.png" width=400 class="zoom border center"></img>
 
 ### Сборка дрона
 
 Установите крепежные элементы в центральную деку дрона:
 
-<img src="../assets/assembling_drone3_1/2/1.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/2/1.png" width=400 class="zoom border center"></img>
 
 Установите лучи дрона:
 
-<img src="../assets/assembling_drone3_1/2/2.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/2/2.png" width=400 class="zoom border center"></img>
 
 Установите крепежные элементы в мотораму:
 
-<img src="../assets/assembling_drone3_1/2/3.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/2/3.png" width=400 class="zoom border center"></img>
 
 Установите мотораму:
 
-<img src="../assets/assembling_drone3_1/2/4.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/2/4.png" width=400 class="zoom border center"></img>
 
 > **Внимание** Установите моторы с пропеллерами в строго определенном порядке. Двигатели вращения CW(по часовой стрелке) установите на ЛЕВЫЙ ВЕРХНИЙ и ПРАВЫЙ НИЖНИЙ лучи дрона, а CCW(против часовой стрелки) на ПРАВЫЙ ВЕРХНИЙ и ЛЕВЫЙ НИЖНИЙ.
 
-<img src="../assets/assembling_drone3_1/2/5.png" width=200 class="zoom border center"></img>
-<img src="../assets/assembling_drone3_1/2/6.png" width=200 class="zoom border center"></img>
-<img src="../assets/assembling_drone3_1/2/7.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/2/5.png" width=400 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/2/6.png" width=400 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/2/7.png" width=400 class="zoom border center"></img>
 
 Установите крепление винтомоторной группы:
 
-<img src="../assets/assembling_drone3_1/2/8.png" width=200 class="zoom border center"></img>
-<img src="../assets/assembling_drone3_1/2/9.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/2/8.png" width=400 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/2/9.png" width=400 class="zoom border center"></img>
 
 Установите защиту пропеллеров:
 
-<img src="../assets/assembling_drone3_1/2/10.png" width=200 class="zoom border center"></img>
-<img src="../assets/assembling_drone3_1/2/11.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/2/10.png" width=400 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/2/11.png" width=400 class="zoom border center"></img>
 
 Установите аккумулятор:
 
-<img src="../assets/assembling_drone3_1/2/13.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/2/13.png" width=400 class="zoom border center"></img>
 
 ## Подключение аппаратуры управления
 
 Установите 3x AAA аккумулятора:
 
-<img src="../assets/assembling_drone3_1/3/1.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/3/1.png" width=400 class="zoom border center"></img>
 
 Включите аппаратуру управления:
 
-<img src="../assets/assembling_drone3_1/3/2.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/3/2.png" width=400 class="zoom border center"></img>
 
 При первой эксплуатации Вам необходимо будет связать аппаратуру управления с приемником на борту дрона, для этого войдите в режим привязки, нажав K0 (средняя кнопка), удерживая правый стик в направлении правого верхнего угла. При удачной связки аппаратуры управления с дроном, у Вас загорятся два зеленых светодиода , как показано на рисунке:
 
-<img src="../assets/assembling_drone3_1/3/3.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/3/3.png" width=400 class="zoom border center"></img>
 
 Нет связи:
 
-<img src="../assets/assembling_drone3_1/3/4.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/3/4.png" width=400 class="zoom border center"></img>
 
 Связан:
 
-<img src="../assets/assembling_drone3_1/3/5.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/3/5.png" width=400 class="zoom border center"></img>
 
 > **Внимание** Для удачного подключения аппаратуры управление, необходимо включить
 дрон, режим поиска аппаратуры управления включится автоматически.
@@ -100,17 +100,17 @@
 
 Чтобы включить дрон, нажмите и удерживайте кнопку питания в течение 1 секунды. Если у дрона отсутсвует связь с аппаратурой управления светодиод будет мигать красным цветом:
 
-<img src="../assets/assembling_drone3_1/4/1.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/4/1.png" width=400 class="zoom border center"></img>
 
 Постоянный зеленый цвет светодиода указывает на успешное соедениние дрона с аппаратурой управления:
 
-<img src="../assets/assembling_drone3_1/4/2.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/4/2.png" width=400 class="zoom border center"></img>
 
 ## Первый взлет
 
 Существует два режима управления Mode 1 и Mode 2 Управление по умолчанию находится в режиме Mode 2. Вы может переключать управление в любой режим. Разница между этими режимами заключается в том, каким стиком осуществляется управление дроном:
 
-<img src="../assets/assembling_drone3_1/5/1.png" width=250 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/5/1.png" width=400 class="zoom border center"></img>
 
 Mode 1:
 
@@ -124,11 +124,11 @@ Mode 2:
 
 Нажмите кнопку «Калибровка» один раз и откалибруйте аппаратуру управления:
 
-<img src="../assets/assembling_drone3_1/5/5.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/5/5.png" width=400 class="zoom border center"></img>
 
 Нажмите кнпоку «Взлет/Посадка» один раз. Дрон должен взлететь.
 
-<img src="../assets/assembling_drone3_1/5/6.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/5/6.png" width=400 class="zoom border center"></img>
 
 Используйте правый стик для управления дроном вперед/назад и движение влево/вправо.
 
@@ -148,29 +148,29 @@ Mode 2:
 
 Откройте программное обеспечение «Пиксель-Вжик». Нажмите «Добавить расширение»:
 
-<img src="../assets/assembling_drone3_1/6/2.png" width=300 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/6/2.png" width=400 class="zoom border center"></img>
 
 Выберите «Пиксель-Вжик»:
 
-<img src="../assets/assembling_drone3_1/6/3.png" width=200 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/6/3.png" width=400 class="zoom border center"></img>
 
 Откроется диалоговое окно, которое уточнит, подключена ли аппаратура управления:
 
-<img src="../assets/assembling_drone3_1/6/4.png" width=300 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/6/4.png" width=400 class="zoom border center"></img>
 
 Соедините аппаратуру управления с компьютером через USB кабель, нажмите K0, чтобы перейти в режим программирования (постоянно горит зеленый цвет светодиода). Нажмите «Попробовать еще раз»:
 
-<img src="../assets/assembling_drone3_1/6/5.png" width=300 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/6/5.png" width=400 class="zoom border center"></img>
 
 Scratch-программирование: нажмите **Код -> Файл -> Загрузить с компьютера**:
 
-<img src="../assets/assembling_drone3_1/6/6.png" width=300 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/6/6.png" width=400 class="zoom border center"></img>
 
 Поставьте дрон на ровную ровную поверхность камерой от себя. Чтобы запустить программу нажмите зеленый флажок в программном обеспечении LitebeeGo:
 
 Как программировать на Python. Нажмите **Python -> Запуск -> Открыть** и откройте программу в формате **.py**:
 
-<img src="../assets/assembling_drone3_1/6/7.png" width=300 class="zoom border center"></img>
+<img src="../assets/assembling_drone3_1/6/7.png" width=400 class="zoom border center"></img>
 
 Поставьте дрон на ровную поверхность камерой от себя.
 
