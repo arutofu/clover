@@ -1,5 +1,7 @@
 # Содержание
 
+[<img src="../assets/company_logo/Тезона_синий.png" width=250 class="zoom border center"></img>](tezona.ru)
+
 * [Техническая поддержка](support.md)
 * [Введение](README.md)
 * [Глоссарий](glossary.md)
