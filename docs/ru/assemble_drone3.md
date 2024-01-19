@@ -248,7 +248,6 @@ Scratch-программирование: нажмите **Код -> Файл ->
 <img src="../assets/assembling_drone3_2/1/1.png" width=300 class="zoom border center">
 <img src="../assets/assembling_drone3_2/1/2.png" width=300 class="zoom border center">
 
-
 Присоедините светодиодный модуль:
 
 <img src="../assets/assembling_drone3_2/1/3.png" width=300 class="zoom border center">
@@ -310,7 +309,6 @@ Scratch-программирование: нажмите **Код -> Файл ->
 <img src="../assets/assembling_drone3_2/5/3.png" width=200 class="zoom border center">
 <img src="../assets/assembling_drone3_2/5/4.png" width=200 class="zoom border center">
 
-
 > **Подсказка** Левая часть подписи блока - это идентификатор дрона, а правая часть - значение.
 
 Разместите дроны на карте меток. Возьмем, например, программу **8 дронов**:
@@ -352,7 +350,6 @@ Scratch-программирование: нажмите **Код -> Файл ->
 <img src="../assets/assembling_drone3_2/7/2.png" width=250 class="zoom border center">
 <img src="../assets/assembling_drone3_2/7/3.png" width=255 class="zoom border center">
 <img src="../assets/assembling_drone3_2/7/4.png" width=274 class="zoom border center">
-
 
 ### Полёт
 
