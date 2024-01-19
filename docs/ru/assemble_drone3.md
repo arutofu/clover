@@ -142,11 +142,11 @@ Mode 2:
 
 Откройте программное обеспечение «Пиксель-Вжик». Нажмите «Добавить расширение»:
 
-<img src="../assets/assembling_drone3_1/6/2.png" width=800 class="zoom border center">
+<img src="../assets/assembling_drone3_1/6/2.png" width=900 class="zoom border center">
 
 Выберите «Пиксель-Вжик»:
 
-<img src="../assets/assembling_drone3_1/6/3.png" width=400 class="zoom border center">
+<img src="../assets/assembling_drone3_1/6/3.png" width=900 class="zoom border center">
 
 Откроется диалоговое окно, которое уточнит, подключена ли аппаратура управления:
 
@@ -158,103 +158,103 @@ Mode 2:
 
 Scratch-программирование: нажмите **Код -> Файл -> Загрузить с компьютера**:
 
-<img src="../assets/assembling_drone3_1/6/6.png" width=400 class="zoom border center">
+<img src="../assets/assembling_drone3_1/6/6.png" width=900 class="zoom border center">
 
 Поставьте дрон на ровную ровную поверхность камерой от себя. Чтобы запустить программу нажмите зеленый флажок в программном обеспечении LitebeeGo:
 
 Как программировать на Python. Нажмите **Python -> Запуск -> Открыть** и откройте программу в формате **.py**:
 
-<img src="../assets/assembling_drone3_1/6/7.png" width=400 class="zoom border center">
+<img src="../assets/assembling_drone3_1/6/7.png" width=900 class="zoom border center">
 
 Поставьте дрон на ровную поверхность камерой от себя.
 
 Чтобы запустить программу нажмите **Запуск**, дрон начнет выполнять программу.
 
-<img src="../assets/assembling_drone3_1/6/8.png" width=100 class="zoom border center">
+<img src="../assets/assembling_drone3_1/6/8.png" width=300 class="zoom border center">
 
 ## Управление дроном с помощью мобильного приложения
 
 Установите приложение LiteBee в Play Store:
 
-<img src="../assets/assembling_drone3_1/7/1.png" width=200 class="zoom border center">
+<img src="../assets/assembling_drone3_1/7/1.png" width=300 class="zoom border center">
 
 Включите и поставьте дрон на ровную повернхность камерой от себя.
 
 Предоставьте разрешение на использование местоположения:
 
-<img src="../assets/assembling_drone3_1/7/2.png" width=200 class="zoom border center">
+<img src="../assets/assembling_drone3_1/7/2.png" width=300 class="zoom border center">
 
 Зайдите в «Настройки» на телефоне и подключитесь к сети «Wi-Fi» дрона **Litebeewing_XXXX**, пароль: **12345678**:
 
-<img src="../assets/assembling_drone3_1/7/3.png" width=200 class="zoom border center">
+<img src="../assets/assembling_drone3_1/7/3.png" width=300 class="zoom border center">
 
 Зайдите в приложение Litebee и нажмите «Litebee wing»:
 
-<img src="../assets/assembling_drone3_1/7/4.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_1/7/4.png" width=600 class="zoom border center">
 
 Предоставьте разрешение на хранение, если приложение спросит:
 
-<img src="../assets/assembling_drone3_1/7/5.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_1/7/5.png" width=600 class="zoom border center">
 
 Выберите значок «Аппаратуры управления»:
 
-<img src="../assets/assembling_drone3_1/7/6.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_1/7/6.png" width=600 class="zoom border center">
 
 Щелкните значок «Калибровка»:
 
-<img src="../assets/assembling_drone3_1/7/7.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_1/7/7.png" width=600 class="zoom border center">
 
 Нажмите значок «Блокировка» и сдвиньте ползунок вправо для разблокировки, после чего дрон взлетит автоматически:
 
-<img src="../assets/assembling_drone3_1/7/8.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_1/7/8.png" width=600 class="zoom border center">
 
-<img src="../assets/assembling_drone3_1/7/9.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_1/7/9.png" width=600 class="zoom border center">
 
 Нажмите значок «Заблокировать» еще раз, чтобы посадить дрон.
 
 Функции:
 
-<img src="../assets/assembling_drone3_1/7/10.png" width=500 class="zoom border center">
+<img src="../assets/assembling_drone3_1/7/10.png" width=900 class="zoom border center">
 
 ## Программирование дрона с помощью мобильного приложения
 
 Выберите значок «Программирование» и перейдите к программированию:
 
-<img src="../assets/assembling_drone3_1/8/1.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_1/8/1.png" width=600 class="zoom border center">
 
 Обязательно добавляйте «Задержки 5 секунд» на каждом шаге. Нажмите значок «Воспроизвести» и дрон начнет выполнять написанную программу:
 
-<img src="../assets/assembling_drone3_1/8/2.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_1/8/2.png" width=600 class="zoom border center">
 
 Сохранение программына телефоне:
 
-<img src="../assets/assembling_drone3_1/8/3.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_1/8/3.png" width=600 class="zoom border center">
 
 Функции программирования:
 
-<img src="../assets/assembling_drone3_1/8/4.png" width=400 class="zoom border center">
+<img src="../assets/assembling_drone3_1/8/4.png" width=575 class="zoom border center">
 
 ## <a id="title2">«Пиксель-Вжик» - рой дронов</a>
 
 * [«Пиксель-Вжик - рой дронов» технический паспорт PDF](https://www.tezona.ru/data/uploads/files/tehnicheskiĭ_pasport_pikselvzhik-roĭdronov.pdf)
 * [«Пиксель-Вжик - рой дронов» инструкция по эксплуатации PDF](https://www.tezona.ru/data/uploads/files/vzhik_manual_a5_print.pdf)
 
-<img src="../assets/assembling_drone3_2/construct2.png" width=500 class="zoom border center">
+<img src="../assets/assembling_drone3_2/construct2.png" width=575 class="zoom border center">
 
 ### Подготовка к полету
 
 Вставьте аккумулятор:
 
-<img src="../assets/assembling_drone3_2/1/1.png" width=300 class="zoom border center">
-<img src="../assets/assembling_drone3_2/1/2.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_2/1/1.png" width=400 class="zoom border center">
+<img src="../assets/assembling_drone3_2/1/2.png" width=400 class="zoom border center">
 
 Присоедините светодиодный модуль:
 
-<img src="../assets/assembling_drone3_2/1/3.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_2/1/3.png" width=400 class="zoom border center">
 
 Вставьте блок питания роутера в розетку для подлключения дронов и компьютера:
 
-<img src="../assets/assembling_drone3_2/1/4.png" width=590 class="zoom border center">
+<img src="../assets/assembling_drone3_2/1/4.png" width=600 class="zoom border center">
 
 ### Установка программного обеспечения
 
@@ -262,7 +262,7 @@ Scratch-программирование: нажмите **Код -> Файл ->
 
 Ознакомьтесь с меню:
 
-<img src="../assets/assembling_drone3_2/2/1.png" width=530 class="zoom border center">
+<img src="../assets/assembling_drone3_2/2/1.png" width=600 class="zoom border center">
 
 ### Переключение в режим «рой дронов»
 
