@@ -85,7 +85,6 @@
 <img src="../assets/assembling_drone2/2/3.png" width=300 class="zoom border center">
 <img src="../assets/assembling_drone2/2/4.png" width=300 class="zoom border center">
 
-
 Готово:
 
 <img src="../assets/assembling_drone2/2/5.png" width=500 class="zoom border center">
@@ -113,7 +112,6 @@
 ### Прикручиваем защелки к фюзеляжу каждую винтом М3х8
 
 <img src="../assets/assembling_drone2/composition/1.png" width=40 class="zoom border center"> <img src="../assets/assembling_drone2/composition/2.png" width=25 class="zoom border center">
-
 
 Передняя часть фюзеляжа:
 
