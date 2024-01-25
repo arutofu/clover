@@ -10,7 +10,8 @@
 
 ## <a id="title1">«Пиксель-Вжик»</a>
 
-* [Инструкция по сборке PDF](https://www.tezona.ru/data/uploads/files/piksel-vzhik_instruktsiya.pdf)
+* [Технический паспорт «Пиксель-Вжик»](https://www.tezona.ru/data/uploads/files/tehnicheskiy_pasport_piksel.pdf)
+* [Инструкция по эксплуатации «Пиксель-Вжик»](https://www.tezona.ru/data/uploads/files/piksel-vzhik_instruktsiya.pdf)
 
 ### Зарядка аккумулятора
 
@@ -236,8 +237,8 @@ Scratch-программирование: нажмите **Код -> Файл ->
 
 ## <a id="title2">«Пиксель-Вжик» - рой дронов</a>
 
-* [«Пиксель-Вжик - рой дронов» технический паспорт PDF](https://www.tezona.ru/data/uploads/files/tehnicheskiĭ_pasport_pikselvzhik-roĭdronov.pdf)
-* [«Пиксель-Вжик - рой дронов» инструкция по эксплуатации PDF](https://www.tezona.ru/data/uploads/files/vzhik_manual_a5_print.pdf)
+* [Технический паспорт «Пиксель-Вжик - рой дронов»](https://www.tezona.ru/data/uploads/files/tehnicheskiy_pasport_pikselvzhik-roydronov.pdf)
+* [Инструкция по эксплуатации «Пиксель-Вжик - рой дронов»](https://www.tezona.ru/data/uploads/files/vzhik_manual_a5_print.pdf)
 
 <img src="../assets/assembling_drone3_2/construct2.png" width=575 class="zoom border center">
 
