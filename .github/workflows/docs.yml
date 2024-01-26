@@ -59,18 +59,18 @@ jobs:
           GITBOOK_SKIP_PDF: ${{ secrets.GITBOOK_SKIP_PDF }}
         continue-on-error: ${{ env.GITBOOK_SKIP_PDF != '' }}
         run: |
-          for i in 1 2 3 4; do gitbook pdf ./ _book/drone.pdf && break || sleep 1; done
+          for i in 1 2 3 4; do gitbook pdf ./ _book/Библиотека_знаний.pdf && break || sleep 1; done
           sudo apt-get -q install ghostscript
-          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/drone_ru_compressed.pdf _book/drone_ru.pdf
-          rm _book/drone_ru.pdf && mv _book/drone_ru_compressed.pdf _book/drone_ru.pdf
-          ls -lah _book/drone*.pdf
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/Библиотека_знаний_compressed.pdf _book/Библиотека_знаний.pdf
+          rm _book/Библиотека_знаний.pdf && mv _book/Библиотека_знаний_compressed.pdf _book/Библиотека_знаний.pdf
+          ls -lah _book/Библиотека_знаний.pdf
           echo '::set-output name=GITBOOK_PDF_OK::1'
-          echo "::set-output name=pdf_files::$(find ./_book -type f -name 'drone*.pdf')"
-  
+          echo "::set-output name=pdf_files::$(find ./_book -type f -name 'Библиотека_знаний*.pdf')"
+
       - name: Find PDF files
         id: find-pdf
         run: |
-          pdf_files=$(find ./_book -type f -name "drone*.pdf")
+          pdf_files=$(find ./_book -type f -name "Библиотека_знаний*.pdf")
           echo "PDF files found: $pdf_files"
           echo "::set-output name=pdf_files::$pdf_files"
   
