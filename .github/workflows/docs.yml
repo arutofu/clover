@@ -106,6 +106,17 @@ jobs:
         with:
           path: _book
   
+      - name: Archive Website
+        run: |
+          zip -r Website.zip _book
+      - name: Upload Website Archive
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./Website.zip
+          asset_name: Website.zip
+          asset_content_type: application/zip
+  
   deploy-docs:
     concurrency:
         group: "pages"
