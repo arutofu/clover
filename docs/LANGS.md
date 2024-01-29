@@ -1,3 +1,3 @@
 # Languages
 
-* [Русский](ru/)
+* [Русский](ru/index.html)
