@@ -106,16 +106,14 @@ jobs:
         with:
           path: _book
   
-      - name: Archive Website
+      - name: Upload Website to Release
+        if: ${{ github.event_name == 'release' }}
         run: |
           zip -r Website.zip _book
-      - name: Upload Website Archive
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./Website.zip
-          asset_name: Website.zip
-          asset_content_type: application/zip
+          release_tag="${{ github.event.release.tag_name }}"
+          release_id=$(curl -s -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" "https://api.github.com/repos/arutofu/drone/releases/tags/$release_tag" | jq -r '.id')
+          echo "Uploading Website.zip to Release #$release_id"
+          curl -s -X POST -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" -H "Content-Type: application/octet-stream" --data-binary "@Website.zip" "https://uploads.github.com/repos/arutofu/drone/releases/$release_id/assets?name=Website.zip"
   
   deploy-docs:
     concurrency:
