@@ -227,14 +227,6 @@ Scratch-программирование: нажмите **Код -> Файл ->
 
 <img src="../assets/assembling_drone3_1/8/2.png" width=600 class="zoom border center">
 
-Сохранение программына телефоне:
-
-<img src="../assets/assembling_drone3_1/8/3.png" width=600 class="zoom border center">
-
-Функции программирования:
-
-<img src="../assets/assembling_drone3_1/8/4.png" width=575 class="zoom border center">
-
 ## <a id="title2">«Пиксель-Вжик» - рой дронов</a>
 
 * [Технический паспорт «Пиксель-Вжик - рой дронов»](https://www.tezona.ru/data/uploads/files/tehnicheskiy_pasport_pikselvzhik-roydronov.pdf)
@@ -269,11 +261,11 @@ Scratch-программирование: нажмите **Код -> Файл ->
 
 Нажмите **Добавить расширение**:
 
-<img src="../assets/assembling_drone3_2/2/2.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_2/2/2.png" width=600 class="zoom border center">
 
 Выберите **Рой дронов**:
 
-<img src="../assets/assembling_drone3_2/2/3.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_2/2/3.png" width=600 class="zoom border center">
 
 Подключитесь к роутеру:
 
@@ -285,13 +277,11 @@ Scratch-программирование: нажмите **Код -> Файл ->
 
 Загрузите полетную программу из примеров:
 
-<img src="../assets/assembling_drone3_2/4/1.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_2/4/1.png" width=600 class="zoom border center">
 
 Выберите, например, 8 дронов:
 
-<img src="../assets/assembling_drone3_2/4/2.png" width=300 class="zoom border center">
-
-<img src="../assets/assembling_drone3_2/4/3.png" width=300 class="zoom border center">
+<img src="../assets/assembling_drone3_2/4/2.png" width=500 class="zoom border center">
 
 Расстелите карту меток на полу и расположите на ней дроны.
 
@@ -307,24 +297,24 @@ Scratch-программирование: нажмите **Код -> Файл ->
 
 Для определения номера дрона наведите указатель мыши на блок **«высота»** и поднимите дрон вверх. Строка, где будет изменяться значение - номер вашего дрона:
 
-<img src="../assets/assembling_drone3_2/5/3.png" width=200 class="zoom border center">
-<img src="../assets/assembling_drone3_2/5/4.png" width=200 class="zoom border center">
+<img src="../assets/assembling_drone3_2/5/3.png" width=260 class="zoom border center">
+<img src="../assets/assembling_drone3_2/5/4.png" width=300 class="zoom border center">
 
 > **Подсказка** Левая часть подписи блока - это идентификатор дрона, а правая часть - значение.
 
 Разместите дроны на карте меток. Возьмем, например, программу **8 дронов**:
 
-<img src="../assets/assembling_drone3_2/5/5.png" width=500 class="zoom border center">
+<img src="../assets/assembling_drone3_2/5/5.png" width=563 class="zoom border center">
 
 > **Внимание** Места для взлета должны соответствовать программе. Цифы на карте меток - номер дрона.
 
-<img src="../assets/assembling_drone3_2/5/6.png" width=500 class="zoom border center">
+<img src="../assets/assembling_drone3_2/5/6.png" width=563 class="zoom border center">
 
 ### Тестирование полетной программы
 
 Скомпилируйте программу, нажав на **<font color=green>зеленый флажок</font>**:
 
-<img src="../assets/assembling_drone3_2/6/1.png" width=250 class="zoom border center">
+<img src="../assets/assembling_drone3_2/6/1.png" width=500 class="zoom border center">
 
 Нажмите на кнопку в виде глаза, чтобы запустить симулятор:
 
@@ -332,26 +322,26 @@ Scratch-программирование: нажмите **Код -> Файл ->
 
 Внутри симулятора подключитесь к программе:
 
-<img src="../assets/assembling_drone3_2/6/3.png" width=250 class="zoom border center">
+<img src="../assets/assembling_drone3_2/6/3.png" width=300 class="zoom border center">
 
 Вернитесь на рабочее поле и запишите миссию на борт дрона:
 
-<img src="../assets/assembling_drone3_2/6/4.png" width=250 class="zoom border center">
+<img src="../assets/assembling_drone3_2/6/4.png" width=400 class="zoom border center">
 
 В симуляторе нажмите на кнопку начала симуляции:
 
-<img src="../assets/assembling_drone3_2/6/5.png" width=250 class="zoom border center">
+<img src="../assets/assembling_drone3_2/6/5.png" width=400 class="zoom border center">
 
 ### Меры предосторожности/проблемы
 
-<img src="../assets/assembling_drone3_2/7/1.png" width=500 class="zoom border center">
+<img src="../assets/assembling_drone3_2/7/1.png" width=600 class="zoom border center">
 
 ### Порядок замены аккумулятора
 
-<img src="../assets/assembling_drone3_2/7/2.png" width=250 class="zoom border center">
-<img src="../assets/assembling_drone3_2/7/3.png" width=255 class="zoom border center">
-<img src="../assets/assembling_drone3_2/7/4.png" width=274 class="zoom border center">
+<img src="../assets/assembling_drone3_2/7/2.png" width=370 class="zoom border center">
+<img src="../assets/assembling_drone3_2/7/3.png" width=375 class="zoom border center">
+<img src="../assets/assembling_drone3_2/7/4.png" width=394 class="zoom border center">
 
 ### Полёт
 
-<img src="../assets/assembling_drone3_2/7/5.png" width=500 class="zoom border center">
+<img src="../assets/assembling_drone3_2/7/5.png" width=650 class="zoom border center">
