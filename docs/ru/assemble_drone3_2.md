@@ -12,7 +12,7 @@
 * [Технический паспорт «Пиксель-Вжик - рой дронов»](https://www.tezona.ru/data/uploads/files/tehnicheskiy_pasport_pikselvzhik-roydronov.pdf)
 * [Инструкция по эксплуатации «Пиксель-Вжик - рой дронов»](https://www.tezona.ru/data/uploads/files/vzhik_manual_a5_print.pdf)
 
-### Состав конструктора:
+### Состав конструктора
 
 <img src="../assets/assembling_drone3_2/construct2.png" width=575 class="zoom border center">
 
