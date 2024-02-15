@@ -13,7 +13,7 @@
      </tr>
      <tr>
           <td><a href="assemble_drone3_1.md">Конструктор «Пиксель-Вжик»</a></td>
-          <td><a href="assemble_drone3_1.md"><img src="../assets/assembling_drone3_2/drone3_2.png" width=400></a></td></a></td>
+          <td><a href="assemble_drone3_1.md"><img src="../assets/assembling_drone3_1/drone3_1.png" width=400></a></td></a></td>
      </tr>
      <tr>
           <td><a href="assemble_drone3_2.md">Конструктор «Пиксель-Вжик - рой дронов»</a></td>

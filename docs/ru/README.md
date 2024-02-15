@@ -26,7 +26,7 @@
 
 ## Конструктор БПЛА «Пиксель-Вжик»
 
-<img src="../assets/assembling_drone3_2/drone3_2.png" width=400></img>
+<img src="../assets/assembling_drone3_1/drone3_1.png" width=400></img>
 
 * [Перейти к инструкции по сборке](assemble_drone3_1.md)
 * [Технический паспорт «Пиксель-Вжик»](https://www.tezona.ru/data/uploads/files/tehnicheskiy_pasport_piksel.pdf)
