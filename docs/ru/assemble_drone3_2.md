@@ -86,9 +86,12 @@
 
 Разместите дроны на карте меток. Возьмем, например, программу **8 дронов**:
 
+
+
 <img src="../assets/assembling_drone3_2/5/5.png" width=563 class="zoom border center">
 
-> **Внимание** Места для взлета должны соответствовать программе. Цифы на карте меток - номер дрона.
+> **Внимание** Места для взлета должны соответствовать программе. Цифы на карте меток - номер дрона. Карта меток имеет размер 3x3 метра.
+    <img src="../assets/assembling_drone3_2/5/5.1.png" width=200 class="zoom border center">
 
 <img src="../assets/assembling_drone3_2/5/6.png" width=563 class="zoom border center">
 
@@ -120,10 +123,20 @@
 
 ### Порядок замены аккумулятора
 
-<img src="../assets/assembling_drone3_2/7/2.png" width=370 class="zoom border center">
-<img src="../assets/assembling_drone3_2/7/3.png" width=375 class="zoom border center">
-<img src="../assets/assembling_drone3_2/7/4.png" width=394 class="zoom border center">
+<img src="../assets/assembling_drone3_2/7/2.png" width=372 class="zoom border center">
+<img src="../assets/assembling_drone3_2/7/3.png" width=350 class="zoom border center">
+<img src="../assets/assembling_drone3_2/7/4.png" width=370 class="zoom border center">
 
 ### Полёт
 
-<img src="../assets/assembling_drone3_2/7/5.png" width=650 class="zoom border center">
+<img src="../assets/assembling_drone3_2/7/5.png" width=600 class="zoom border center">
+
+### Ответственность
+
+Пожалуйста, внимательно прочитайте инструкцию перед использованием конструктора и правильного управления дронами.
+
+Прочитав эту инструкцию, Вы подтверждаете, что принимаете условия и требования использования конструктора.
+
+Пользователь несет ответственность за любые возможные последствия, вызванные неправильной эксплуатацией конструктора.
+
+Пользователь обязуется использовать этот конструктор только в законных целях. Производитель не несет ответственности за любые прямые или косвенные телесные повреждения или материальный ущерб, вызванные применением этого конструктора не в соответствии с данной инструкцией.
