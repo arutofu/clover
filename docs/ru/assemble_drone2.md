@@ -274,4 +274,4 @@
 
 ## Подключение и настройка
 
-* [Видеоинструкция подключения и настройки](https://www.tezona.ru/data/uploads/files/Orlenok-podkluchenie-i-nastroika.webm)
+* [Видеоинструкция подключения и настройки](https://www.tezona.ru/data/uploads/files/Orlenok-podkluchenie-i-nastroika.mp4)
