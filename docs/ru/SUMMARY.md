@@ -15,7 +15,7 @@
 * [Настройка](setup.md)
   * [Калибровка датчиков](calibration.md)
   * [Настройка пульта](radio.md)
-    * [Работа с FS-X6B](rc_flysky_a8s.md)
+  * [Работа с FS-X6B](rc_flysky_a8s.md)
   * [Полетные режимы](modes.md)
   * [Настройка питания](power.md)
   * [Настройка Failsafe](failsafe.md)
