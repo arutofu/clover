@@ -2,7 +2,7 @@
 
 ## Конструктор БПЛА мультироторного типа «Оса»
 
-<img src="../assets/assembling_drone1/drone1.png" width=500></img>
+<img src="../assets/Drones/drone1.png" width=500></img>
 
 * [Перейти к инструкции по сборке](assemble_drone1.md)
 * [Технический паспорт «Оса»](https://www.tezona.ru/data/uploads/files/osa_pasport.pdf)
@@ -15,7 +15,7 @@
 
 ## Конструктор БПЛА самолетного типа «Орленок»
 
-<img src="../assets/assembling_drone2/drone2.png" width=500></img>
+<img src="../assets/Drones/drone2.png" width=500></img>
 
 * [Перейти к инструкции по сборке](assemble_drone2.md)
 * [Технический паспорт «Орленок»](https://www.tezona.ru/data/uploads/files/tehpasport__orlenok.pdf)
@@ -26,7 +26,7 @@
 
 ## Конструктор БПЛА «Пиксель-Вжик»
 
-<img src="../assets/assembling_drone3_1/drone3_1.png" width=400></img>
+<img src="../assets/Drones/drone3_1.png" width=400></img>
 
 * [Перейти к инструкции по сборке](assemble_drone3_1.md)
 * [Технический паспорт «Пиксель-Вжик»](https://www.tezona.ru/data/uploads/files/tehnicheskiy_pasport_piksel.pdf)
@@ -35,7 +35,7 @@
 
 ## Конструктор БПЛА «Пиксель-Вжик - рой дронов»
 
-<img src="../assets/assembling_drone3_2/drone3_2.png" width=400></img>
+<img src="../assets/Drones/drone3_2.png" width=400></img>
 
 * [Перейти к инструкции по сборке](assemble_drone3_2.md)
 * [Технический паспорт «Пиксель-Вжик - рой дронов»](https://www.tezona.ru/data/uploads/files/tehnicheskiy_pasport_pikselvzhik-roydronov.pdf)
