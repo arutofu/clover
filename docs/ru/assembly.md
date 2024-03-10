@@ -6,7 +6,7 @@
      <tr>
           <td>Конструктор «Пиксель-Вжик»</td>
           <td><img src="../assets/Drones/drone3_1.png" width=400></td>
-            <td>
+            <td align="left">
             Программное обеспечение
             <li><a href="https://www.tezona.ru/download/avia-application/">Программное обеспечение</a></li>
             <li><a href="https://www.tezona.ru/data/uploads/files/driver_for_win_8_or_10.zip">Драйверы для Win 8/10</a></li>
@@ -20,7 +20,7 @@
      <tr>
           <td>Конструктор «Пиксель-Вжик - рой дронов»</td>
           <td><img src="../assets/Drones/drone3_2.png" width=400></td>
-            <td>
+            <td align="left">
             Программное обеспечение
             <li><a href="https://www.tezona.ru/download/avia-application/">Программное обеспечение</a></li>
             <li><a href="https://www.tezona.ru/data/uploads/files/driver_for_win_8_or_10.zip">Драйверы для Win 8/10</a></li>
@@ -34,7 +34,7 @@
      <tr>
           <td>Конструктор мультироторного типа «Оса»</td>
           <td><img src="../assets/Drones/drone1.png" width=400></td>
-            <td>
+            <td align="left">
             Документация
             <li><a href="https://www.tezona.ru/data/uploads/files/osa_pasport.pdf">Технический паспорт</a></li>
             <li><a href="https://www.tezona.ru/data/uploads/files/stl_osa.zip">STL файлы</a></li>
@@ -46,7 +46,7 @@
      <tr>
           <td>Конструктор самолетного типа «Орленок»</td>
           <td><img src="../assets/Drones/drone2.png" width=400></td>
-            <td>
+            <td align="left">
             Документация
             <li><a href="https://www.tezona.ru/data/uploads/files/tehpasport__orlenok.pdf">Технический паспорт</a></li>
             <li><a href="https://www.tezona.ru/data/uploads/files/stl_orlenok.zip">STL файлы</a></li>
