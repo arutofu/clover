@@ -1,43 +1,59 @@
-# Сборка Клевера
+# Инструкции по сборке и настройке
 
-В этом разделе находится статьи, описывающие сборку каждой из версии Клевера.
+В этом разделе находятся статьи с инструкциями по сборке и настройке БПЛА.
 
 <table class=versions>
-     <tr><th>Версия</th><th>Изображение</th></tr>
      <tr>
-          <td>
-               <a href="assemble_4_2.md">Клевер&nbsp;4.2</a>
-               <div class=subversion>
-                    (<a href="assemble_4_2_ws.md">WorldSkills</a>,
-                    <a href="assemble_4_2_pro.md">Pro</a>)
-               </div>
-          </td>
-          <td><a href="assemble_4_2.md"><img src="../assets/versions/clover_4_2.jpg" width=200></a></td>
+          <td>Конструктор «Пиксель-Вжик»</td>
+          <td><img src="../assets/Drones/drone3_1.png" width=400></td>
+            <td align="left">
+            Программное обеспечение
+            <li><a href="https://www.tezona.ru/download/avia-application/">Программное обеспечение</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/driver_for_win_8_or_10.zip">Драйверы для Win 8/10</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/driver_for_win_7.zip">Драйверы для Win 7</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/mac_osx_vcp_driver.zip">Драйверы для Mac</a></li>
+            Документация
+            <li><a href="https://www.tezona.ru/data/uploads/files/tehnicheskiy_pasport_piksel.pdf">Технический паспорт «Пиксель-Вжик»</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/piksel-vzhik_instruktsiya.pdf">Инструкция по эксплуатации «Пиксель-Вжик»</a></li>
+            </td>
      </tr>
      <tr>
-          <td><a href="assemble_4_1.md">Клевер&nbsp;4.1</a></td>
-          <td><a href="assemble_4_1.md"><img src="../assets/versions/clover_4_1.jpg" width=200></a></td>
+          <td>Конструктор «Пиксель-Вжик - рой дронов»</td>
+          <td><img src="../assets/Drones/drone3_2.png" width=400></td>
+            <td align="left">
+            Программное обеспечение
+            <li><a href="https://www.tezona.ru/download/avia-application/">Программное обеспечение</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/driver_for_win_8_or_10.zip">Драйверы для Win 8/10</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/driver_for_win_7.zip">Драйверы для Win 7</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/mac_osx_vcp_driver.zip">Драйверы для Mac</a></li>
+            Документация
+            <li><a href="https://www.tezona.ru/data/uploads/files/tehnicheskiy_pasport_pikselvzhik-roydronov.pdf">Технический паспорт «Пиксель-Вжик - рой дронов»</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/vzhik_manual_a5_print.pdf">Инструкция по эксплуатации «Пиксель-Вжик - рой дронов»</a></li>
+            </td>
      </tr>
      <tr>
-          <td><a href="assemble_4.md">Клевер&nbsp;4</a></td>
-          <td><a href="assemble_4.md"><img src="../assets/versions/clover_4.jpg" width=200></a></td>
+          <td>Конструктор мультироторного типа «Оса»</td>
+          <td><img src="../assets/Drones/drone1.png" width=400></td>
+            <td align="left">
+            Документация
+            <li><a href="https://www.tezona.ru/data/uploads/files/osa_pasport.pdf">Технический паспорт</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/stl_osa.zip">STL файлы</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/osa-manual.pdf">Инструкция по сборке PDF</a></li>
+            <li><a href="https://mail.tezona.ru/оса/инструкция.mp4">Видеоинструкция сборки</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/osa-kalibrovka.mp4">Видеоинструкция калибровки</a></li>
+            </td>
      </tr>
      <tr>
-          <td><a href="assemble_3.md">Клевер&nbsp;3</a></td>
-          <td><a href="assemble_3.md"><img src="../assets/versions/clover_3.jpg" width=200></a></td>
-     </tr>
-     <tr>
-          <td><a href="assemble_2.md">Клевер&nbsp;2</a></td>
-          <td><a href="assemble_2.md"><img src="../assets/versions/clover_2.jpg" width=200></a></td>
+          <td>Конструктор самолетного типа «Орленок»</td>
+          <td><img src="../assets/Drones/drone2.png" width=400></td>
+            <td align="left">
+            Документация
+            <li><a href="https://www.tezona.ru/data/uploads/files/tehpasport__orlenok.pdf">Технический паспорт</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/stl_orlenok.zip">STL файлы</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/orlenok_instruktsiya_po_sborke_korpusa.pdf">Инструкция по сборке PDF</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/Orlenok-instrukcia-1.webm">Видеоинструкция сборки часть 1</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/Orlenok-podkluchenie-i-nastroika.mp4">Видеоинструкция сборки часть 2</a></li>
+            <li><a href="https://www.tezona.ru/data/uploads/files/Orlenok-nastroika-pc.mp4">Видеоинструкция прошивки полетного контроллера</a></li>
+            </td>
      </tr>
 </table>
-
-Ссылки на CAD-модели деталей Клевера доступны в статье "[CAD-модели](models.md)".
-
-## Определение версии
-
-Для определения версии Клевера 4 посмотрите на серийный номер.
-
-<img src="../assets/serial_n.png" title="Серийный номер Клевера" width=300>
-
-В данном случае число *420* обозначает версию Клевера **4.2**.

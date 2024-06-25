@@ -68,11 +68,11 @@ my_travis_retry() {
   return $result
 }
 
-# TODO: 'kinetic-rosdep-clover.yaml' should add only if we use our repo?
+# TODO: 'kinetic-rosdep-drone.yaml' should add only if we use our repo?
 echo_stamp "Init rosdep"
 my_travis_retry rosdep init
 # FIXME: Re-add this after missing packages are built
-echo "yaml file:///etc/ros/rosdep/${ROS_DISTRO}-rosdep-clover.yaml" >> /etc/ros/rosdep/sources.list.d/20-default.list
+echo "yaml file:///etc/ros/rosdep/${ROS_DISTRO}-rosdep-drone.yaml" >> /etc/ros/rosdep/sources.list.d/20-default.list
 my_travis_retry rosdep update
 
 echo_stamp "Populate rosdep for ROS user"
@@ -80,8 +80,15 @@ my_travis_retry sudo -u pi rosdep update
 
 export ROS_IP='127.0.0.1' # needed for running tests
 
-# echo_stamp "Reconfiguring Clover repository for simplier unshallowing"
-cd /home/pi/catkin_ws/src/clover
+# echo_stamp "Reconfiguring Drone repository for simplier unshallowing"
+
+echo_stamp "Check dirs 1"
+ls /home/pi/catkin_ws
+ls /home/pi/catkin_ws/src
+ls /home/pi/catkin_ws/src/drone
+echo_stamp "End of check dirs 1"
+
+cd /home/pi/catkin_ws/src/drone
 git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 
 # This is sort of a hack to force "custom" packages to be installed - the ones built by COEX, linked against OpenCV 4.2
@@ -100,34 +107,76 @@ ros-${ROS_DISTRO}-cv-camera \
 ros-${ROS_DISTRO}-image-publisher \
 ros-${ROS_DISTRO}-web-video-server
 
-echo_stamp "Installing libboost-dev" # https://travis-ci.org/github/CopterExpress/clover/jobs/766318908#L6536
+echo_stamp "Installing libboost-dev"
 my_travis_retry apt-get install -y --no-install-recommends libboost-dev libboost-all-dev
 
-echo_stamp "Build and install Clover"
+echo_stamp "Build and install Drone"
 cd /home/pi/catkin_ws
+
+echo_stamp "Check dirs 2"
+ls /home/pi/catkin_ws
+ls /home/pi/catkin_ws/src
+ls /home/pi/catkin_ws/src/drone
+echo_stamp "End of check dirs 2"
+
 # Don't try to install gazebo_ros
 my_travis_retry rosdep install -y --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} --os=debian:buster \
   --skip-keys=gazebo_ros --skip-keys=gazebo_plugins
 my_travis_retry pip3 install wheel
-my_travis_retry pip3 install -r /home/pi/catkin_ws/src/clover/clover/requirements.txt
+my_travis_retry pip3 install -r /home/pi/catkin_ws/src/drone/drone/requirements.txt
 source /opt/ros/${ROS_DISTRO}/setup.bash
 # Don't build simulation plugins for actual drone
 catkin_make -j2 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 source devel/setup.bash
 
-echo_stamp "Install clever package (for backwards compatibility)"
-cd /home/pi/catkin_ws/src/clover/builder/assets/clever
+echo_stamp "Install dronee package (for backwards compatibility)"
+chmod +x /home/pi/catkin_ws/src/drone/builder/assets/dronee/setup.py
+cd /home/pi/catkin_ws/src/drone/builder/assets/dronee
 ./setup.py install
 rm -rf build  # remove build artifacts
 
-echo_stamp "Build Clover documentation"
-cd /home/pi/catkin_ws/src/clover
+echo_stamp "Build Drone documentation"
+cd /home/pi/catkin_ws/src/drone
 builder/assets/install_gitbook.sh
 gitbook install
 gitbook build
+
+ls
+
+echo "--------------------------------------------------------"
+
+buttons_file="_book/gitbook/gitbook-plugin-sharing/buttons.js"
+
+if [ -f "$buttons_file" ]; then
+  echo "Clearing contents of $buttons_file"
+  > "$buttons_file"
+else
+  echo "File $buttons_file not found."
+fi
+
+echo "--------------------------------------------------------"
+
+start_directory="_book/ru/"
+search_string="<nav role=\"navigation\">"
+inserted_line='<p><a href="https://www.tezona.ru/"><img src="../assets/company_logo/Тезона_синий.png" width="270" align="center"></a></p>'
+
+found_files=$(grep -rl --include='*.html' "$search_string" "$start_directory")
+
+for found_file in $found_files; do
+  echo "File found: $found_file"
+
+  # Вставка новой строки перед найденной строкой
+  sed -i "/$search_string/i $inserted_line" "$found_file"
+
+  # Перенос строки, содержащей искомую строку, на следующую строку
+  sed -i "/$search_string/s/$/\\n/" "$found_file"
+done
+
+echo "--------------------------------------------------------"
+
 # replace assets copy to assets symlink to save space
 rm -rf _book/assets && ln -s ../docs/assets _book/assets
-touch node_modules/CATKIN_IGNORE docs/CATKIN_IGNORE _book/CATKIN_IGNORE clover/www/CATKIN_IGNORE apps/CATKIN_IGNORE # ignore documentation files by catkin
+touch node_modules/CATKIN_IGNORE docs/CATKIN_IGNORE _book/CATKIN_IGNORE drone/www/CATKIN_IGNORE # ignore documentation files by catkin
 
 echo_stamp "Installing additional ROS packages"
 my_travis_retry apt-get install -y --no-install-recommends \
@@ -156,22 +205,35 @@ catkin_make run_tests #&& catkin_test_results
 echo_stamp "Change permissions for catkin_ws"
 chown -Rf pi:pi /home/pi/catkin_ws
 
+echo_stamp "Check dirs 3"
+ls /home/pi/catkin_ws/src
+ls /home/pi/catkin_ws/src/drone
+ls /home/pi/catkin_ws/src/drone/drone
+ls /home/pi/catkin_ws/src/drone/drone/src
+
+echo_stamp "End of check dirs 3"
+
+echo_stamp "Read setup.sh"
+cat devel/setup.sh
+
 echo_stamp "Update www"
-sudo -u pi sh -c ". devel/setup.sh && rosrun clover www"
+ls /home/pi/catkin_ws/src/drone/drone/src
+chmod +x /home/pi/catkin_ws/src/drone/drone/src/www
+sudo -u pi sh -c ". devel/setup.sh && rosrun drone www"
 
 echo_stamp "Make \$HOME/examples symlink"
-ln -s "$(catkin_find clover examples --first-only)" /home/pi
+ln -s "$(catkin_find drone examples --first-only)" /home/pi
 chown -Rf pi:pi /home/pi/examples
 
 echo_stamp "Make systemd services symlinks"
-ln -s /home/pi/catkin_ws/src/clover/builder/assets/clover.service /lib/systemd/system/
-ln -s /home/pi/catkin_ws/src/clover/builder/assets/roscore.service /lib/systemd/system/
+ln -s /home/pi/catkin_ws/src/drone/builder/assets/drone.service /lib/systemd/system/
+ln -s /home/pi/catkin_ws/src/drone/builder/assets/roscore.service /lib/systemd/system/
 # validate
-[ -f /lib/systemd/system/clover.service ]
+[ -f /lib/systemd/system/drone.service ]
 [ -f /lib/systemd/system/roscore.service ]
 
 echo_stamp "Make udev rules symlink"
-ln -s "$(catkin_find clover udev --first-only)"/* /lib/udev/rules.d/
+ln -s "$(catkin_find drone udev --first-only)"/* /lib/udev/rules.d/
 
 echo_stamp "Setup ROS environment"
 cat << EOF >> /home/pi/.bashrc

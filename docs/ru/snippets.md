@@ -4,7 +4,7 @@
 
 <!-- markdownlint-disable MD031 -->
 
-> **Note** При использовании кириллических символов в кодировке UTF-8 необходимо добавить в начало программы указание кодировки:
+> **Заметка** При использовании кириллических символов в кодировке UTF-8 необходимо добавить в начало программы указание кодировки:
 > ```python
 > # -*- coding: utf-8 -*-
 > ```
@@ -104,7 +104,7 @@ def get_distance_global(lat1, lon1, lat2, lon2):
 
 ### # {#disarm}
 
-Дизарм коптера (выключение винтов, **коптер упадет**):
+Дизарм коптера (выключение пропеллеров, **коптер упадет**):
 
 ```python
 # Объявление прокси:
@@ -204,80 +204,11 @@ while not rospy.is_shutdown():
     r.sleep()
 ```
 
-### # {#mavros-sub}
-
-Пример подписки на топики из MAVROS:
-
-```python
-from geometry_msgs.msg import PoseStamped, TwistStamped
-from sensor_msgs.msg import BatteryState
-from mavros_msgs.msg import RCIn
-
-def pose_update(pose):
-    # Обработка новых данных о позиции коптера
-    pass
-
-rospy.Subscriber('mavros/local_position/pose', PoseStamped, pose_update)
-rospy.Subscriber('mavros/local_position/velocity', TwistStamped, velocity_update)
-rospy.Subscriber('mavros/battery', BatteryState, battery_update)
-rospy.Subscriber('mavros/rc/in', RCIn, rc_callback)
-
-rospy.spin()
-```
-
-Информацию по топикам MAVROS см. по [ссылке](mavros.md).
-
 <!-- markdownlint-disable MD044 -->
-
-### # {#mavlink}
-
-<!-- markdownlint-enable MD044 -->
-
-Пример отправки произвольного [MAVLink-сообщения](mavlink.md) коптеру:
-
-```python
-from mavros_msgs.msg import Mavlink
-from mavros import mavlink
-from pymavlink import mavutil
-
-mavlink_pub = rospy.Publisher('mavlink/to', Mavlink, queue_size=1)
-
-# Отправка сообщения HEARTBEAT:
-
-msg = mavutil.mavlink.MAVLink_heartbeat_message(mavutil.mavlink.MAV_TYPE_GCS, 0, 0, 0, 0, 0)
-msg.pack(mavutil.mavlink.MAVLink('', 2, 1))
-ros_msg = mavlink.convert_to_rosmsg(msg)
-
-mavlink_pub.publish(ros_msg)
-```
-
-<!-- markdownlint-disable MD044 -->
-
-### # {#mavlink-receive}
-
-<!-- markdownlint-enable MD044 -->
-
-Подписка на все MAVLink-сообщения от полетного контроллера и их декодирование:
-
-```python
-from mavros_msgs.msg import Mavlink
-from mavros import mavlink
-from pymavlink import mavutil
-
-link = mavutil.mavlink.MAVLink('', 255, 1)
-
-def mavlink_cb(msg):
-    mav_msg = link.decode(mavlink.convert_to_bytes(msg))
-    print('msgid =', msg.msgid, mav_msg) # print message id and parsed message
-
-mavlink_sub = rospy.Subscriber('mavlink/from', Mavlink, mavlink_cb)
-
-rospy.spin()
-```
 
 ### # {#rc-sub}
 
-Реакция на переключение режима на пульте радиоуправления (может быть использовано для запуска автономного полета, см. [пример](https://gist.github.com/okalachev/b709f04522d2f9af97e835baedeb806b)):
+Реакция на переключение режима на пульте радиоуправления (может быть использовано для запуска автономного полета:
 
 ```python
 from mavros_msgs.msg import RCIn
@@ -377,7 +308,7 @@ def calibrate_gyro():
 calibrate_gyro()
 ```
 
-> **Note** В процессе калибровки гироскопов дрон нельзя двигать.
+> **Заметка** В процессе калибровки гироскопов дрон нельзя двигать.
 
 <!-- markdownlint-disable MD044 -->
 
@@ -403,37 +334,13 @@ rospy.sleep(5)
 aruco_client.update_configuration({'enabled': True})
 ```
 
-### # {#optical-flow-enabled}
-
-Динамически включать и отключать [Optical Flow](optical_flow.md):
-
-```python
-import rospy
-import dynamic_reconfigure.client
-
-rospy.init_node('flight')
-flow_client = dynamic_reconfigure.client.Client('optical_flow')
-
-# Выключить Optical Flow
-flow_client.update_configuration({'enabled': False})
-
-rospy.sleep(5)
-
-# Включить Optical Flow
-flow_client.update_configuration({'enabled': True})
-```
-
 <!-- markdownlint-disable MD044 -->
 
 ### # {#aruco-map-dynamic}
 
-> **Info** Для [образа](image.md) версии > 0.23.
-
 Динамически изменить используемый файл с [картой ArUco-маркеров](aruco_map.md):
 
 <!-- markdownlint-enable MD044 -->
-
-$\color{red}{\textsf{🔴директория}}$
 
 ```python
 import rospy
@@ -442,10 +349,8 @@ import dynamic_reconfigure.client
 rospy.init_node('flight')
 map_client = dynamic_reconfigure.client.Client('aruco_map')
 
-map_client.update_configuration({'map': '/home/pi/catkin_ws/src/clover/aruco_pose/map/office.txt'})
+map_client.update_configuration({'map': '/home/pi/catkin_ws/src/drone/aruco_pose/map/office.txt'})
 ```
-
-$\color{red}{\textsf{🔴директория}}$
 
 ### # {#wait-global-position}
 
@@ -492,12 +397,4 @@ param_set(param_id='COM_FLTMODE1', value=ParamValue(integer=8))
 
 # Изменить параметр типа FLOAT:
 param_set(param_id='MPC_Z_P', value=ParamValue(real=1.5))
-```
-
-### # {#is-simulation}
-
-Проверить, что код запущен в [симуляции Gazebo](simulation.md):
-
-```python
-is_simulation = rospy.get_param('/use_sim_time', False)
 ```

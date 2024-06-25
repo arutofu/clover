@@ -4,7 +4,7 @@ on:
   push:
     branches: [ '*' ]
   pull_request:
-    branches: [ master ]
+    branches: [ final-master ]
   release:
     types: [ created ]
 
@@ -16,14 +16,15 @@ jobs:
       - name: Build image
         run: |
           docker run --privileged --rm -v /dev:/dev -v $(pwd):/builder/repo -e TRAVIS_TAG="${{ github.event.release.tag_name }}" sfalexrog/img-tool:qemu-update
-      - name: Compress image
+      - name: Rename and Compress image
         run: |
-          cd images && sudo chmod -R 777 . && zip -9 $(echo clover_*).zip clover_* && ls -l . && unzip -l clover_*.zip
+          cd images && sudo chmod -R 777 . && find . -type f -name '*.img' -exec sh -c 'new_name="drone_$(basename "$1" | sed "s/.*_//;s/\.img$//")"; mv "$1" "$(dirname "$1")/$new_name.img"' _ {} \; && find . -type f -name '*.img' -exec sh -c 'zip -9 "$(dirname "$1")/$(basename "$1" .img).zip" "$1"' _ {} \;
+          ls
       - name: Upload image
         uses: softprops/action-gh-release@v1
         if: ${{ github.event_name == 'release' }}
         with:
-          files: images/clover_*.zip
+          files: images/drone*.zip
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

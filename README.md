@@ -1,6 +1,22 @@
-[ROS](https://www.ros.org)-based framework, providing user-friendly tools to control [PX4](https://px4.io)-powered drones. Clover is available as a ROS package, but is shipped mainly as a preconfigured image for Raspberry Pi. Once you've installed Raspberry Pi on your drone and flashed the image to its microSD card, taking the drone up in the air is a matter of minutes.
+## About
 
-## Preconfigured image for Raspberry Pi.
+[ROS](https://www.ros.org)-based framework. Available as a ROS package, but is shipped mainly as a preconfigured image for Raspberry Pi. 
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/CopterExpress/clover/build-image.yaml?branch=master)
-![GitHub all releases](https://img.shields.io/github/downloads/CopterExpress/clover/total)
+For more information, please contact the [source project](https://github.com/CopterExpress/clover).
+
+## Raspberry Pi image
+
+Preconfigured image for Raspberry Pi is available [in the Releases section](https://github.com/arutofu/drone/releases).
+
+1. Flash the image to the microSD card.
+2. Attach the Raspberry Pi to your drone.
+3. Connect to the Raspberry Pi using Wi-Fi from any device. See the SSID and PSK in [network.md](https://github.com/arutofu/drone/blob/main-copy/docs/ru/wifi.md).
+4. Open the web interface at [192.168.11.1](http://192.168.11.1/) in your browser.
+
+## Documentation
+
+[Image documentation](https://github.com/arutofu/drone/tree/main-copy/docs) avaliable at https://arutofu.github.io/drone/ru/ (russian language only).
+
+## License
+
+Code is available under the [MIT License](https://opensource.org/licenses/MIT), note, that the [documentation](https://github.com/arutofu/drone/tree/main-copy/docs) is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en).

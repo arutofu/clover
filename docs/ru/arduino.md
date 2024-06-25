@@ -1,10 +1,10 @@
-# Управление коптером с Arduino
+# Управление дроном с Arduino
 
 Для взаимодействия с ROS-топиками и сервисами на Raspberry Pi можно использовать библиотеку [rosserial_arduino](http://wiki.ros.org/rosserial_arduino). Эта библиотека предустановлена на [образе для Raspberry Pi](image.md).
 
 Основной туториал по rosserial: http://wiki.ros.org/rosserial_arduino/Tutorials
 
-Arduino необходимо установить на Клевер и подключить по USB-порту.
+Arduino необходимо установить на дрон и подключить по USB-порту.
 
 ## Настройка Arduino IDE
 
@@ -18,7 +18,7 @@ rosrun rosserial_arduino make_libraries.py .
 
 ## Настройка Raspberry Pi
 
-Для запуска `rosserial` создайте файл `arduino.launch` в каталоге `~/catkin_ws/src/clover/clover/launch/` со следующим содержимым:
+Для запуска `rosserial` создайте файл `arduino.launch` в каталоге `~/catkin_ws/src/drone/drone/launch/` со следующим содержимым:
 
 ```xml
 <launch>
@@ -31,19 +31,19 @@ rosrun rosserial_arduino make_libraries.py .
 Чтобы единоразово запустить программу на Arduino, можно будет воспользоваться командой:
 
 ```bash
-roslaunch clover arduino.launch
+roslaunch drone arduino.launch
 ```
 
-Чтобы запускать связку с Arduino при старте системы автоматически, необходимо добавить запуск созданного launch-файла в основной launch-файл Клевера (`~/catkin_ws/src/clover/clover/launch/clover.launch`). Добавьте в конец этого файла строку:
+Чтобы запускать связку с Arduino при старте системы автоматически, необходимо добавить запуск созданного launch-файла в основной launch-файл (`~/catkin_ws/src/drone/drone/launch/drone.launch`). Добавьте в конец этого файла строку:
 
 ```xml
-<include file="$(find clover)/launch/arduino.launch"/>
+<include file="$(find drone)/launch/arduino.launch"/>
 ```
 
-При изменении launch-файла необходимо перезапустить пакет `clover`:
+При изменении launch-файла необходимо перезапустить пакет `drone`:
 
 ```bash
-sudo systemctl restart clover
+sudo systemctl restart drone
 ```
 
 ## Задержки
@@ -69,21 +69,21 @@ for(int i=0; i<8; i++) {
 }
 ```
 
-## Работа с Клевером
+## Работа с дроном
 
-Набор сервисов и топиков аналогичен обычному набору в [simple_offboard](simple_offboard.md) и [mavros](mavros.md).
+Набор сервисов и топиков аналогичен обычному набору в [simple_offboard](simple_offboard.md).
 
-Пример программы, контролирующей коптер по позиции, с использованием сервисов `navigate` и `set_mode`:
+Пример программы, контролирующей дрон по позиции, с использованием сервисов `navigate` и `set_mode`:
 
 ```cpp
 // Подключение библиотек для работы с rosserial
 #include <ros.h>
 
-// Подключение заголовочных файлов сообщений пакета clover и MAVROS
-#include <clover/Navigate.h>
+// Подключение заголовочных файлов сообщений пакета drone и MAVROS
+#include <drone/Navigate.h>
 #include <mavros_msgs/SetMode.h>
 
-using namespace clover;
+using namespace drone;
 using namespace mavros_msgs;
 
 ros::NodeHandle nh;
@@ -184,7 +184,7 @@ void loop()
 
 // ...
 
-#include <clover/GetTelemetry.h>
+#include <drone/GetTelemetry.h>
 
 // ...
 
@@ -205,9 +205,9 @@ GetTelemetry::Response gt_res;
 gt_req.frame_id = "aruco_map"; // фрейм для значений x, y, z
 getTelemetry.call(gt_req, gt_res);
 
-// gt_res.x - положение коптера по x
-// gt_res.y - положение коптера по y
-// gt_res.z - положение коптера по z
+// gt_res.x - положение дрона по x
+// gt_res.y - положение дрона по y
+// gt_res.z - положение дрона по z
 ```
 
 ## Проблемы
