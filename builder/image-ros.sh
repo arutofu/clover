@@ -119,6 +119,10 @@ ls /home/pi/catkin_ws/src
 ls /home/pi/catkin_ws/src/drone
 echo_stamp "End of check dirs 2"
 
+# Установить необходимые пакеты
+sudo apt-get update
+sudo apt-get install -y libgeographic-dev libxml2-dev libxslt1-dev
+
 # Don't try to install gazebo_ros
 my_travis_retry rosdep install -y --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} --os=debian:buster \
   --skip-keys=gazebo_ros --skip-keys=gazebo_plugins
@@ -128,6 +132,7 @@ source /opt/ros/${ROS_DISTRO}/setup.bash
 # Don't build simulation plugins for actual drone
 catkin_make -j2 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 source devel/setup.bash
+
 
 echo_stamp "Install dronee package (for backwards compatibility)"
 chmod +x /home/pi/catkin_ws/src/drone/builder/assets/dronee/setup.py
