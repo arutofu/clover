@@ -119,16 +119,16 @@ ls /home/pi/catkin_ws/src
 ls /home/pi/catkin_ws/src/drone
 echo_stamp "End of check dirs 2"
 
-# Создание файла правил для rosdep
-echo "libgeographiclib-dev:
-  debian: [libgeographic-dev]" | sudo tee /etc/ros/rosdep/sources.list.d/30-geographiclib-fix.list
-
-# Обновление rosdep
-sudo rosdep update
-
 # Установить необходимые пакеты
 sudo apt-get update -y
 sudo apt-get install -y libgeographic-dev libxml2-dev libxslt1-dev
+
+# Добавить замену libgeographiclib-dev на libgeographic-dev
+echo -e "libgeographiclib-dev:\n  debian: [libgeographic-dev]" | sudo tee /etc/ros/rosdep/sources.list.d/30-geographiclib-fix.list
+
+# Обновить rosdep
+sudo rosdep fix-permissions
+rosdep update
 
 # Don't try to install gazebo_ros
 my_travis_retry rosdep install -y --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} --os=debian:buster \
