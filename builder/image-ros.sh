@@ -121,11 +121,11 @@ echo_stamp "End of check dirs 2"
 
 # Установить необходимые пакеты
 sudo apt-get update -y
-sudo apt-get install -y libgeographic-dev libxml2-dev libxslt1-dev libgeographiclib-dev
+sudo apt-get install -y libxml2-dev libxslt1-dev libgeographic-dev 
 
 # Don't try to install gazebo_ros
 my_travis_retry rosdep install -y --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} --os=debian:buster \
-  --skip-keys=gazebo_ros --skip-keys=gazebo_plugins
+  --skip-keys=gazebo_ros --skip-keys=gazebo_plugins --skip-keys=libgeographiclib-dev
 my_travis_retry pip3 install wheel
 my_travis_retry pip3 install -r /home/pi/catkin_ws/src/drone/drone/requirements.txt
 source /opt/ros/${ROS_DISTRO}/setup.bash
