@@ -124,7 +124,7 @@ sudo apt-get update -y
 sudo apt-get install -y libgeographic-dev libxml2-dev libxslt1-dev
 
 # Добавить замену libgeographiclib-dev на libgeographic-dev
-echo -e "libgeographiclib-dev:\n  debian: [libgeographic-dev]" | sudo tee /etc/ros/rosdep/sources.list.d/30-geographiclib-fix.list
+echo -e "libgeographiclib-dev:\n  debian: [libgeographic-dev]" | sudo tee /etc/ros/rosdep/sources.list.d/30-geographiclib-fix.list > /dev/null
 
 # Обновить rosdep
 sudo rosdep fix-permissions
@@ -139,8 +139,6 @@ source /opt/ros/${ROS_DISTRO}/setup.bash
 # Don't build simulation plugins for actual drone
 catkin_make -j2 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 source devel/setup.bash
-
-
 
 echo_stamp "Install dronee package (for backwards compatibility)"
 chmod +x /home/pi/catkin_ws/src/drone/builder/assets/dronee/setup.py
