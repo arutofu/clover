@@ -46,7 +46,7 @@ fi
 # ros stuff
 
 roscore -h
-rosversion clover
+rosversion drone
 rosversion aruco_pose
 rosversion mavros
 rosversion mavros_extras

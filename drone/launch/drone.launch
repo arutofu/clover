@@ -40,7 +40,7 @@
     </include>
 
     <!-- optical flow -->
-    <node pkg="nodelet" type="nodelet" name="optical_flow" args="load clover/optical_flow main_camera_nodelet_manager" if="$(arg optical_flow)" clear_params="true" output="screen" respawn="true">
+    <node pkg="nodelet" type="nodelet" name="optical_flow" args="load drone/optical_flow main_camera_nodelet_manager" if="$(arg optical_flow)" clear_params="true" output="screen" respawn="true">
         <remap from="image_raw" to="main_camera/image_raw"/>
         <remap from="camera_info" to="main_camera/camera_info"/>
         <param name="calc_flow_gyro" value="true"/>
@@ -49,7 +49,7 @@
     </node>
 
     <!-- simplified offboard control -->
-    <node name="simple_offboard" pkg="clover" type="simple_offboard" output="screen" clear_params="true">
+    <node name="simple_offboard" pkg="drone" type="simple_offboard" output="screen" clear_params="true">
         <param name="reference_frames/main_camera_optical" value="map"/>
         <param name="terrain_frame_mode" value="range"/>
     </node>
@@ -84,7 +84,7 @@
     <node name="clover_blocks" pkg="clover_blocks" type="clover_blocks" output="screen" if="$(arg blocks)"/>
 
     <!-- rc backend -->
-    <node name="rc" pkg="clover" type="rc" output="screen" if="$(arg rc)" clear_params="true">
+    <node name="rc" pkg="drone" type="rc" output="screen" if="$(arg rc)" clear_params="true">
         <!-- Send fake GCS heartbeats. Set to "true" for upstream PX4 -->
         <param name="use_fake_gcs" value="false"/>
     </node>

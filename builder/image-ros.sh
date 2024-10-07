@@ -127,7 +127,7 @@ gitbook install
 gitbook build
 # replace assets copy to assets symlink to save space
 rm -rf _book/assets && ln -s ../docs/assets _book/assets
-touch node_modules/CATKIN_IGNORE docs/CATKIN_IGNORE _book/CATKIN_IGNORE clover/www/CATKIN_IGNORE apps/CATKIN_IGNORE # ignore documentation files by catkin
+touch node_modules/CATKIN_IGNORE docs/CATKIN_IGNORE _book/CATKIN_IGNORE drone/www/CATKIN_IGNORE apps/CATKIN_IGNORE # ignore documentation files by catkin
 
 echo_stamp "Installing additional ROS packages"
 my_travis_retry apt-get install -y --no-install-recommends \
@@ -157,10 +157,10 @@ echo_stamp "Change permissions for catkin_ws"
 chown -Rf pi:pi /home/pi/catkin_ws
 
 echo_stamp "Update www"
-sudo -u pi sh -c ". devel/setup.sh && rosrun clover www"
+sudo -u pi sh -c ". devel/setup.sh && rosrun drone www"
 
 echo_stamp "Make \$HOME/examples symlink"
-ln -s "$(catkin_find clover examples --first-only)" /home/pi
+ln -s "$(catkin_find drone examples --first-only)" /home/pi
 chown -Rf pi:pi /home/pi/examples
 
 echo_stamp "Make systemd services symlinks"
@@ -171,7 +171,7 @@ ln -s /home/pi/catkin_ws/src/drone/builder/assets/roscore.service /lib/systemd/s
 [ -f /lib/systemd/system/roscore.service ]
 
 echo_stamp "Make udev rules symlink"
-ln -s "$(catkin_find clover udev --first-only)"/* /lib/udev/rules.d/
+ln -s "$(catkin_find drone udev --first-only)"/* /lib/udev/rules.d/
 
 echo_stamp "Setup ROS environment"
 cat << EOF >> /home/pi/.bashrc

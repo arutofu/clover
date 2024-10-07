@@ -784,7 +784,7 @@ def check_clover_service():
         failure('systemctl returned %s: %s', e.returncode, e.output)
         return
     if 'inactive' in output:
-        failure('service is not running, try sudo systemctl restart clover')
+        failure('service is not running, try sudo systemctl restart drone')
         return
     elif 'failed' in output:
         failure('service failed to run, check your launch-files')
