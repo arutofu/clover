@@ -37,7 +37,7 @@ roslaunch clover arduino.launch
 Чтобы запускать связку с Arduino при старте системы автоматически, необходимо добавить запуск созданного launch-файла в основной launch-файл Клевера (`~/catkin_ws/src/clover/clover/launch/clover.launch`). Добавьте в конец этого файла строку:
 
 ```xml
-<include file="$(find clover)/launch/arduino.launch"/>
+<include file="$(find drone)/launch/arduino.launch"/>
 ```
 
 При изменении launch-файла необходимо перезапустить пакет `clover`:

@@ -256,10 +256,10 @@ gst-rtsp-launch "( v4l2src device=/dev/video0 ! video/x-raw,format=UYVY,width=19
 
 ```xml
     <!-- front camera -->
-    <include file="$(find clover)/launch/front_camera.launch" if="$(arg front_camera)"/>
+    <include file="$(find drone)/launch/front_camera.launch" if="$(arg front_camera)"/>
 
     <!-- thermal camera -->
-    <include file="$(find clover)/launch/thermal_camera.launch" if="$(arg thermal_camera)"/>
+    <include file="$(find drone)/launch/thermal_camera.launch" if="$(arg thermal_camera)"/>
 ```
 
 Теперь осталось только перезагрузить сервис `clover` командой:

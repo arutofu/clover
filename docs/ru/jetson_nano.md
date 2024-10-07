@@ -127,7 +127,7 @@ source devel/setup.bash
 roslaunch clover clover.launch
 ```
 
-> **Hint** Вы можете настроить `systemd` так, чтобы ноды Клевера запускались автоматически. Примером такой настройки может служить образ Клевера для Raspberry Pi: там созданы сервисы [`roscore`](https://github.com/CopterExpress/clover/blob/master/builder/assets/roscore.service) и [`clover`](https://github.com/CopterExpress/clover/blob/master/builder/assets/clover.service). Их можно подкорректировать и использовать в Jetson Nano.
+> **Hint** Вы можете настроить `systemd` так, чтобы ноды Клевера запускались автоматически. Примером такой настройки может служить образ Клевера для Raspberry Pi: там созданы сервисы [`roscore`](https://github.com/CopterExpress/clover/blob/master/builder/assets/roscore.service) и [`clover`](https://github.com/CopterExpress/clover/blob/master/builder/assets/drone.service). Их можно подкорректировать и использовать в Jetson Nano.
 
 ## Возможные проблемы
 

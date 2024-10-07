@@ -3,7 +3,7 @@
 
     <node pkg="mavros" type="mavros_node" name="mavros" required="true" output="screen">
         <param name="fcu_url" value="udp://@127.0.1:14557"/>
-        <rosparam command="load" file="$(find clover)/launch/mavros_config.yaml"/>
+        <rosparam command="load" file="$(find drone)/launch/mavros_config.yaml"/>
     </node>
 
     <node name="visualization" pkg="mavros_extras" type="visualization" required="true">
@@ -50,6 +50,6 @@
         <remap from="image_rect" to="main_camera/image_rect"/>
     </node>
 
-    <param name="test_module" value="$(find clover)/test/basic.py"/>
+    <param name="test_module" value="$(find drone)/test/basic.py"/>
     <test test-name="basic_test" pkg="ros_pytest" type="ros_pytest_runner"/>
 </launch>

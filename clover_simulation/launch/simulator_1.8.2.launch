@@ -28,7 +28,7 @@
     </include>
 
     <!-- Clover services -->
-    <include file="$(find clover)/launch/clover.launch">
+    <include file="$(find drone)/launch/drone.launch">
         <arg name="simulator" value="true"/>
         <arg name="fcu_conn" value="udp"/>
         <arg name="fcu_ip" value="127.0.0.1"/>

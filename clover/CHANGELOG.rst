@@ -44,7 +44,7 @@ Changelog for package clover
 * Web: add link for viewing the error log.
 * LED: add error/ignore parameter to not flash on some errors.
 * Wait for FC and camera devices before launching mavros and camera driver.
-* clover.launch: disable rc node by default.
+* drone.launch: disable rc node by default.
 * optical_flow: publish debug image even when calc_flow_gyro failed.
 * Various changes.
 
