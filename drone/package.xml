@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>clover</name>
+  <name>drone</name>
   <version>0.25.0</version>
   <description>The Clover package</description>
 
