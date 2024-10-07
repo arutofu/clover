@@ -8,7 +8,7 @@ systemd
 
 Main documentation: https://wiki.archlinux.org/title/Systemd.
 
-All automatically started Clover software is launched as a `clover.service` systemd service.
+All automatically started Clover software is launched as a `drone.service` systemd service.
 
 The service may be restarted by the `systemctl` command:
 

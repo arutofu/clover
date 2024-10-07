@@ -81,7 +81,7 @@ my_travis_retry sudo -u pi rosdep update
 export ROS_IP='127.0.0.1' # needed for running tests
 
 # echo_stamp "Reconfiguring Clover repository for simplier unshallowing"
-cd /home/pi/catkin_ws/src/clover
+cd /home/pi/catkin_ws/src/drone
 git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 
 # This is sort of a hack to force "custom" packages to be installed - the ones built by COEX, linked against OpenCV 4.2
@@ -109,19 +109,19 @@ cd /home/pi/catkin_ws
 my_travis_retry rosdep install -y --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} --os=debian:buster \
   --skip-keys=gazebo_ros --skip-keys=gazebo_plugins
 my_travis_retry pip3 install wheel
-my_travis_retry pip3 install -r /home/pi/catkin_ws/src/clover/clover/requirements.txt
+my_travis_retry pip3 install -r /home/pi/catkin_ws/src/drone/drone/requirements.txt
 source /opt/ros/${ROS_DISTRO}/setup.bash
 # Don't build simulation plugins for actual drone
 catkin_make -j2 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 source devel/setup.bash
 
 echo_stamp "Install clever package (for backwards compatibility)"
-cd /home/pi/catkin_ws/src/clover/builder/assets/clever
+cd /home/pi/catkin_ws/src/drone/builder/assets/clever
 ./setup.py install
 rm -rf build  # remove build artifacts
 
 echo_stamp "Build Clover documentation"
-cd /home/pi/catkin_ws/src/clover
+cd /home/pi/catkin_ws/src/drone
 builder/assets/install_gitbook.sh
 gitbook install
 gitbook build
@@ -164,8 +164,8 @@ ln -s "$(catkin_find clover examples --first-only)" /home/pi
 chown -Rf pi:pi /home/pi/examples
 
 echo_stamp "Make systemd services symlinks"
-ln -s /home/pi/catkin_ws/src/clover/builder/assets/drone.service /lib/systemd/system/
-ln -s /home/pi/catkin_ws/src/clover/builder/assets/roscore.service /lib/systemd/system/
+ln -s /home/pi/catkin_ws/src/drone/builder/assets/drone.service /lib/systemd/system/
+ln -s /home/pi/catkin_ws/src/drone/builder/assets/roscore.service /lib/systemd/system/
 # validate
 [ -f /lib/systemd/system/drone.service ]
 [ -f /lib/systemd/system/roscore.service ]

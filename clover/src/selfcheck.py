@@ -772,13 +772,13 @@ def check_cpu_usage():
                     cpu.strip(), cmd.strip(), pid.strip())
 
 
-@check('clover.service')
+@check('drone.service')
 def check_clover_service():
     if not os.path.exists('/etc/clover_version'):
         return # Don't check not on Clover's image
 
     try:
-        output = subprocess.check_output('systemctl show -p ActiveState --value clover.service'.split(),
+        output = subprocess.check_output('systemctl show -p ActiveState --value drone.service'.split(),
                                          stderr=subprocess.STDOUT).decode()
     except subprocess.CalledProcessError as e:
         failure('systemctl returned %s: %s', e.returncode, e.output)
