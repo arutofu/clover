@@ -28,8 +28,8 @@ echo_stamp() {
 sudo apt-get update
 sudo apt-get upgrade -y
 
-# Устанавливаем Python 3 и pip, если не установлены
-sudo apt-get install -y python3 python3-pip
+# Устанавливаем Python 3, pip и необходимые пакеты для виртуальных окружений
+sudo apt-get install -y python3 python3-pip python3-venv
 
 # Создаём виртуальное окружение для установки пакетов
 python3 -m venv sensor-env
@@ -60,3 +60,4 @@ sudo apt-get install -y python3-smbus python3-dev i2c-tools
 
 # Выводим предупреждение о том, что скрипт запущен от root
 echo "Предупреждение: если вы не используете виртуальное окружение, запуск pip от root может привести к проблемам с правами доступа."
+
