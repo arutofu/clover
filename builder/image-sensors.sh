@@ -39,6 +39,9 @@ sudo pip3 install RPi.GPIO
 
 sudo apt-get install -y wget unzip git
 
+# Устанавливаем библиотеку wiringPi
+sudo apt-get install -y wiringpi
+
 # Устанавливаем библиотеку для работы с RTC DS1302 (модуль часов реального времени)
 git clone https://github.com/dimp-gh/rpi-ds1302.git
 cd rpi-ds1302
