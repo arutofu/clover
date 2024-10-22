@@ -28,36 +28,33 @@ echo_stamp() {
 sudo apt-get update
 sudo apt-get upgrade -y
 
-# Устанавливаем Python 3, pip и необходимые пакеты для виртуальных окружений
-sudo apt-get install -y python3 python3-pip python3-venv
-
-# Создаём виртуальное окружение для установки пакетов
-python3 -m venv sensor-env
-source sensor-env/bin/activate
+# Устанавливаем Python 3 и pip, если не установлены
+sudo apt-get install -y python3 python3-pip
 
 # Устанавливаем библиотеку для работы с DHT11 (датчик температуры и влажности)
-pip install Adafruit_DHT
+sudo pip3 install Adafruit_DHT
 
 # Устанавливаем библиотеки для работы с GPIO
-pip install RPi.GPIO
+sudo pip3 install RPi.GPIO
+
+sudo apt-get install -y wget unzip
 
 # Устанавливаем библиотеку для работы с RTC DS1302 (модуль часов реального времени)
-# Клонируем репозиторий с использованием анонимного доступа
-git clone https://github.com/Seeed-Studio/RTC_DS1302.git || {
-    echo "Ошибка клонирования репозитория RTC_DS1302. Убедитесь, что у вас есть доступ в интернет или выполните клонирование вручную."
-    exit 1
-}
+# Скачиваем архив с GitHub вместо клонирования
+wget https://github.com/Seeed-Studio/RTC_DS1302/archive/refs/heads/master.zip -O RTC_DS1302.zip
 
-cd RTC_DS1302
-sudo python3 setup.py install || {
-    echo "Ошибка установки библиотеки RTC_DS1302."
-    exit 1
-}
+# Распаковываем архив
+unzip RTC_DS1302.zip
+cd RTC_DS1302-master
+
+# Устанавливаем библиотеку
+sudo python3 setup.py install
 cd ..
+
+# Удаляем архив и временную папку
+rm -rf RTC_DS1302.zip RTC_DS1302-master
+
+# Для остальных датчиков не требуется установка дополнительных библиотек, так как они используют стандартные GPIO библиотеки
 
 # Устанавливаем дополнительную библиотеку для работы с I2C, если понадобится
 sudo apt-get install -y python3-smbus python3-dev i2c-tools
-
-# Выводим предупреждение о том, что скрипт запущен от root
-echo "Предупреждение: если вы не используете виртуальное окружение, запуск pip от root может привести к проблемам с правами доступа."
-
