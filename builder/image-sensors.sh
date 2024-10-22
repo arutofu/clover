@@ -37,24 +37,17 @@ sudo pip3 install Adafruit_DHT
 # Устанавливаем библиотеки для работы с GPIO
 sudo pip3 install RPi.GPIO
 
-sudo apt-get install -y wget unzip
+sudo apt-get install -y wget unzip git
 
 # Устанавливаем библиотеку для работы с RTC DS1302 (модуль часов реального времени)
-# Скачиваем архив с GitHub вместо клонирования
-wget https://github.com/Seeed-Studio/RTC_DS1302/archive/refs/heads/master.zip -O RTC_DS1302.zip
-
-# Распаковываем архив
-unzip RTC_DS1302.zip
-cd RTC_DS1302-master
-
-# Устанавливаем библиотеку
+git clone https://github.com/dimp-gh/rpi-ds1302.git
+cd rpi-ds1302
 sudo python3 setup.py install
 cd ..
-
-# Удаляем архив и временную папку
-rm -rf RTC_DS1302.zip RTC_DS1302-master
+rm -rf rpi-ds1302
 
 # Для остальных датчиков не требуется установка дополнительных библиотек, так как они используют стандартные GPIO библиотеки
 
 # Устанавливаем дополнительную библиотеку для работы с I2C, если понадобится
 sudo apt-get install -y python3-smbus python3-dev i2c-tools
+
