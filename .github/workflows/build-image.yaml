@@ -17,14 +17,16 @@ jobs:
       - name: Build image
         run: |
           docker run --privileged --rm -v /dev:/dev -v $(pwd):/builder/repo -e TRAVIS_TAG="${{ github.event.release.tag_name }}" sfalexrog/img-tool:qemu-update
-      - name: Compress image
+      - name: Compress image with 7z
         run: |
-          cd images && sudo chmod -R 777 . && zip -9 $(echo *_*).zip *_* && ls -l . && unzip -l *_*.zip
+          cd images && sudo chmod -R 777 .
+          7z a -t7z -mx=9 image.7z *_*  # -t7z указывает на формат 7z, -mx=9 для максимального сжатия
+          ls -l .
+          7z l image.7z  # Вывод содержимого архива для проверки
       - name: Upload image
         uses: softprops/action-gh-release@v1
         if: ${{ github.event_name == 'release' }}
         with:
-          files: images/*_*.zip
-          prerelease: true
+          files: images/*_*.7z  # Загрузка сжатого файла 7z
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

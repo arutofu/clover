@@ -56,7 +56,7 @@ echo "rpi-ds1302 for RTC DS1302 installed"
 
 # Устанавливаем дополнительную библиотеку для работы с I2C, если понадобится
 sudo apt-get install -y python3-smbus python3-dev i2c-tools
-echo "Installing the library for I2C just in case"
+echo "The library for I2C installed just in case"
 
 # Для остальных датчиков не требуется установка дополнительных библиотек, так как они используют стандартные GPIO библиотеки
 echo "Others sensors dont want any libraries"
