@@ -22,11 +22,11 @@ jobs:
           cd images && sudo chmod -R 777 .
           7z a -t7z -mx=9 image.7z *_*  # -t7z указывает на формат 7z, -mx=9 для максимального сжатия
           ls -l .
-          7z l image.7z  # Вывод содержимого архива для проверки
+          7z l *.7z  # Вывод содержимого архива для проверки
       - name: Upload image
         uses: softprops/action-gh-release@v1
         if: ${{ github.event_name == 'release' }}
         with:
-          files: images/*_*.7z  # Загрузка сжатого файла 7z
+          files: images/*.7z  # Ищет все файлы с расширением .7z в директории images
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
