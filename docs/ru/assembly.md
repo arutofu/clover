@@ -56,4 +56,32 @@
             <li><a href="https://www.tezona.ru/data/uploads/files/Orlenok-nastroika-pc.mp4">Видеоинструкция прошивки полетного контроллера</a></li>
             </td>
      </tr>
+     <tr>
+     <td>Конструктор спортивного мультироторного типа для FPV-пилотирования «Олимпиец»</td>
+     <td><img src="../assets/Drones/olimpiec.jpg" width=400></td>
+          <td align="left">
+          Документация
+          <li><a href="https://www.tezona.ru/data/uploads/files/description_olimpiec.pdf">Описание</a></li>
+          <li><a href="https://www.tezona.ru/data/uploads/files/tehpasport_olimpiec.pdf">Технический паспорт</a></li>
+          <li><a href="https://www.tezona.ru/data/uploads/files/manual_olimpiec.pdf">Инструкция по сборке и настройке PDF</a></li>
+          </td>
+     </tr>
+     <tr>
+     <td>Развивающий набор для FPV-пилотирования «Чижик»</td>
+     <td><img src="../assets/Drones/drone4.png" width=200></td>
+          <td align="left">
+          Документация
+          <li><a href="https://www.tezona.ru/data/uploads/files/manual_chizhik.pdf">Инструкция по эксплуатации</a></li>
+          <li><a href="https://www.tezona.ru/data/uploads/files/tehpasport_chizhik.pdf">Технический паспорт</a></li>
+          </td>
+     </tr>
+     <tr>
+     <td>Образовательный ресурсный набор для программирования конструктора БПЛА «Пиксель-Вжик»</td>
+     <td><img src="../assets/Drones/resourcekit_pixel.jpg" width=400></td>
+          <td align="left">
+          Документация
+          <li><a href="https://www.tezona.ru/data/uploads/files/manual_resourcekit_pixel.pdf">Инструкция по эксплуатации</a></li>
+          <li><a href="https://www.tezona.ru/data/uploads/files/tehpasport_resourcekit_pixel.pdf">Технический паспорт</a></li>
+          </td>
+     </tr>
 </table>
